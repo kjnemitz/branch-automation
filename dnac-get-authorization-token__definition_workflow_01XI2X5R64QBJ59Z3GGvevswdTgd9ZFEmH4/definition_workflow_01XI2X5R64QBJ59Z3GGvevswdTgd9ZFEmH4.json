@@ -1,0 +1,71 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XI2X5R64QBJ59Z3GGvevswdTgd9ZFEmH4",
+    "name": "DNAC - Get Authorization Token",
+    "title": "DNAC - Get Authorization Token",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "DNAC - Get Authorization Token",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XI3O15VYP3K2C3w9GrKEMJbeopi2VMgmo",
+        "name": "HTTP Request",
+        "title": "Get Authorization Token",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Get Authorization Token",
+          "method": "GET",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01XI2XSGIBJQY5hfK788jc6BhqWsLMZovmZ"
+    ]
+  },
+  "categories": {
+    "category_01XI2XSGIBJQY5hfK788jc6BhqWsLMZovmZ": {
+      "unique_name": "category_01XI2XSGIBJQY5hfK788jc6BhqWsLMZovmZ",
+      "name": "DNAC",
+      "title": "DNAC",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Cisco DNAC Workflows",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
