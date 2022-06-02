@@ -1,0 +1,23 @@
+{
+    "deviceModels": [{
+        "deviceModelName": "Cisco IOSv",
+        "platformDeviceType": "Router",
+        "platformDeviceSubType": "ISR",
+        "interfaces": [
+		"GigabitEthernet0/0,
+		"GigabitEthernet0/1,
+		"GigabitEthernet0/2,
+		"GigabitEthernet0/3
+	],
+        "lan": [
+		"GigabitEthernet0/2,
+		"GigabitEthernet0/3
+	],
+        "wan": [
+		"GigabitEthernet0/0,
+		"GigabitEthernet0/1
+	],
+        "nedId": "cisco-ios",
+        "deviceType": "cli"
+    }]
+}
