@@ -5,7 +5,21 @@
     "title": "DNAC - Get Authorization Token",
     "type": "generic.workflow",
     "base_type": "workflow",
-    "variables": null,
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Token",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XI43BPXULHV3vHsRSbBuPGldrn0CNiw2v",
+        "object_type": "variable_workflow"
+      }
+    ],
     "properties": {
       "atomic": {
         "is_atomic": false
@@ -50,6 +64,47 @@
             "use_workflow_target": true,
             "use_workflow_target_group": false
           }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XI3ZFT50U215nqT7yJJOPieyDD7t81WP6",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query",
+          "input_json": "$activity.definition_activity_01XI3O15VYP3K2C3w9GrKEMJbeopi2VMgmo.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.Token",
+              "jsonpath_query_name": "Token",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XI42NRCCJIE79RLWIiYmHA4VEljA6HOzI",
+        "name": "Set Variables",
+        "title": "Set Output Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Output Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XI2X5R64QBJ59Z3GGvevswdTgd9ZFEmH4.output.variable_workflow_01XI43BPXULHV3vHsRSbBuPGldrn0CNiw2v$",
+              "variable_value_new": "$activity.definition_activity_01XI3ZFT50U215nqT7yJJOPieyDD7t81WP6.output.jsonpath_queries.Token$"
+            }
+          ]
         },
         "object_type": "definition_activity"
       }
