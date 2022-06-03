@@ -1,0 +1,51 @@
+{
+  "enterprise": {
+    "name": "JPMC",
+    "site": [
+      {
+        "name": "Seattle",
+        "building": [
+          {
+            "name": "SEA-1",
+            "floor": [
+              {
+                "name": "Lobby"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "template": [
+      {
+        "name": "Switch-Base-Config",
+        "description": "Base configuration for switch",
+        "deviceTypes": [
+          {
+            "productFamily": "Switches and Hubs"
+          }
+        ],
+        "softwareType": "IOS-XE",
+        "softwareVariant": "XE",
+        "templateContent": "hostname {{ HOSTNAME }}",
+        "templateParams": [
+          {
+            "parameterName": "HOSTNAME",
+            "dataType": "STRING",
+            "description": "Host Name",
+            "required": true,
+            "notParam": false,
+            "paramArray": false,
+            "displayName": "Host Name",
+            "order": 1,
+            "customOrder": 0
+          }
+        ],
+        "customParamsOrder": false,
+        "projectName": "Onboarding Configuration",
+        "projectAssociated": true,
+        "documentDatabase": false
+      }
+    ]
+  }
+}
