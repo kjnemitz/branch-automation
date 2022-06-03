@@ -1,0 +1,277 @@
+lab:
+  description: ''
+  notes: ''
+  title: prototype
+  version: 0.0.5
+nodes:
+  - id: n0
+    label: outside
+    node_definition: external_connector
+    x: 227
+    y: 172
+    configuration: bridge302
+    hide_links: false
+    ram: 0
+    cpus: 0
+    cpu_limit: 100
+    data_volume: 0
+    boot_disk_size: 0
+    tags: []
+    interfaces:
+      - id: i0
+        slot: 0
+        label: port
+        type: physical
+  - id: n1
+    label: moe
+    node_definition: iosv
+    x: 497
+    y: 166
+    configuration: |-
+      hostname moe
+      !
+      interface GigabitEthernet0/0
+       ip address dhcp
+       ip dhcp client client-id ascii foo
+       ip dhcp client hostname moe
+       no shut
+      !
+      interface GigabitEthernet0/1
+       ip address 192.168.47.1 255.255.255.0
+       no shut
+      !
+      interface GigabitEthernet0/2
+       ip address 192.168.48.1 255.255.255.0
+       no shut
+      !
+      interface Loopback0
+       ip address 192.168.0.1 255.255.255.255
+      !
+      no banner exec
+      no banner incoming
+      no banner login
+      !
+      aaa new-model
+      !
+      aaa authentication login default local
+      aaa authorization exec default local
+      aaa authorization console
+      !
+      enable password 0 cisco
+      username cisco privilege 15 password 0 cisco
+      !
+      ip ssh version 2
+      ip domain name forcryptokey
+      crypto key generate rsa modulus 2048
+      !
+      line vty 0 4
+       login authentication default
+       transport input ssh
+      !
+      router ospf 1
+       router-id 192.168.0.1
+       network 192.168.0.1  0.0.0.0 area 0
+       network 192.168.47.1 0.0.0.0 area 0
+       network 192.168.48.1 0.0.0.0 area 0
+      !
+      end
+    hide_links: false
+    ram: 512
+    cpus: 1
+    cpu_limit: 100
+    data_volume: 0
+    boot_disk_size: 0
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: GigabitEthernet0/0
+        type: physical
+      - id: i2
+        slot: 1
+        label: GigabitEthernet0/1
+        type: physical
+      - id: i3
+        slot: 2
+        label: GigabitEthernet0/2
+        type: physical
+      - id: i4
+        slot: 3
+        label: GigabitEthernet0/3
+        type: physical
+  - id: n2
+    label: larry
+    node_definition: iosv
+    x: 269
+    y: 312
+    configuration: |-
+      hostname larry
+      !
+      interface GigabitEthernet0/0
+       ip address 192.168.47.2 255.255.255.0
+       no shut
+      !
+      interface GigabitEthernet0/1
+       ip address 192.168.49.2 255.255.255.0
+       no shut
+      !
+      interface Loopback0
+       ip address 192.168.0.2 255.255.255.255
+      !
+      no banner exec
+      no banner incoming
+      no banner login
+      !
+      aaa new-model
+      !
+      aaa authentication login default local
+      aaa authorization exec default local
+      aaa authorization console
+      !
+      enable password 0 cisco
+      username cisco privilege 15 password 0 cisco
+      !
+      ip ssh version 2
+      ip domain name forcryptokey
+      crypto key generate rsa modulus 2048
+      !
+      line vty 0 4
+       login authentication default
+       transport input ssh
+      !
+      router ospf 1
+       router-id 192.168.0.2
+       network 192.168.0.2  0.0.0.0 area 0
+       network 192.168.47.2 0.0.0.0 area 0
+       network 192.168.49.2 0.0.0.0 area 0
+      !
+      end
+    hide_links: false
+    ram: 512
+    cpus: 1
+    cpu_limit: 100
+    data_volume: 0
+    boot_disk_size: 0
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: GigabitEthernet0/0
+        type: physical
+      - id: i2
+        slot: 1
+        label: GigabitEthernet0/1
+        type: physical
+      - id: i3
+        slot: 2
+        label: GigabitEthernet0/2
+        type: physical
+      - id: i4
+        slot: 3
+        label: GigabitEthernet0/3
+        type: physical
+  - id: n3
+    label: curly
+    node_definition: iosv
+    x: 718
+    y: 314
+    configuration: |
+      hostname curly
+      !
+      interface GigabitEthernet0/0
+       ip address 192.168.49.3 255.255.255.0
+       no shut
+      !
+      interface GigabitEthernet0/1
+       ip address 192.168.48.3 255.255.255.0
+       no shut
+      !
+      interface Loopback0
+       ip address 192.168.0.3 255.255.255.255
+      !
+      no banner exec
+      no banner incoming
+      no banner login
+      !
+      aaa new-model
+      !
+      aaa authentication login default local
+      aaa authorization exec default local
+      aaa authorization console
+      !
+      enable password 0 cisco
+      username cisco privilege 15 password 0 cisco
+      !
+      ip ssh version 2
+      ip domain name forcryptokey
+      crypto key generate rsa modulus 2048
+      !
+      line vty 0 4
+       login authentication default
+       transport input ssh
+      !
+      router ospf 1
+       router-id 192.168.0.3
+       network 192.168.0.3  0.0.0.0 area 0
+       network 192.168.48.3 0.0.0.0 area 0
+       network 192.168.49.3 0.0.0.0 area 0
+      !
+      end
+    hide_links: false
+    ram: 512
+    cpus: 1
+    cpu_limit: 100
+    data_volume: 0
+    boot_disk_size: 0
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: GigabitEthernet0/0
+        type: physical
+      - id: i2
+        slot: 1
+        label: GigabitEthernet0/1
+        type: physical
+      - id: i3
+        slot: 2
+        label: GigabitEthernet0/2
+        type: physical
+      - id: i4
+        slot: 3
+        label: GigabitEthernet0/3
+        type: physical
+links:
+  - id: l0
+    i1: i1
+    n1: n1
+    i2: i0
+    n2: n0
+    label: moe-GigabitEthernet0/0<->outside-port
+  - id: l1
+    i1: i2
+    n1: n1
+    i2: i1
+    n2: n2
+    label: moe-GigabitEthernet0/1<->larry-GigabitEthernet0/0
+  - id: l2
+    i1: i2
+    n1: n2
+    i2: i1
+    n2: n3
+    label: larry-GigabitEthernet0/1<->curly-GigabitEthernet0/0
+  - id: l3
+    i1: i2
+    n1: n3
+    i2: i3
+    n2: n1
+    label: curly-GigabitEthernet0/1<->moe-GigabitEthernet0/2
