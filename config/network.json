@@ -3,13 +3,100 @@
     "name": "JPMC",
     "site": [
       {
-        "name": "Seattle",
+        "name": "CDC 1",
+        "type": "datacenter",
+        "address": {
+            "street": "880 Powder Mill Road",
+            "city": "Bear",
+            "state": "Delaware",
+            "zipcode": "19803",
+        },
         "building": [
           {
-            "name": "SEA-1",
+            "name": "Building A",
             "floor": [
               {
-                "name": "Lobby"
+                "name": "Floor 1",
+                "devices": [
+                    {
+                        "devicename": "placeholder"
+                    }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "CDC 2",
+        "type": "datacenter",
+        "address": {
+            "street": "36 E Midland Ave",
+            "city": "Paramus",
+            "state": "New Jersey",
+            "zipcode": "07652",
+        },
+        "building": [
+          {
+            "name": "Building A",
+            "floor": [
+              {
+                "name": "Floor 1",
+                "devices": [
+                    {
+                        "devicename": "placeholder"
+                    }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Yamhill Branch",
+        "type": "branch",
+        "address": {
+            "street": "811 Southwest 6th Avenue",
+            "city": "Portland",
+            "state": "Oregon",
+            "zipcode": "97204",
+        },
+        "building": [
+          {
+            "name": "Building A",
+            "floor": [
+              {
+                "name": "Floor 1",
+                "devices": [
+                    {
+                        "devicename": "placeholder"
+                    }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Greenwich Branch",
+        "type": "branch",
+        "address": {
+            "street": "285 Greenwich St",
+            "city": "New York",
+            "state": "New York",
+            "zipcode": "10006",
+        },
+        "building": [
+          {
+            "name": "Westfield World Trade Center",
+            "floor": [
+              {
+                "name": "Floor 2",
+                "devices": [
+                    {
+                        "devicename": "placeholder"
+                    }
+                ]
               }
             ]
           }
