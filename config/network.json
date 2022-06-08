@@ -5,15 +5,15 @@
       {
         "name": "CDC 1",
         "type": "datacenter",
-        "address": {
-            "street": "880 Powder Mill Road",
-            "city": "Bear",
-            "state": "Delaware",
-            "zipcode": "19803"
-        },
         "building": [
           {
             "name": "Building A",
+            "address": {
+                "address1": "880 Powder Mill Road",
+                "city": "Wilmington",
+                "state": "DE",
+                "zipcode": "19803"
+            },
             "floor": [
               {
                 "name": "Floor 1",
@@ -30,15 +30,15 @@
       {
         "name": "CDC 2",
         "type": "datacenter",
-        "address": {
-            "street": "36 E Midland Ave",
-            "city": "Paramus",
-            "state": "New Jersey",
-            "zipcode": "07652"
-        },
         "building": [
           {
             "name": "Building A",
+            "address": {
+                "street": "36 E Midland Ave",
+                "city": "Paramus",
+                "state": "NJ",
+                "zipcode": "07652"
+            },
             "floor": [
               {
                 "name": "Floor 1",
@@ -55,15 +55,15 @@
       {
         "name": "Yamhill Branch",
         "type": "branch",
-        "address": {
-            "street": "811 Southwest 6th Avenue",
-            "city": "Portland",
-            "state": "Oregon",
-            "zipcode": "97204"
-        },
         "building": [
           {
             "name": "Building A",
+            "address": {
+                "street": "811 Southwest 6th Avenue",
+                "city": "Portland",
+                "state": "OR",
+                "zipcode": "97204"
+            },
             "floor": [
               {
                 "name": "Floor 1",
@@ -83,7 +83,7 @@
         "address": {
             "street": "285 Greenwich St",
             "city": "New York",
-            "state": "New York",
+            "state": "NY",
             "zipcode": "10006"
         },
         "building": [
