@@ -1,0 +1,138 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XJOAXZPPN911oPch2wyZ5iYdhvsbCuKNV",
+    "name": "BA - Retrieve Network Design",
+    "title": "BA - Retrieve Network Design",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "network.json",
+          "scope": "input",
+          "name": "Design File Name",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJOBWE1DXS52bmMx27UgKB5iVKBtBRRgO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Design File Contents (JSON)",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJOJKA4N5ZN4lRhDJQf3rcEHosc9jQ5KM",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "BA - Retrieve Network Design",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XJOC4GGU5501RKQsjLcAqGIq5V2k9OIhs",
+        "name": "HTTP Request",
+        "title": "Get Network Design",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Get Network Design",
+          "method": "GET",
+          "relative_url": "config/network.json",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XJOXCPVIF0M7Bt5ritK0S0KXL7JJKlT93",
+        "name": "Set Variables",
+        "title": "Set Design File Contents",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Design File Contents",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XJOAXZPPN911oPch2wyZ5iYdhvsbCuKNV.output.variable_workflow_01XJOJKA4N5ZN4lRhDJQf3rcEHosc9jQ5KM$",
+              "variable_value_new": "$activity.definition_activity_01XJOC4GGU5501RKQsjLcAqGIq5V2k9OIhs.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01XJOBI3DXOFM6BgIAE65eYqPa9T1EJNqec"
+    ]
+  },
+  "categories": {
+    "category_01XJOBI3DXOFM6BgIAE65eYqPa9T1EJNqec": {
+      "unique_name": "category_01XJOBI3DXOFM6BgIAE65eYqPa9T1EJNqec",
+      "name": "Branch Automation",
+      "title": "Branch Automation",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE": {
+      "unique_name": "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE",
+      "name": "GitHub",
+      "title": "GitHub",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "GitHub",
+        "host": "raw.githubusercontent.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "kjnemitz/branch-automation/main/",
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  }
+}
