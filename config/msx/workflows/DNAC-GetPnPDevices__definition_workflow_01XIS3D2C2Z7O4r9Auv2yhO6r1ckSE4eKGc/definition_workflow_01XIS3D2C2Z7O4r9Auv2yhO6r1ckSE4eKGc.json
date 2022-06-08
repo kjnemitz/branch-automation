@@ -1,0 +1,463 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc",
+    "name": "DNAC - Get PnP Devices",
+    "title": "DNAC - Get PnP Devices",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "/dna/intent/api/v1/onboarding/pnp-device",
+          "scope": "local",
+          "name": "Relative URL",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "PnP Devices (JSON)",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XIWIOS5D3O41fi565fBu9tWW3GkLZV2sf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Query Parameters (JSON)",
+          "type": "datatype.string",
+          "description": "[\n  {\n    \"name\": \"NAME1\",\n    \"value\": \"VALUE1\"\n  },\n  {\n    \"name\": \"NAME2\",\n    \"value\": \"VALUE2\"\n  }\n]",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XIX2HA9NAG507jXjn0S3L0HKvLbe7W3WE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Token",
+          "type": "datatype.string",
+          "description": "DNAC authorization token",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "DNAC - Get PnP Devices",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XIS4N430JT7779ntQJg6M6pDdjJHmNi6C",
+        "name": "Condition Block",
+        "title": "Get Token",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Token",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01XIS4N4WFUM34533q9COibuYQcSIAW8FtR",
+            "name": "Condition Branch",
+            "title": "Empty Token",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.input.variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk$",
+                "operator": "eq",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "Empty Token",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01XIS5DE5RSYG5rgUWeiiz6b2KPXlMb6Z3h",
+                "name": "DNAC - Get Authorization Token",
+                "title": "DNAC - Get Authorization Token",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "display_name": "DNAC - Get Authorization Token",
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "target": {
+                    "target_type": "web-service.endpoint",
+                    "use_workflow_target": true
+                  },
+                  "workflow_id": "definition_workflow_01XI2X5R64QBJ59Z3GGvevswdTgd9ZFEmH4"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01XIS5Q0FWL6Q0teCaeZUHWEKBw9VhFGIiY",
+                "name": "Set Variables",
+                "title": "Set Token",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Token",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.input.variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk$",
+                      "variable_value_new": "$activity.definition_activity_01XIS5DE5RSYG5rgUWeiiz6b2KPXlMb6Z3h.output.variable_workflow_01XI43BPXULHV3vHsRSbBuPGldrn0CNiw2v$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01XIW7Q93Z0TO2rvDd5N9IIzH5Vwsyc25e8",
+        "name": "Condition Block",
+        "title": "Add Query Parameters",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "If Query parameters have been set then add to the URL",
+          "display_name": "Add Query Parameters",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01XIW7Q9VC5L20dsnbWU97GgNnoj2oCGusO",
+            "name": "Condition Branch",
+            "title": "Parameters Exist",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.input.variable_workflow_01XIX2HA9NAG507jXjn0S3L0HKvLbe7W3WE$",
+                "operator": "ne",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "Parameters Exist",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01XIX3KZXP9OK1BiH9NAr3vN74NB6uf2lkU",
+                "name": "Read Table from JSON",
+                "title": "Convert Query Parameters to Table",
+                "type": "corejava.read_table_from_json",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Convert Query Parameters to Table",
+                  "input_json": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.input.variable_workflow_01XIX2HA9NAG507jXjn0S3L0HKvLbe7W3WE$",
+                  "jsonpath_query": "$.*",
+                  "persist_output": false,
+                  "populate_columns": false,
+                  "skip_execution": false,
+                  "table_columns": [
+                    {
+                      "column_name": "name",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "value",
+                      "column_type": "string"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01XIWAFDWZY4A6aFkaIhNOpKqdhUdlZ14cV",
+                "name": "Set Variables",
+                "title": "Add Query Indicator to URL",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Add Query Indicator to URL",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.local.variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ$",
+                      "variable_value_new": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.local.variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ$?"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01XIXBF9QP5IK6FFB7SvG1BKKefVuSs3jLE",
+                "name": "For Each",
+                "title": "For Each Query Parameter",
+                "type": "logic.for_each",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "For Each Query Parameter",
+                  "skip_execution": false,
+                  "source_array": "$activity.definition_activity_01XIX3KZXP9OK1BiH9NAr3vN74NB6uf2lkU.output.read_table_from_json$"
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01XIXC7HISDWN0tNT9Axb63H5DyI6sHDQGr",
+                    "name": "Set Variables",
+                    "title": "Add Query Parameter to URL",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Add Query Parameter to URL",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.local.variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ$",
+                          "variable_value_new": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.local.variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ$$activity.definition_activity_01XIXBF9QP5IK6FFB7SvG1BKKefVuSs3jLE.input.source_array[@].name$=$activity.definition_activity_01XIXBF9QP5IK6FFB7SvG1BKKefVuSs3jLE.input.source_array[@].value$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01XIS7LXAE3V92Uab64l1YTSU3m5DfEHr9Q",
+        "name": "HTTP Request",
+        "title": "Get PnP Devices",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "accept": "application/json",
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "X-Auth-Token",
+              "value": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.input.variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk$"
+            }
+          ],
+          "display_name": "Get PnP Devices",
+          "method": "GET",
+          "relative_url": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.local.variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XIWITHWUDGC5qwubVuxskExE0FBdaFRdM",
+        "name": "Set Variables",
+        "title": "Set Output Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Output Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XIS3D2C2Z7O4r9Auv2yhO6r1ckSE4eKGc.output.variable_workflow_01XIWIOS5D3O41fi565fBu9tWW3GkLZV2sf$",
+              "variable_value_new": "$activity.definition_activity_01XIS7LXAE3V92Uab64l1YTSU3m5DfEHr9Q.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01XI2XSGIBJQY5hfK788jc6BhqWsLMZovmZ"
+    ]
+  },
+  "categories": {
+    "category_01XI2XSGIBJQY5hfK788jc6BhqWsLMZovmZ": {
+      "unique_name": "category_01XI2XSGIBJQY5hfK788jc6BhqWsLMZovmZ",
+      "name": "DNAC",
+      "title": "DNAC",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "Cisco DNAC Workflows",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01XI2X5R64QBJ59Z3GGvevswdTgd9ZFEmH4",
+        "name": "DNAC - Get Authorization Token",
+        "title": "DNAC - Get Authorization Token",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Token",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01XI43BPXULHV3vHsRSbBuPGldrn0CNiw2v",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "DNAC - Get Authorization Token",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "target_type": "web-service.endpoint",
+            "specify_on_workflow_start": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01XI3O15VYP3K2C3w9GrKEMJbeopi2VMgmo",
+            "name": "HTTP Request",
+            "title": "Get Authorization Token",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": false,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Get Authorization Token",
+              "method": "POST",
+              "relative_url": "/dna/system/api/v1/auth/token",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": false,
+                "override_workflow_target_group_criteria": false,
+                "use_workflow_target": true,
+                "use_workflow_target_group": false
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01XI3ZFT50U215nqT7yJJOPieyDD7t81WP6",
+            "name": "JSONPath Query",
+            "title": "JSONPath Query",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "JSONPath Query",
+              "input_json": "$activity.definition_activity_01XI3O15VYP3K2C3w9GrKEMJbeopi2VMgmo.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.Token",
+                  "jsonpath_query_name": "Token",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01XI42NRCCJIE79RLWIiYmHA4VEljA6HOzI",
+            "name": "Set Variables",
+            "title": "Set Output Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Output Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01XI2X5R64QBJ59Z3GGvevswdTgd9ZFEmH4.output.variable_workflow_01XI43BPXULHV3vHsRSbBuPGldrn0CNiw2v$",
+                  "variable_value_new": "$activity.definition_activity_01XI3ZFT50U215nqT7yJJOPieyDD7t81WP6.output.jsonpath_queries.Token$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_01XI2XSGIBJQY5hfK788jc6BhqWsLMZovmZ"
+        ]
+      }
+    }
+  ]
+}
