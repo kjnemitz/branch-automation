@@ -9,18 +9,18 @@
           {
             "name": "Building A",
             "address": {
-                "address1": "880 Powder Mill Road",
-                "city": "Wilmington",
-                "state": "DE",
-                "zipcode": "19803"
+              "address1": "880 Powder Mill Road",
+              "city": "Wilmington",
+              "state": "DE",
+              "zipcode": "19803"
             },
             "floor": [
               {
                 "name": "Floor 1",
                 "devices": [
-                    {
-                        "devicename": "placeholder"
-                    }
+                  {
+                    "devicename": "placeholder"
+                  }
                 ]
               }
             ]
@@ -34,18 +34,18 @@
           {
             "name": "Building A",
             "address": {
-                "street": "36 E Midland Ave",
-                "city": "Paramus",
-                "state": "NJ",
-                "zipcode": "07652"
+              "street": "36 E Midland Ave",
+              "city": "Paramus",
+              "state": "NJ",
+              "zipcode": "07652"
             },
             "floor": [
               {
                 "name": "Floor 1",
                 "devices": [
-                    {
-                        "devicename": "placeholder"
-                    }
+                  {
+                    "devicename": "placeholder"
+                  }
                 ]
               }
             ]
@@ -59,18 +59,18 @@
           {
             "name": "Building A",
             "address": {
-                "street": "811 Southwest 6th Avenue",
-                "city": "Portland",
-                "state": "OR",
-                "zipcode": "97204"
+              "street": "811 Southwest 6th Avenue",
+              "city": "Portland",
+              "state": "OR",
+              "zipcode": "97204"
             },
             "floor": [
               {
                 "name": "Floor 1",
                 "devices": [
-                    {
-                        "devicename": "placeholder"
-                    }
+                  {
+                    "devicename": "placeholder"
+                  }
                 ]
               }
             ]
@@ -80,22 +80,22 @@
       {
         "name": "Greenwich Branch",
         "type": "branch",
-        "address": {
-            "street": "285 Greenwich St",
-            "city": "New York",
-            "state": "NY",
-            "zipcode": "10006"
-        },
         "building": [
           {
             "name": "Westfield World Trade Center",
+            "address": {
+              "street": "285 Greenwich St",
+              "city": "New York",
+              "state": "NY",
+              "zipcode": "10006"
+            },
             "floor": [
               {
                 "name": "Floor 2",
                 "devices": [
-                    {
-                        "devicename": "placeholder"
-                    }
+                  {
+                    "devicename": "placeholder"
+                  }
                 ]
               }
             ]
@@ -132,6 +132,15 @@
         "projectName": "Onboarding Configuration",
         "projectAssociated": true,
         "documentDatabase": false
+      }
+    ],
+    "network_profile": [
+      {
+        "name": "Switch Profile",
+        "namespace": "switching",
+        "templates": [
+          "Switch-Base-Config"
+        ]
       }
     ]
   }
