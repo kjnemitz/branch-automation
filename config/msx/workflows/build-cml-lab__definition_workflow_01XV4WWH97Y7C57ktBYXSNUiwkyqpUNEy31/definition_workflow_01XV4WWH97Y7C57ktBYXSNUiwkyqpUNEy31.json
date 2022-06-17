@@ -1,0 +1,284 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31",
+    "name": "Build CML Lab",
+    "title": "Build CML Lab",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "token",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XV59KS7FQJC7BSq5HUTXakT0sTtXoz2fN",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Build CML Lab",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XV4XQYCBJPK7EepCurhj0IXyH0T9EXPX2",
+        "name": "HTTP Request",
+        "title": "Get CML YAML from GitHub",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Get CML YAML from GitHub",
+          "method": "GET",
+          "relative_url": "prototype/prototype.yaml",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XV555BRLGPY0PBrYdc7bpqGvODJe3keL3",
+        "name": "HTTP Request",
+        "title": "Get Authentication Token from CML",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n    \"username\" : \"admin\",\n    \"password\" : \"10-9=One\"\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Get Authentication Token from CML",
+          "method": "POST",
+          "relative_url": "authenticate",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XV59WNDNVLB2ULbLO5o5Pj4aUirqXmW2M",
+        "name": "Trim String",
+        "title": "Trim String",
+        "type": "core.trim_string",
+        "base_type": "activity",
+        "properties": {
+          "characters_to_trim": "\"",
+          "continue_on_failure": false,
+          "display_name": "Trim String",
+          "skip_execution": false,
+          "source": "$activity.definition_activity_01XV555BRLGPY0PBrYdc7bpqGvODJe3keL3.output.response_body$",
+          "trim_leading": true,
+          "trim_trailing": true
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XV5C4R8LFBU3huHSBDKHy2Gw9ut3C1uOv",
+        "name": "Set Variables",
+        "title": "Save Token",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Save Token",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31.local.variable_workflow_01XV59KS7FQJC7BSq5HUTXakT0sTtXoz2fN$",
+              "variable_value_new": "$activity.definition_activity_01XV59WNDNVLB2ULbLO5o5Pj4aUirqXmW2M.output.trimmed$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XV5EJ54K30E2qSpJF5W6YIqHXCScAqZGp",
+        "name": "HTTP Request",
+        "title": "Import Lab To CML",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "$activity.definition_activity_01XV4XQYCBJPK7EepCurhj0IXyH0T9EXPX2.output.response_body$",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-yaml"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "authorization",
+              "value": "bearer $workflow.definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31.local.variable_workflow_01XV59KS7FQJC7BSq5HUTXakT0sTtXoz2fN$"
+            }
+          ],
+          "display_name": "Import Lab To CML",
+          "method": "POST",
+          "relative_url": "import",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XV5JBMI8ICO3mKHv5WHWxGViqO4VwgVup",
+        "name": "JSONPath Query",
+        "title": "Get Lab ID For Imported Lab",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get Lab ID For Imported Lab",
+          "input_json": "$activity.definition_activity_01XV5EJ54K30E2qSpJF5W6YIqHXCScAqZGp.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "@.id",
+              "jsonpath_query_name": "id",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XV5PHLHTK9646eFt1z4fmYbAmqLOtrx5j",
+        "name": "HTTP Request",
+        "title": "Start CML Lab",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "authorization",
+              "value": "bearer $workflow.definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31.local.variable_workflow_01XV59KS7FQJC7BSq5HUTXakT0sTtXoz2fN$"
+            }
+          ],
+          "display_name": "Start CML Lab",
+          "method": "PUT",
+          "relative_url": "labs/$activity.definition_activity_01XV5JBMI8ICO3mKHv5WHWxGViqO4VwgVup.output.jsonpath_queries.id$/start",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE": {
+      "unique_name": "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE",
+      "name": "GitHub",
+      "title": "GitHub",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "GitHub",
+        "host": "raw.githubusercontent.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "kjnemitz/branch-automation/main/",
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ": {
+      "unique_name": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
+      "name": "CML",
+      "title": "CML",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "CML",
+        "host": "10.2.1.177",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "/api/v0/",
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  }
+}
