@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01XVNC6BDSMYQ4Gt4EjRXRkNGVP0kSXJMBZ",
-    "name": "SD-WAN standup",
-    "title": "SD-WAN standup",
+    "name": "BA - Lab Start",
+    "title": "BA - Lab Start",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "SD-WAN standup",
+      "display_name": "BA - Lab Start",
       "runtime_user": {
         "override_target_runtime_user": false,
         "specify_on_workflow_start": false,
@@ -279,8 +279,19 @@
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01XJOBI3DXOFM6BgIAE65eYqPa9T1EJNqec"
     ]
+  },
+  "categories": {
+    "category_01XJOBI3DXOFM6BgIAE65eYqPa9T1EJNqec": {
+      "unique_name": "category_01XJOBI3DXOFM6BgIAE65eYqPa9T1EJNqec",
+      "name": "Branch Automation",
+      "title": "Branch Automation",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
   },
   "targets": {
     "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE": {
