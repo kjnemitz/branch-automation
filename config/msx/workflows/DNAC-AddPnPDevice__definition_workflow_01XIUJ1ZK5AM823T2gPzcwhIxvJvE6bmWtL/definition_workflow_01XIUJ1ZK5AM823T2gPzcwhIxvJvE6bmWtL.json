@@ -11,12 +11,12 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Serial Number",
+          "name": "Device ID",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XIYDX6BCCHO5vvrS3YMCKiQthZMdfxKCW",
+        "unique_name": "variable_workflow_01XIXLR16E0KR72roaEycnqCtAXzuihWG7A",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +24,12 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Device ID",
+          "name": "Serial Number",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XIXLR16E0KR72roaEycnqCtAXzuihWG7A",
+        "unique_name": "variable_workflow_01XIYDX6BCCHO5vvrS3YMCKiQthZMdfxKCW",
         "object_type": "variable_workflow"
       },
       {
@@ -620,6 +620,20 @@
             "properties": {
               "value": "",
               "scope": "input",
+              "name": "Token",
+              "type": "datatype.string",
+              "description": "DNAC authorization token",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
               "name": "Query Parameters (JSON)",
               "type": "datatype.string",
               "description": "[\n  {\n    \"name\": \"NAME1\",\n    \"value\": \"VALUE1\"\n  },\n  {\n    \"name\": \"NAME2\",\n    \"value\": \"VALUE2\"\n  }\n]",
@@ -627,19 +641,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01XIX2HA9NAG507jXjn0S3L0HKvLbe7W3WE",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "PnP Devices (JSON)",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01XIWIOS5D3O41fi565fBu9tWW3GkLZV2sf",
             "object_type": "variable_workflow"
           },
           {
@@ -659,14 +660,13 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "input",
-              "name": "Token",
+              "scope": "output",
+              "name": "PnP Devices (JSON)",
               "type": "datatype.string",
-              "description": "DNAC authorization token",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk",
+            "unique_name": "variable_workflow_01XIWIOS5D3O41fi565fBu9tWW3GkLZV2sf",
             "object_type": "variable_workflow"
           }
         ],
