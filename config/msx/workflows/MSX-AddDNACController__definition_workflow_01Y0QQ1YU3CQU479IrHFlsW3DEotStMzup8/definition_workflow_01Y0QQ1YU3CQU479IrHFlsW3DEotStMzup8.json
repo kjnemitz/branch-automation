@@ -1,0 +1,411 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8",
+    "name": "MSX - Add DNAC Controller",
+    "title": "MSX - Add DNAC Controller",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Debug",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y0QQLQUI40V5E4QtDK8cbrbnZPYPd9jLT",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "MSX Token",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y0QU11TTEEJ09iFPeZvJrTG2lkD4ncuQS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "{\n  \"enterprise\": {\n    \"organization\": [\n      {\n        \"description\": \"Branch Networking\",\n        \"email\": \"jnemitz@cisco.com\",\n        \"name\": \"JPMC\",\n        \"url\": \"https://www.jpmorganchase.com/\"\n      }\n    ],\n    \"CML\": {\n      \"title\": \"Auto Test Lab\",\n      \"owner\": \"jnemitz\",\n      \"external_connections\": [\n        {\n          \"x\": 1326,\n          \"y\": 253,\n          \"label\": \"Enterprise\",\n          \"configuration\": \"\",\n          \"node_definition\": \"external_connector\",\n          \"cpu_limit\": 100,\n          \"hide_links\": false,\n          \"tags\": []\n        }\n      ]\n    },\n    \"dnac_controller\": [\n      {\n        \"address\": \"7025 Kit Creek Rd, Morrisville, NC 27560\",\n        \"host\": \"dnac.lab.local\",\n        \"name\": \"DNAC-East\",\n        \"password\": \"10-9=One\",\n        \"port\": 443,\n        \"username\": \"admin\"\n      }\n    ],\n    \"site\": [\n      {\n        \"name\": \"CDC 1\",\n        \"type\": \"datacenter\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"address1\": \"880 Powder Mill Road\",\n              \"city\": \"Wilmington\",\n              \"state\": \"DE\",\n              \"zipcode\": \"19803\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"CDC 2\",\n        \"type\": \"datacenter\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"street\": \"36 E Midland Ave\",\n              \"city\": \"Paramus\",\n              \"state\": \"NJ\",\n              \"zipcode\": \"07652\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Yamhill Branch\",\n        \"type\": \"branch\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"street\": \"811 Southwest 6th Avenue\",\n              \"city\": \"Portland\",\n              \"state\": \"OR\",\n              \"zipcode\": \"97204\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": [\n                  {\n                    \"devicename\": \"Switch-1\",\n                    \"hostname\": \"Switch-1\",\n                    \"CML\": {\n                      \"x\": 1326,\n                      \"y\": 395,\n                      \"label\": \"Switch-1\",\n                      \"configuration\": \"\",\n                      \"node_definition\": \"c9kv-20220216\",\n                      \"cpu_limit\": 100,\n                      \"hide_links\": false,\n                      \"tags\": []\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Greenwich Branch\",\n        \"type\": \"branch\",\n        \"building\": [\n          {\n            \"name\": \"Westfield World Trade Center\",\n            \"address\": {\n              \"street\": \"285 Greenwich St\",\n              \"city\": \"New York\",\n              \"state\": \"NY\",\n              \"zipcode\": \"10006\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 2\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"template\": [\n      {\n        \"name\": \"Switch-Base-Config\",\n        \"description\": \"Base configuration for switch\",\n        \"deviceTypes\": [\n          {\n            \"productFamily\": \"Switches and Hubs\"\n          }\n        ],\n        \"softwareType\": \"IOS-XE\",\n        \"softwareVariant\": \"XE\",\n        \"templateContent\": \"hostname {{ HOSTNAME }}\",\n        \"templateParams\": [\n          {\n            \"parameterName\": \"HOSTNAME\",\n            \"dataType\": \"STRING\",\n            \"description\": \"Host Name\",\n            \"required\": true,\n            \"notParam\": false,\n            \"paramArray\": false,\n            \"displayName\": \"Host Name\",\n            \"order\": 1,\n            \"customOrder\": 0\n          }\n        ],\n        \"customParamsOrder\": false,\n        \"projectName\": \"Onboarding Configuration\",\n        \"projectAssociated\": true,\n        \"documentDatabase\": false\n      }\n    ],\n    \"network_profile\": [\n      {\n        \"name\": \"Switch Profile\",\n        \"namespace\": \"switching\",\n        \"templates\": [\n          \"Switch-Base-Config\"\n        ]\n      }\n    ]\n  }\n}",
+          "scope": "input",
+          "name": "Network Design",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y0QRY72K79A3MQAqsKyeZfJm6YhuC7xSS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "true",
+          "scope": "local",
+          "name": "Force Attach Controller",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y0QXJNSPPLD3ZEdPhCU4EvMuTS4vvYCo8",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "MSX - Add DNAC Controller",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "msx-api.endpoint",
+        "target_id": "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01Y0QS5WGKPU22WDgYl0mBIhQ5Ke4NiPQsD",
+        "name": "Condition Block",
+        "title": "Debug?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Debug?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01Y0QS5WUGC474kN99HILKDGtK1yfZL8zK8",
+            "name": "Condition Branch",
+            "title": "Yes",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8.input.variable_workflow_01Y0QQLQUI40V5E4QtDK8cbrbnZPYPd9jLT$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "Yes",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01Y0QSG9X5HNF002VOWtDhkdhI7mzyIeHJE",
+                "name": "Session Login",
+                "title": "Get MSX Token",
+                "type": "msxapi.login",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Get MSX Token",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "specificPassword": "$Wyh~ObZ:*eYNQjJ76.MSHwbARSYWd0@",
+                  "specificUsername": "superuser",
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01Y0QT5AX1FTN5VXZO8x6Rc5JAVMcQbuiFH",
+                "name": "Set Variables",
+                "title": "Set MSX Token",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set MSX Token",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8.input.variable_workflow_01Y0QU11TTEEJ09iFPeZvJrTG2lkD4ncuQS$",
+                      "variable_value_new": "$activity.definition_activity_01Y0QSG9X5HNF002VOWtDhkdhI7mzyIeHJE.output.accessToken$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01Y0R5Q9ZE82F0loJOguZ036RCf2yBzJVdj",
+        "name": "Read Table from JSON",
+        "title": "Get Tenants From Network Design",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get Tenants From Network Design",
+          "input_json": "$workflow.definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8.input.variable_workflow_01Y0QRY72K79A3MQAqsKyeZfJm6YhuC7xSS$",
+          "jsonpath_query": "$.enterprise.organization.*",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "name",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Y0R6PYKATZ27agyrrdHj3oFMdPgv3LRtZ",
+        "name": "Condition Block",
+        "title": "Tenant Exists?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Tenant Exists?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01Y0R6PZ67E9N7GRefQVk7ratHr31h0viej",
+            "name": "Condition Branch",
+            "title": "Yes",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01Y0R5Q9ZE82F0loJOguZ036RCf2yBzJVdj.output.row_count$",
+                "operator": "gt",
+                "right_operand": 0
+              },
+              "continue_on_failure": false,
+              "display_name": "Yes",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01Y0R4DAT5LYJ4CUjCoCsdDeuxts5pz78lC",
+                "name": "MSX-API Request",
+                "title": "Query Tenants",
+                "type": "msxapi.request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "body": "{\n  \"filters\": [\n    {\n      \"name\": \"name\",\n      \"value\": [\n        \"$activity.definition_activity_01Y0R5Q9ZE82F0loJOguZ036RCf2yBzJVdj.output.read_table_from_json[0].name$\"\n      ]\n    }\n  ],\n  \"pageable\": {\n    \"page\": 0,\n    \"size\": 1\n  }\n}",
+                  "continueOnError": false,
+                  "continue_on_failure": false,
+                  "display_name": "Query Tenants",
+                  "expectEnvelope": false,
+                  "method": "POST",
+                  "msxtoken": "$workflow.definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8.input.variable_workflow_01Y0QU11TTEEJ09iFPeZvJrTG2lkD4ncuQS$",
+                  "path": "/idm/api/v3/tenants/search",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01Y0R7QVAVJ1P6YvzrHN6IVkqSu3hGBivRB",
+                "name": "Read Table from JSON",
+                "title": "Get Tenant ID",
+                "type": "corejava.read_table_from_json",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Get Tenant ID",
+                  "input_json": "$activity.definition_activity_01Y0R4DAT5LYJ4CUjCoCsdDeuxts5pz78lC.output.body$",
+                  "jsonpath_query": "$.responseObject.content[?(@.displayName === '$activity.definition_activity_01Y0R5Q9ZE82F0loJOguZ036RCf2yBzJVdj.output.read_table_from_json[0].name$')]",
+                  "persist_output": false,
+                  "populate_columns": false,
+                  "skip_execution": false,
+                  "table_columns": [
+                    {
+                      "column_name": "tenantId",
+                      "column_type": "string"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01Y0R1CNBL0TU1SmxhYQa512oobYXt5rqpM",
+                "name": "Read Table from JSON",
+                "title": "Get DNAC Controllers from Network Design",
+                "type": "corejava.read_table_from_json",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Get DNAC Controllers from Network Design",
+                  "input_json": "$workflow.definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8.input.variable_workflow_01Y0QRY72K79A3MQAqsKyeZfJm6YhuC7xSS$",
+                  "jsonpath_query": "$.enterprise.dnac_controller",
+                  "persist_output": false,
+                  "populate_columns": false,
+                  "skip_execution": false,
+                  "table_columns": [
+                    {
+                      "column_name": "name",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "address",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "host",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "port",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "username",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "password",
+                      "column_type": "string"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01Y0R2WD4SFDP6hf66nNtAzmdyQDDuAoIIk",
+                "name": "For Each",
+                "title": "For Each DNAC Controller",
+                "type": "logic.for_each",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "For Each DNAC Controller",
+                  "skip_execution": false,
+                  "source_array": "$activity.definition_activity_01Y0R1CNBL0TU1SmxhYQa512oobYXt5rqpM.output.read_table_from_json$"
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01Y0QVCDS1DE91Sg3yd14bxzns8szU17swZ",
+                    "name": "MSX-API Request",
+                    "title": "Add DNAC Controller",
+                    "type": "msxapi.request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "body": "{\n  \"address\": \"$activity.definition_activity_01Y0R2WD4SFDP6hf66nNtAzmdyQDDuAoIIk.input.source_array[@].address$\",\n  \"host\": \"$activity.definition_activity_01Y0R2WD4SFDP6hf66nNtAzmdyQDDuAoIIk.input.source_array[@].host$\",\n  \"name\": \"$activity.definition_activity_01Y0R2WD4SFDP6hf66nNtAzmdyQDDuAoIIk.input.source_array[@].name$\",\n  \"password\": \"$activity.definition_activity_01Y0R2WD4SFDP6hf66nNtAzmdyQDDuAoIIk.input.source_array[@].password$\",\n  \"port\": $activity.definition_activity_01Y0R2WD4SFDP6hf66nNtAzmdyQDDuAoIIk.input.source_array[@].port$,\n  \"tenantId\": \"$activity.definition_activity_01Y0R7QVAVJ1P6YvzrHN6IVkqSu3hGBivRB.output.read_table_from_json[0].tenantId$\",\n  \"username\": \"$activity.definition_activity_01Y0R2WD4SFDP6hf66nNtAzmdyQDDuAoIIk.input.source_array[@].username$\"\n}",
+                      "continueOnError": false,
+                      "continue_on_failure": false,
+                      "display_name": "Add DNAC Controller",
+                      "expectEnvelope": false,
+                      "method": "POST",
+                      "msxtoken": "$workflow.definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8.input.variable_workflow_01Y0QU11TTEEJ09iFPeZvJrTG2lkD4ncuQS$",
+                      "path": "/sda/api/v1/controlplanes",
+                      "queryParameters": [
+                        {
+                          "key": "forceAttach",
+                          "value": "$workflow.definition_workflow_01Y0QQ1YU3CQU479IrHFlsW3DEotStMzup8.local.variable_workflow_01Y0QXJNSPPLD3ZEdPhCU4EvMuTS4vvYCo8$"
+                        }
+                      ],
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": false,
+                        "override_workflow_target_group_criteria": false,
+                        "use_workflow_target": true,
+                        "use_workflow_target_group": false
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7": {
+      "unique_name": "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7",
+      "name": "MSX API",
+      "title": "MSX API",
+      "description": "MSX API",
+      "type": "msx-api.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "clientId": "nfv-service",
+        "clientSecret": "*****",
+        "default_runtime_user_id": "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt",
+        "display_name": "MSX API",
+        "host": "routerservice.service.consul",
+        "port": 8765,
+        "protocol": "http"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt": {
+      "unique_name": "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt",
+      "name": "MSX System",
+      "title": "MSX System",
+      "description": "MSX System",
+      "type": "runtime_user.msx-api_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "MSX System",
+        "password": "*****",
+        "username": "*****"
+      }
+    }
+  }
+}
