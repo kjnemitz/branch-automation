@@ -58,7 +58,7 @@ nodes:
         label: GigabitEthernet0/0
         type: physical
   - id: n3
-    label: cEdge-0
+    label: SDWAN-ROUTER
     node_definition: cedge
     x: 1511
     y: 383
