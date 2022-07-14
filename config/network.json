@@ -1,13 +1,58 @@
 {
   "enterprise": {
-    "name": "JPMC",
+    "organization": [
+      {
+        "description": "Branch Networking",
+        "email": "jnemitz@cisco.com",
+        "name": "JPMC",
+        "url": "https://www.jpmorganchase.com/",
+        "services": [
+          {
+            "name": "sda"
+          },
+          {
+            "name": "sdwan"
+          }
+        ]
+      }
+    ],
+    "CML": {
+      "lab": {
+        "description": "",
+        "notes": "",
+        "title": "SDWAN-AUTO-TEST",
+        "version": "0.0.5"
+      },
+      "lab_definition": "/prototype/SD-WAN-JPMC-BRANCH-Test"
+    },
+    "dnac_controller": [
+      {
+        "address": "7025 Kit Creek Rd, Morrisville, NC 27560",
+        "host": "dnac.lab.local",
+        "name": "DNAC-East",
+        "password": "10-9=One",
+        "port": 443,
+        "username": "admin"
+      }
+    ],
     "site": [
       {
         "name": "CDC 1",
         "type": "datacenter",
+        "dnac_controller": "DNAC-East",
+        "services": [
+          {
+            "name": "sda"
+          }
+        ],
+        "network_profile": [
+          {
+            "name": "Switch Profile"
+          }
+        ],
         "building": [
           {
-            "name": "Building A",
+            "name": "CDC 1 - Building A",
             "address": {
               "address1": "880 Powder Mill Road",
               "city": "Wilmington",
@@ -17,11 +62,13 @@
             "floor": [
               {
                 "name": "Floor 1",
-                "devices": [
-                  {
-                    "devicename": "placeholder"
-                  }
-                ]
+                "floorInfo": {
+                  "height": "5",
+                  "length": "5",
+                  "width": "5",
+                  "rfModelId": "75078"
+                },
+                "devices": []
               }
             ]
           }
@@ -30,9 +77,20 @@
       {
         "name": "CDC 2",
         "type": "datacenter",
+        "dnac_controller": "DNAC-East",
+        "services": [
+          {
+            "name": "sda"
+          }
+        ],
+        "network_profile": [
+          {
+            "name": "Switch Profile"
+          }
+        ],
         "building": [
           {
-            "name": "Building A",
+            "name": "CDC 2 - Building 1",
             "address": {
               "street": "36 E Midland Ave",
               "city": "Paramus",
@@ -42,11 +100,13 @@
             "floor": [
               {
                 "name": "Floor 1",
-                "devices": [
-                  {
-                    "devicename": "placeholder"
-                  }
-                ]
+                "floorInfo": {
+                  "height": "5",
+                  "length": "5",
+                  "width": "5",
+                  "rfModelId": "75078"
+                },
+                "devices": []
               }
             ]
           }
@@ -55,9 +115,15 @@
       {
         "name": "Yamhill Branch",
         "type": "branch",
+        "dnac_controller": "DNAC-East",
+        "services": [
+          {
+            "name": "sda"
+          }
+        ],
         "building": [
           {
-            "name": "Building A",
+            "name": "Yamhill - Branch",
             "address": {
               "street": "811 Southwest 6th Avenue",
               "city": "Portland",
@@ -67,9 +133,31 @@
             "floor": [
               {
                 "name": "Floor 1",
+                "floorInfo": {
+                  "height": "5",
+                  "length": "5",
+                  "width": "5",
+                  "rfModelId": "75078"
+                },
                 "devices": [
                   {
-                    "devicename": "placeholder"
+                    "devicename": "BR02-SW02",
+                    "hostname": "BR02-SW01",
+                    "smart_license": "false",
+                    "dnac": {
+                      "serialNumber": "9BIT3F663GJ",
+                      "name": "9BIT3F663GJ",
+                      "pid": "C9300-8V",
+                      "hostname": "BR02-SW01"
+                    },
+                    "CML": {
+                      "label": "BR02-SW01"
+                    },
+                    "interfaces": [
+                      {
+                        "name": "GigabitEthernet0/0"
+                      }
+                    ]
                   }
                 ]
               }
@@ -80,6 +168,17 @@
       {
         "name": "Greenwich Branch",
         "type": "branch",
+        "dnac_controller": "DNAC-East",
+        "services": [
+          {
+            "name": "sda"
+          }
+        ],
+        "network_profile": [
+          {
+            "name": "Switch Profile"
+          }
+        ],
         "building": [
           {
             "name": "Westfield World Trade Center",
@@ -92,9 +191,33 @@
             "floor": [
               {
                 "name": "Floor 2",
+                "floorInfo": {
+                  "height": "5",
+                  "length": "5",
+                  "width": "5",
+                  "rfModelId": "75078"
+                },
                 "devices": [
                   {
-                    "devicename": "placeholder"
+                    "devicename": "BR02-SW01",
+                    "hostname": "BR02-SW01",
+                    "sdwan": {
+                      
+                    },
+                    "dnac": {
+                      "serialNumber": "9BIT3F663GJ",
+                      "name": "9BIT3F663GJ",
+                      "pid": "C9300-8V",
+                      "hostname": "BR02-SW01"
+                    },
+                    "CML": {
+                      "label": "SDWAN-ROUTER"
+                    },
+                    "interfaces": [
+                      {
+                        "name": "GigabitEthernet0/0"
+                      }
+                    ]
                   }
                 ]
               }
