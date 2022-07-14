@@ -20,10 +20,10 @@
       "lab": {
         "description": "",
         "notes": "",
-        "title": "SDWAN-AUTO-TEST",
+        "title": "JPMC-Branch",
         "version": "0.0.5"
       },
-      "lab_definition": "/prototype/SD-WAN-JPMC-BRANCH-Test"
+      "lab_definition": "/CML/JPMC-Branch"
     },
     "dnac_controller": [
       {
@@ -68,7 +68,17 @@
                   "width": "5",
                   "rfModelId": "75078"
                 },
-                "devices": []
+                "devices": [
+                  {
+                    "device_name": "DC-1-R1",
+                    "sdwan": {
+                      "template": "DC_Single_Router"
+                    },
+                    "CML": {
+                      "label": "DC-1-R1"
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -77,17 +87,6 @@
       {
         "name": "CDC 2",
         "type": "datacenter",
-        "dnac_controller": "DNAC-East",
-        "services": [
-          {
-            "name": "sda"
-          }
-        ],
-        "network_profile": [
-          {
-            "name": "Switch Profile"
-          }
-        ],
         "building": [
           {
             "name": "CDC 2 - Building 1",
@@ -106,7 +105,17 @@
                   "width": "5",
                   "rfModelId": "75078"
                 },
-                "devices": []
+                "devices": [
+                  {
+                    "devicename": "DC-2-R1",
+                    "sdwan": {
+                      "template": "DC_Single_Router"
+                    },
+                    "CML": {
+                      "label": "DC-2-R1"
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -115,12 +124,9 @@
       {
         "name": "Yamhill Branch",
         "type": "branch",
-        "dnac_controller": "DNAC-East",
-        "services": [
-          {
-            "name": "sda"
-          }
-        ],
+        "sda": {
+          "dnac_controller": "DNAC-East"
+        },
         "building": [
           {
             "name": "Yamhill - Branch",
@@ -141,23 +147,21 @@
                 },
                 "devices": [
                   {
-                    "devicename": "BR02-SW02",
-                    "hostname": "BR02-SW01",
-                    "smart_license": "false",
-                    "dnac": {
-                      "serialNumber": "9BIT3F663GJ",
-                      "name": "9BIT3F663GJ",
-                      "pid": "C9300-8V",
-                      "hostname": "BR02-SW01"
+                    "devicename": "BR-1-R1",
+                    "sdwan": {
+                      "template": "Branch_Single_Router"
                     },
                     "CML": {
-                      "label": "BR02-SW01"
+                      "label": "BR-1-R1"
+                    }
+                  },
+                  {
+                    "devicename": "BR-1-SW1",
+                    "sda": {
                     },
-                    "interfaces": [
-                      {
-                        "name": "GigabitEthernet0/0"
-                      }
-                    ]
+                    "CML": {
+                      "label": "BR-1-SW1"
+                    }
                   }
                 ]
               }
@@ -199,25 +203,38 @@
                 },
                 "devices": [
                   {
-                    "devicename": "BR02-SW01",
-                    "hostname": "BR02-SW01",
+                    "devicename": "BR-2-R1",
                     "sdwan": {
-                      
-                    },
-                    "dnac": {
-                      "serialNumber": "9BIT3F663GJ",
-                      "name": "9BIT3F663GJ",
-                      "pid": "C9300-8V",
-                      "hostname": "BR02-SW01"
+                      "template": "Branch_Dual_Router-MPLS-CELL_TLOC-INET"
                     },
                     "CML": {
-                      "label": "SDWAN-ROUTER"
+                      "label": "BR-2-R1"
+                    }
+                  },
+                  {
+                    "devicename": "BR-2-R2",
+                    "sdwan": {
+                      "template": "Branch_Dual_Router-INET-CELL_TLOC-MPLS"
                     },
-                    "interfaces": [
-                      {
-                        "name": "GigabitEthernet0/0"
-                      }
-                    ]
+                    "CML": {
+                      "label": "BR-2-R1"
+                    }
+                  },
+                  {
+                    "devicename": "BR-2-SW1",
+                    "sda": {
+                    },
+                    "CML": {
+                      "label": "BR-2-SW1"
+                    }
+                  },
+                  {
+                    "devicename": "BR-2-SW2",
+                    "sda": {
+                    },
+                    "CML": {
+                      "label": "BR-2-SW2"
+                    }
                   }
                 ]
               }
