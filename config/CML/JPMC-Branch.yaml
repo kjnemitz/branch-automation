@@ -1,7 +1,7 @@
 lab:
   description: ''
   notes: ''
-  title: SD-WAN-JPMC-BRANCH
+  title: JPMC-Branch
   version: 0.0.5
 nodes:
   - id: n0
