@@ -1,0 +1,155 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XZTGM901UJG5xgRfgn83U235ovDwbMXqv",
+    "name": "Test MSX Request",
+    "title": "Test MSX Request",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Test MSX Request",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "msx-api.endpoint",
+        "target_id": "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XZTGQ25I0T44IIXDBAAasxSQc0wfEIpTp",
+        "name": "Session Login",
+        "title": "Session Login",
+        "type": "msxapi.login",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Session Login",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "specificPassword": "$Wyh~ObZ:*eYNQjJ76.MSHwbARSYWd0@",
+          "specificUsername": "superuser",
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XZTICZAJKRO1sAF3IBsk9JECh6HmT0w5D",
+        "name": "MSX-API Request",
+        "title": "MSX-API Request",
+        "type": "msxapi.request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "body": "{\n  \"search\": [\n    {\n      \"name\": \"displayname\",\n      \"value\": \"Global\"\n    }\n  ]\n}",
+          "continueOnError": false,
+          "continue_on_failure": false,
+          "display_name": "MSX-API Request",
+          "expectEnvelope": false,
+          "method": "POST",
+          "msxtoken": "$activity.definition_activity_01XZTGQ25I0T44IIXDBAAasxSQc0wfEIpTp.output.accessToken$",
+          "path": "/manage/api/v3/sites/search",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Y00128T96PJ2aPvzwNqNx4Zu7N4KD888d",
+        "name": "MSX-API Request",
+        "title": "MSX-API Request",
+        "type": "msxapi.request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "body": "{\n  \"search\": [\n    {\n      \"name\": \"displayname\",\n      \"value\": \"Global\"\n    }\n  ]\n}",
+          "continueOnError": false,
+          "continue_on_failure": false,
+          "display_name": "MSX-API Request",
+          "expectEnvelope": false,
+          "method": "POST",
+          "msxtoken": "$activity.definition_activity_01XZTGQ25I0T44IIXDBAAasxSQc0wfEIpTp.output.accessToken$",
+          "path": "/idm/v2/logout",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7": {
+      "unique_name": "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7",
+      "name": "MSX API",
+      "title": "MSX API",
+      "description": "MSX API",
+      "type": "msx-api.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "clientId": "nfv-service",
+        "clientSecret": "*****",
+        "default_runtime_user_id": "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt",
+        "display_name": "MSX API",
+        "host": "routerservice.service.consul",
+        "port": 8765,
+        "protocol": "http"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt": {
+      "unique_name": "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt",
+      "name": "MSX System",
+      "title": "MSX System",
+      "description": "MSX System",
+      "type": "runtime_user.msx-api_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "MSX System",
+        "password": "*****",
+        "username": "*****"
+      }
+    }
+  }
+}
