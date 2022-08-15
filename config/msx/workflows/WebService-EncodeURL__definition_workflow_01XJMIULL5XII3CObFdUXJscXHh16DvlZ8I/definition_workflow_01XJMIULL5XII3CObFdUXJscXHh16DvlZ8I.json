@@ -1,0 +1,153 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XJMIULL5XII3CObFdUXJscXHh16DvlZ8I",
+    "name": "Web Service - Encode URL",
+    "title": "Web Service - Encode URL",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "output_encode_length",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJMIULHNF4D1KrNWhpWonAdvnw3TYmSsv",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "encode_with_plus_sign",
+          "type": "datatype.boolean",
+          "description": "select true to encode with plus sign over %20 for space",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJMIULHN6SN6UtohHt05WbJ5GjZI86qaB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Hellö Wörld@Python",
+          "scope": "input",
+          "name": "url_to_encode",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJMIULHNBVP4LFMSNBDrdeWkPa4uTxiTh",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "output_encoded_url",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJMIULHNDMJ2fwMEKx4Wxryk77Qr11kRp",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Web Service - Encode URL",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XJMIUQM2M283y7MmSdIxvt8ccZi4azOoq",
+        "name": "Execute Python Script",
+        "title": "Encode via URLLIB",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Encode via URLLIB",
+          "script": "import urllib.parse, sys\nquery = sys.argv[1]\nplus_sign = sys.argv[2]\nif plus_sign == \"true\":\n   output = urllib.parse.quote_plus(query)\nelse:\n   output = urllib.parse.quote(query)\noutput_len = len(output)",
+          "script_arguments": [
+            "$workflow.definition_workflow_01XJMIULL5XII3CObFdUXJscXHh16DvlZ8I.input.variable_workflow_01XJMIULHNBVP4LFMSNBDrdeWkPa4uTxiTh$",
+            "$workflow.definition_workflow_01XJMIULL5XII3CObFdUXJscXHh16DvlZ8I.input.variable_workflow_01XJMIULHN6SN6UtohHt05WbJ5GjZI86qaB$"
+          ],
+          "script_queries": [
+            {
+              "script_query": "output",
+              "script_query_name": "encoded_url",
+              "script_query_type": "string"
+            },
+            {
+              "script_query": "output_len",
+              "script_query_name": "output_length",
+              "script_query_type": "integer"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XJMIUS8VW3P5V2WhTBQvf6Jj3aqGjRDvt",
+        "name": "Set Variables",
+        "title": "Set Output",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Output",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XJMIULL5XII3CObFdUXJscXHh16DvlZ8I.output.variable_workflow_01XJMIULHNDMJ2fwMEKx4Wxryk77Qr11kRp$",
+              "variable_value_new": "$activity.definition_activity_01XJMIUQM2M283y7MmSdIxvt8ccZi4azOoq.output.script_queries.encoded_url$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XJMIULL5XII3CObFdUXJscXHh16DvlZ8I.output.variable_workflow_01XJMIULHNF4D1KrNWhpWonAdvnw3TYmSsv$",
+              "variable_value_new": "$activity.definition_activity_01XJMIUQM2M283y7MmSdIxvt8ccZi4azOoq.output.script_queries.output_length$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01XJLXLZP25AG0btQ5sbzCJqUKd0s5WyAt6"
+    ]
+  },
+  "categories": {
+    "category_01XJLXLZP25AG0btQ5sbzCJqUKd0s5WyAt6": {
+      "unique_name": "category_01XJLXLZP25AG0btQ5sbzCJqUKd0s5WyAt6",
+      "name": "Web Service",
+      "title": "Web Service",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
