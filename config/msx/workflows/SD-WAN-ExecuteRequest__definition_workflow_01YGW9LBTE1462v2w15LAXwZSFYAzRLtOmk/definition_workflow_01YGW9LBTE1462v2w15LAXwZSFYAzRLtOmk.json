@@ -11,6 +11,19 @@
         "properties": {
           "value": "",
           "scope": "input",
+          "name": "Relative API URL",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
           "name": "Request Type",
           "type": "datatype.string",
           "is_required": true,
@@ -30,6 +43,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Response Body",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS",
         "object_type": "variable_workflow"
       },
       {
@@ -57,32 +83,6 @@
         },
         "unique_name": "variable_workflow_01YGWDP1QG17V5xVlmTnI4rv1n7uK9NLDbg",
         "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Relative API URL",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Response Body",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS",
-        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -90,6 +90,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "This is used to test SD-WAN request payloads",
       "display_name": "SD-WAN - Execute Request",
       "runtime_user": {
         "override_target_runtime_user": false,
