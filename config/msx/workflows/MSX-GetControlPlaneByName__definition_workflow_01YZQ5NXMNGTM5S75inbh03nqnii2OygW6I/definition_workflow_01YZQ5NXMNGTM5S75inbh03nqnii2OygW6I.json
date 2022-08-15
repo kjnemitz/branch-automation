@@ -1,0 +1,299 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01YZQ5NXMNGTM5S75inbh03nqnii2OygW6I",
+    "name": "MSX - Get Control Plane By Name",
+    "title": "MSX - Get Control Plane By Name",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Tenant ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YZQA7ZT25RC2Zk3mqXzx2Ztsav0qWv8Bf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "MSX Token",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YZQ67QFMWEN6NVqKcwD2alh4dQ9HxsdSv",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Control Plane Attributes",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YZQAEKJFRUO4XyXNHdKUzd63mcYVxHxkZ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Control Plane ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YZQA1KA72C941sGhid4WpgETz58DeIltD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Control Plane Name",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YZQ62TI7C7Z68KS52LBgPfcZ6HIueRtSu",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "MSX - Get Control Plane By Name",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "msx-api.endpoint",
+        "target_id": "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01Z0HGJI44IRA3a86Wv3QcvR4hZW1gTWre3",
+        "name": "HTTP Request",
+        "title": "Get All Control Planes",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "accept": "$global.variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn.global.variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn$",
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $workflow.definition_workflow_01YZQ5NXMNGTM5S75inbh03nqnii2OygW6I.input.variable_workflow_01YZQ67QFMWEN6NVqKcwD2alh4dQ9HxsdSv$"
+            }
+          ],
+          "display_name": "Get All Control Planes",
+          "method": "GET",
+          "relative_url": "/manage/api/v1/controlplanes",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01XP0YZ45DE9T2PrzWbDWRzQdyzOzKyXSco"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01YZQ6OS6DAFN2FQwVK8hHpcB6LamFN900K",
+        "name": "MSX-API Request",
+        "title": "Get Control Planes",
+        "type": "msxapi.request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continueOnError": false,
+          "continue_on_failure": false,
+          "display_name": "Get Control Planes",
+          "expectEnvelope": false,
+          "method": "GET",
+          "msxtoken": "$workflow.definition_workflow_01YZQ5NXMNGTM5S75inbh03nqnii2OygW6I.input.variable_workflow_01YZQ67QFMWEN6NVqKcwD2alh4dQ9HxsdSv$",
+          "path": "/manage/api/v1/controlplanes",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": true,
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01YZQ8UPJHMAC6AT1QsLiHcpjDzE9FGeioZ",
+        "name": "Read Table from JSON",
+        "title": "Get Control Plane by Name",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get Control Plane by Name",
+          "input_json": "$activity.definition_activity_01Z0HGJI44IRA3a86Wv3QcvR4hZW1gTWre3.output.response_body$",
+          "jsonpath_query": "$.responseObject[?(@.name === \"$workflow.definition_workflow_01YZQ5NXMNGTM5S75inbh03nqnii2OygW6I.input.variable_workflow_01YZQ62TI7C7Z68KS52LBgPfcZ6HIueRtSu$\")]",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "controlPlaneId",
+              "column_type": "string"
+            },
+            {
+              "column_name": "tenantId",
+              "column_type": "string"
+            },
+            {
+              "column_name": "attributes",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01YZQ9SNCWKK22oWTP3A6UNOpROUIjry1xK",
+        "name": "Set Variables",
+        "title": "Set Output Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Output Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01YZQ5NXMNGTM5S75inbh03nqnii2OygW6I.output.variable_workflow_01YZQA1KA72C941sGhid4WpgETz58DeIltD$",
+              "variable_value_new": "$activity.definition_activity_01YZQ8UPJHMAC6AT1QsLiHcpjDzE9FGeioZ.output.read_table_from_json[0].controlPlaneId$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01YZQ5NXMNGTM5S75inbh03nqnii2OygW6I.output.variable_workflow_01YZQA7ZT25RC2Zk3mqXzx2Ztsav0qWv8Bf$",
+              "variable_value_new": "$activity.definition_activity_01YZQ8UPJHMAC6AT1QsLiHcpjDzE9FGeioZ.output.read_table_from_json[0].tenantId$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01YZQ5NXMNGTM5S75inbh03nqnii2OygW6I.output.variable_workflow_01YZQAEKJFRUO4XyXNHdKUzd63mcYVxHxkZ$",
+              "variable_value_new": "$activity.definition_activity_01YZQ8UPJHMAC6AT1QsLiHcpjDzE9FGeioZ.output.read_table_from_json[0].attributes$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01XN4IFBM98CS6OFNgKW5bC45w1pCgtnNA5"
+    ]
+  },
+  "categories": {
+    "category_01XN4IFBM98CS6OFNgKW5bC45w1pCgtnNA5": {
+      "unique_name": "category_01XN4IFBM98CS6OFNgKW5bC45w1pCgtnNA5",
+      "name": "MSX",
+      "title": "MSX",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7": {
+      "unique_name": "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7",
+      "name": "MSX API",
+      "title": "MSX API",
+      "description": "MSX API",
+      "type": "msx-api.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "clientId": "nfv-service",
+        "clientSecret": "*****",
+        "default_runtime_user_id": "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt",
+        "display_name": "MSX API",
+        "host": "routerservice.service.consul",
+        "port": 8765,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01XP0YZ45DE9T2PrzWbDWRzQdyzOzKyXSco": {
+      "unique_name": "definition_target_01XP0YZ45DE9T2PrzWbDWRzQdyzOzKyXSco",
+      "name": "MSX",
+      "title": "MSX",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "MSX",
+        "host": "msx-lite.lab.local",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt": {
+      "unique_name": "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt",
+      "name": "MSX System",
+      "title": "MSX System",
+      "description": "MSX System",
+      "type": "runtime_user.msx-api_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "MSX System",
+        "password": "*****",
+        "username": "*****"
+      }
+    }
+  },
+  "variables": {
+    "variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn": {
+      "unique_name": "variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn",
+      "properties": {
+        "value": "application/json",
+        "scope": "global",
+        "name": "Web Service Header - Accept JSON",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  }
+}
