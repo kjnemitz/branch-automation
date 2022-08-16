@@ -355,32 +355,6 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "Status Text",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01YG710XDA8SQ5cVa7vHJPdnwyqU4t3ryIU",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Status Code",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01YG70V7HPJZA6nwOg3x4dovtlHdVUUefuR",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
               "scope": "input",
               "name": "Relative API URL",
               "type": "datatype.string",
@@ -394,13 +368,13 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "Body",
+              "scope": "input",
+              "name": "Request Type",
               "type": "datatype.string",
-              "is_required": false,
+              "is_required": true,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01YG7169YI6GL0ZzI0g0oLuAX9RfFCk9SmJ",
+            "unique_name": "variable_workflow_01YG6ZU7KO57U43NmJ8quDJ1vewwPRnogLa",
             "object_type": "variable_workflow"
           },
           {
@@ -420,13 +394,39 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "input",
-              "name": "Request Type",
+              "scope": "output",
+              "name": "Status Code",
               "type": "datatype.string",
-              "is_required": true,
+              "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01YG6ZU7KO57U43NmJ8quDJ1vewwPRnogLa",
+            "unique_name": "variable_workflow_01YG70V7HPJZA6nwOg3x4dovtlHdVUUefuR",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Status Text",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YG710XDA8SQ5cVa7vHJPdnwyqU4t3ryIU",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Body",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YG7169YI6GL0ZzI0g0oLuAX9RfFCk9SmJ",
             "object_type": "variable_workflow"
           }
         ],
@@ -550,16 +550,29 @@
             "base_type": "workflow",
             "variables": [
               {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "xuIChD1cvLPrjHagEDIsJkFrqDPD",
+                  "scope": "static",
+                  "name": "Token",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01YG8U19OQA7T6pXCaQzLHs6bYkIsy6jJ3s",
+                "object_type": "variable_workflow"
+              },
+              {
                 "schema_id": "datatype.integer",
                 "properties": {
-                  "value": 10,
-                  "scope": "input",
-                  "name": "Retry Wait Time (seconds)",
+                  "value": 0,
+                  "scope": "local",
+                  "name": "Status Code",
                   "type": "datatype.integer",
                   "is_required": false,
                   "is_invisible": false
                 },
-                "unique_name": "variable_workflow_01YOQPUU6B77L7UVU2BcDLXVEt4ScdpYhzO",
+                "unique_name": "variable_workflow_01YOQJDGNOT7F3HMAUEQ2UnnEnPv0E5P1O9",
                 "object_type": "variable_workflow"
               },
               {
@@ -579,32 +592,6 @@
                 "schema_id": "datatype.string",
                 "properties": {
                   "value": "",
-                  "scope": "local",
-                  "name": "Response Body",
-                  "type": "datatype.string",
-                  "is_required": false,
-                  "is_invisible": false
-                },
-                "unique_name": "variable_workflow_01YOQRBK9M6486L5TzSnAGj7mOQtV479WRX",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "xuIChD1cvLPrjHagEDIsJkFrqDPD",
-                  "scope": "static",
-                  "name": "Token",
-                  "type": "datatype.string",
-                  "is_required": false,
-                  "is_invisible": false
-                },
-                "unique_name": "variable_workflow_01YG8U19OQA7T6pXCaQzLHs6bYkIsy6jJ3s",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
                   "scope": "output",
                   "name": "Cisco API Token",
                   "type": "datatype.string",
@@ -617,14 +604,27 @@
               {
                 "schema_id": "datatype.integer",
                 "properties": {
-                  "value": 0,
-                  "scope": "local",
-                  "name": "Status Code",
+                  "value": 10,
+                  "scope": "input",
+                  "name": "Retry Wait Time (seconds)",
                   "type": "datatype.integer",
                   "is_required": false,
                   "is_invisible": false
                 },
-                "unique_name": "variable_workflow_01YOQJDGNOT7F3HMAUEQ2UnnEnPv0E5P1O9",
+                "unique_name": "variable_workflow_01YOQPUU6B77L7UVU2BcDLXVEt4ScdpYhzO",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "local",
+                  "name": "Response Body",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01YOQRBK9M6486L5TzSnAGj7mOQtV479WRX",
                 "object_type": "variable_workflow"
               }
             ],
