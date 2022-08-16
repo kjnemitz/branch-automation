@@ -20,15 +20,16 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "tabletype_01XP1MCVY1RNP28K9xBu0672VkUoC5n0yQS",
+        "schema_id": "datatype.string",
         "properties": {
-          "scope": "output",
-          "name": "Items",
-          "type": "datatype.table",
+          "value": " ",
+          "scope": "local",
+          "name": "Space",
+          "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XP2KXKX2EMV0zZ1CaG0a5WMYpDv82V12p",
+        "unique_name": "variable_workflow_01XP2U0JWMFZ30aJvPRjTXUoC1RG1Hyjsah",
         "object_type": "variable_workflow"
       },
       {
@@ -45,16 +46,15 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "tabletype_01XP1MCVY1RNP28K9xBu0672VkUoC5n0yQS",
         "properties": {
-          "value": " ",
-          "scope": "local",
-          "name": "Space",
-          "type": "datatype.string",
+          "scope": "output",
+          "name": "Items",
+          "type": "datatype.table",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XP2U0JWMFZ30aJvPRjTXUoC1RG1Hyjsah",
+        "unique_name": "variable_workflow_01XP2KXKX2EMV0zZ1CaG0a5WMYpDv82V12p",
         "object_type": "variable_workflow"
       },
       {
