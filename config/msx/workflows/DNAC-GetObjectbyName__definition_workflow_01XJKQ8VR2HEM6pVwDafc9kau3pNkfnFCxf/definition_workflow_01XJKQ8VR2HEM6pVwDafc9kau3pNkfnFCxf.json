@@ -10,6 +10,20 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
+          "scope": "input",
+          "name": "Object Type",
+          "type": "datatype.string",
+          "description": "Types:\n- Project",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJLEG8XJKR02hD2C5gnoOtoDwI4bgcJVn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
           "scope": "output",
           "name": "Object ID",
           "type": "datatype.string",
@@ -17,6 +31,32 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01XJLJKYS6U166Sje0vizWbGdbR1QI6HAF0",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Object (JSON)",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJRWSSHST2U54Px7pnuwuCaN2OmNrcy9S",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Object Name",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJLF2NN89IX0nzv8N4oF1wxCBqgAV36XD",
         "object_type": "variable_workflow"
       },
       {
@@ -45,46 +85,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01XJLPUAI6L2G2c430GpjAJmLAcre9d4LKY",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Object (JSON)",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XJRWSSHST2U54Px7pnuwuCaN2OmNrcy9S",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Object Type",
-          "type": "datatype.string",
-          "description": "Types:\n- Project",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XJLEG8XJKR02hD2C5gnoOtoDwI4bgcJVn",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Object Name",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XJLF2NN89IX0nzv8N4oF1wxCBqgAV36XD",
         "object_type": "variable_workflow"
       }
     ],
@@ -326,15 +326,15 @@
   "targets": {
     "definition_target_01XI3XD3LOIF95Z67uZRj3nc0zMlKp6Sd4l": {
       "unique_name": "definition_target_01XI3XD3LOIF95Z67uZRj3nc0zMlKp6Sd4l",
-      "name": "DNAC",
-      "title": "DNAC",
+      "name": "DNAC-East",
+      "title": "DNAC-East",
       "type": "web-service.endpoint",
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
         "default_runtime_user_id": "definition_runtime_user_01XI3WB00LEFV5wINI5lUOL0zPJwLWVaUvf",
         "disable_certificate_validation": true,
-        "display_name": "DNAC",
+        "display_name": "DNAC-East",
         "host": "dnac.lab.local",
         "ignore_proxy": false,
         "no_runtime_user": false,
@@ -529,24 +529,11 @@
     {
       "workflow": {
         "unique_name": "definition_workflow_01XJMIULL5XII3CObFdUXJscXHh16DvlZ8I",
-        "name": "Encode URL",
-        "title": "Encode URL",
+        "name": "Web Service - Encode URL",
+        "title": "Web Service - Encode URL",
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "Hellö Wörld@Python",
-              "scope": "input",
-              "name": "url_to_encode",
-              "type": "datatype.string",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01XJMIULHNBVP4LFMSNBDrdeWkPa4uTxiTh",
-            "object_type": "variable_workflow"
-          },
           {
             "schema_id": "datatype.string",
             "properties": {
@@ -558,6 +545,19 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01XJMIULHNDMJ2fwMEKx4Wxryk77Qr11kRp",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 0,
+              "scope": "output",
+              "name": "output_encode_length",
+              "type": "datatype.integer",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01XJMIULHNF4D1KrNWhpWonAdvnw3TYmSsv",
             "object_type": "variable_workflow"
           },
           {
@@ -575,16 +575,16 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.integer",
+            "schema_id": "datatype.string",
             "properties": {
-              "value": 0,
-              "scope": "output",
-              "name": "output_encode_length",
-              "type": "datatype.integer",
-              "is_required": false,
+              "value": "Hellö Wörld@Python",
+              "scope": "input",
+              "name": "url_to_encode",
+              "type": "datatype.string",
+              "is_required": true,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01XJMIULHNF4D1KrNWhpWonAdvnw3TYmSsv",
+            "unique_name": "variable_workflow_01XJMIULHNBVP4LFMSNBDrdeWkPa4uTxiTh",
             "object_type": "variable_workflow"
           }
         ],
@@ -593,7 +593,7 @@
             "is_atomic": false
           },
           "delete_workflow_instance": false,
-          "display_name": "Encode URL",
+          "display_name": "Web Service - Encode URL",
           "runtime_user": {
             "override_target_runtime_user": false,
             "specify_on_workflow_start": false,
