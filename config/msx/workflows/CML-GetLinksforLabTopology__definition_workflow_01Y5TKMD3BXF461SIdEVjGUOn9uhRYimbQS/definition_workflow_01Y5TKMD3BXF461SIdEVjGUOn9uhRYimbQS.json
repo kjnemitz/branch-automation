@@ -271,13 +271,13 @@
             "schema_id": "datatype.secure_string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "CML Token",
+              "scope": "input",
+              "name": "Password",
               "type": "datatype.secure_string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y54AZT35HIU5nuc7rg0mPhxdjleDHazuU",
+            "unique_name": "variable_workflow_01Y541O0ZW21N4DSSwDKbnJy3KniUmAveMk",
             "object_type": "variable_workflow"
           },
           {
@@ -297,13 +297,13 @@
             "schema_id": "datatype.secure_string",
             "properties": {
               "value": "",
-              "scope": "input",
-              "name": "Password",
+              "scope": "output",
+              "name": "CML Token",
               "type": "datatype.secure_string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y541O0ZW21N4DSSwDKbnJy3KniUmAveMk",
+            "unique_name": "variable_workflow_01Y54AZT35HIU5nuc7rg0mPhxdjleDHazuU",
             "object_type": "variable_workflow"
           }
         ],
@@ -477,55 +477,16 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": -1,
-              "scope": "output",
-              "name": "Status Code",
-              "type": "datatype.integer",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54LVO3JYOP6YAO6lbHIrQhldmKlSkuUl",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "Request Body",
+              "name": "Request Type",
               "type": "datatype.string",
-              "is_required": false,
+              "is_required": true,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Reponse Trim Left Characters",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54MQYR244F5UAVPKfa9ZhrXAo7dVw1KL",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.secure_string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "CML Token",
-              "type": "datatype.secure_string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ",
+            "unique_name": "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A",
             "object_type": "variable_workflow"
           },
           {
@@ -542,19 +503,6 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Request Type",
-              "type": "datatype.string",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.boolean",
             "properties": {
               "value": false,
@@ -565,6 +513,58 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Reponse Trim Right Characters",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Request Body",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": -1,
+              "scope": "output",
+              "name": "Status Code",
+              "type": "datatype.integer",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y54LVO3JYOP6YAO6lbHIrQhldmKlSkuUl",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "CML Token",
+              "type": "datatype.secure_string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ",
             "object_type": "variable_workflow"
           },
           {
@@ -585,12 +585,12 @@
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "Reponse Trim Right Characters",
+              "name": "Reponse Trim Left Characters",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK",
+            "unique_name": "variable_workflow_01Y54MQYR244F5UAVPKfa9ZhrXAo7dVw1KL",
             "object_type": "variable_workflow"
           }
         ],
@@ -802,19 +802,6 @@
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "JPMC Test Lab",
-              "scope": "input",
-              "name": "Lab Name",
-              "type": "datatype.string",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y5TNFKSRVYX3rRvT3hYNElEKfKwsZcYLH",
-            "object_type": "variable_workflow"
-          },
-          {
             "schema_id": "datatype.boolean",
             "properties": {
               "value": false,
@@ -825,6 +812,19 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01Y5TQAWE6JGI2kOQQ6JvBgDkVB5sn53EPU",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "JPMC Test Lab",
+              "scope": "input",
+              "name": "Lab Name",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y5TNFKSRVYX3rRvT3hYNElEKfKwsZcYLH",
             "object_type": "variable_workflow"
           },
           {
