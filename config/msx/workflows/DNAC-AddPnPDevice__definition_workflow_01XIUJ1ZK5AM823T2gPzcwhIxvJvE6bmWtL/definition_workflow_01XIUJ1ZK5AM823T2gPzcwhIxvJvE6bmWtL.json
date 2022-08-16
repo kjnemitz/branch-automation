@@ -24,6 +24,19 @@
         "properties": {
           "value": "",
           "scope": "input",
+          "name": "DNAC Token",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y53BEXO4OIW1OlrZpFoWcDy1qnxSbOSlb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
           "name": "Device Information (JSON)",
           "type": "datatype.string",
           "is_required": true,
@@ -43,19 +56,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01XIYDX6BCCHO5vvrS3YMCKiQthZMdfxKCW",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "DNAC Token",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01Y53BEXO4OIW1OlrZpFoWcDy1qnxSbOSlb",
         "object_type": "variable_workflow"
       },
       {
@@ -712,19 +712,6 @@
           {
             "schema_id": "datatype.string",
             "properties": {
-              "value": "/dna/intent/api/v1/onboarding/pnp-device",
-              "scope": "local",
-              "name": "Relative URL",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
               "value": "",
               "scope": "input",
               "name": "Token",
@@ -747,6 +734,19 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01XIWIOS5D3O41fi565fBu9tWW3GkLZV2sf",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "/dna/intent/api/v1/onboarding/pnp-device",
+              "scope": "local",
+              "name": "Relative URL",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ",
             "object_type": "variable_workflow"
           }
         ],
