@@ -7,6 +7,19 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Debug",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y0W1HKB838K7QhCncN2RhVsfysZDdrzej",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -56,19 +69,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01Y0VUH5VC4VE1PQ8oUatpNtmGhrsPEhLtU",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug",
-          "type": "datatype.boolean",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01Y0W1HKB838K7QhCncN2RhVsfysZDdrzej",
         "object_type": "variable_workflow"
       }
     ],
