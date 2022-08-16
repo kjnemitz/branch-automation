@@ -7,29 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.secure_string",
+        "schema_id": "datatype.boolean",
         "properties": {
-          "value": "",
+          "value": false,
           "scope": "input",
-          "name": "MSX Token",
-          "type": "datatype.secure_string",
+          "name": "Debug",
+          "type": "datatype.boolean",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XYZZTC8LCX6179YuFKyMwq2ZY4mX464g3",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Tenant ID",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XYZZTC8LJ8O2UOngv4MMSRqIQcdEg6d1C",
+        "unique_name": "variable_workflow_01XYZZTC8LHR37DNMX54IIRsItN6ZCc7IyN",
         "object_type": "variable_workflow"
       },
       {
@@ -46,16 +33,29 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug",
-          "type": "datatype.boolean",
+          "value": "",
+          "scope": "output",
+          "name": "Tenant ID",
+          "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XYZZTC8LHR37DNMX54IIRsItN6ZCc7IyN",
+        "unique_name": "variable_workflow_01XYZZTC8LJ8O2UOngv4MMSRqIQcdEg6d1C",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "MSX Token",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XYZZTC8LCX6179YuFKyMwq2ZY4mX464g3",
         "object_type": "variable_workflow"
       }
     ],
