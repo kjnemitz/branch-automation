@@ -355,25 +355,25 @@
             "properties": {
               "value": "",
               "scope": "output",
-              "name": "Response Body",
+              "name": "Response Status Code",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS",
+            "unique_name": "variable_workflow_01YGWDHV214QD1Y5rFMQOkKgEMalvAj5TLy",
             "object_type": "variable_workflow"
           },
           {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "input",
-              "name": "Request Body",
+              "scope": "output",
+              "name": "Response Status Text",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba",
+            "unique_name": "variable_workflow_01YGWDP1QG17V5xVlmTnI4rv1n7uK9NLDbg",
             "object_type": "variable_workflow"
           },
           {
@@ -393,13 +393,26 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "output",
-              "name": "Response Status Code",
+              "scope": "input",
+              "name": "Request Body",
               "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01YGWDHV214QD1Y5rFMQOkKgEMalvAj5TLy",
+            "unique_name": "variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Response Body",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS",
             "object_type": "variable_workflow"
           },
           {
@@ -413,19 +426,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01YGWAOTSTHI62EWVCm5aTWeQMUCZhqLeQo",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Response Status Text",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01YGWDP1QG17V5xVlmTnI4rv1n7uK9NLDbg",
             "object_type": "variable_workflow"
           }
         ],
