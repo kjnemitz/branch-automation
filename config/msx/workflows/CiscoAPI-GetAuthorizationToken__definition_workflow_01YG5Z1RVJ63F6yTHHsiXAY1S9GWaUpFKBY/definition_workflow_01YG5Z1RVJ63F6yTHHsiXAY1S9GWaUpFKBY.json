@@ -1,0 +1,548 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY",
+    "name": "Cisco API - Get Authorization Token",
+    "title": "Cisco API - Get Authorization Token",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Cisco API Token",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YG9AL0TFIIG3nWb66Sm2s8tgJ680dbjKm",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "local",
+          "name": "Status Code",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YOQJDGNOT7F3HMAUEQ2UnnEnPv0E5P1O9",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 3,
+          "scope": "input",
+          "name": "Retry Count",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YOQPOAQNLAE5sN8lcv7bgyKvrBZ9Rbx55",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 10,
+          "scope": "input",
+          "name": "Retry Wait Time (seconds)",
+          "type": "datatype.integer",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YOQPUU6B77L7UVU2BcDLXVEt4ScdpYhzO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Response Body",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YOQRBK9M6486L5TzSnAGj7mOQtV479WRX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "xuIChD1cvLPrjHagEDIsJkFrqDPD",
+          "scope": "static",
+          "name": "Token",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YG8U19OQA7T6pXCaQzLHs6bYkIsy6jJ3s",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Cisco API - Get Authorization Token",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01YG5YSLD2FBJ5ofYXcAHiHsI7inVdNNv7A",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01YG63YFZZUX3134CAxPNY8JA2OfnBEwntR",
+        "name": "Condition Block",
+        "title": "Token Empty?",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Token Empty?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01YG91SECUPMM46eyUpwnbBTpFXuLTfSoXg",
+            "name": "Condition Branch",
+            "title": "No",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.static.variable_workflow_01YG8U19OQA7T6pXCaQzLHs6bYkIsy6jJ3s$",
+                "operator": "ne",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "No",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01YG8ZC0T1PY60H4CUcDUeqoPW2t0xChpZH",
+                "name": "HTTP Request",
+                "title": "List Accounts",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": true,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "Bearer $workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.static.variable_workflow_01YG8U19OQA7T6pXCaQzLHs6bYkIsy6jJ3s$"
+                    }
+                  ],
+                  "display_name": "List Accounts",
+                  "method": "GET",
+                  "relative_url": "/services/api/smart-accounts-and-licensing/v2/accounts",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01YG9197X4N250SqJN21i7yMiLjGvIlQCzV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01YGX61D9SN5I21YmcxKI3IYxkLeCuvNky2",
+                "name": "Condition Block",
+                "title": "Check Succeeded?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Check Succeeded?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01YGX61EGLVE54OO86zZh6ogjDRE8EB1ghh",
+                    "name": "Condition Branch",
+                    "title": "Condition Branch",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01YG8ZC0T1PY60H4CUcDUeqoPW2t0xChpZH.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": true
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Condition Branch",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01YG9496I99SR0TaU4hqZoEXZN2z4GvjOFn",
+                        "name": "Condition Block",
+                        "title": "Token Valid?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Token Valid?",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01YG9497D3Z870yyAI4exQ73AXTZeJbVg4v",
+                            "name": "Condition Branch",
+                            "title": "Yes",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01YG8ZC0T1PY60H4CUcDUeqoPW2t0xChpZH.output.status_code$",
+                                "operator": "eq",
+                                "right_operand": 200
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Yes",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01YG9BFWOO6Y94rpmB5V89YFQPcMLlOqWwm",
+                                "name": "Set Variables",
+                                "title": "Set Cisco API Token",
+                                "type": "core.set_multiple_variables",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Set Cisco API Token",
+                                  "skip_execution": false,
+                                  "variables_to_update": [
+                                    {
+                                      "variable_to_update": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.output.variable_workflow_01YG9AL0TFIIG3nWb66Sm2s8tgJ680dbjKm$",
+                                      "variable_value_new": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.static.variable_workflow_01YG8U19OQA7T6pXCaQzLHs6bYkIsy6jJ3s$"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              },
+                              {
+                                "unique_name": "definition_activity_01YG9CPQ01X1S1LccKCBoy0UI5sOxm8VVTT",
+                                "name": "Completed",
+                                "title": "Completed",
+                                "type": "logic.completed",
+                                "base_type": "activity",
+                                "properties": {
+                                  "completion_type": "succeeded",
+                                  "continue_on_failure": false,
+                                  "display_name": "Completed",
+                                  "result_message": "Token is Valid and Unchanged",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01YOQKFO2B8Z410izSxupbH6v2xM6zF9mOd",
+        "name": "While Loop",
+        "title": "Request Complete?",
+        "type": "logic.while",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Request Complete?",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01YOQKFPI81LX5qunTcDh0oyUej8CGUx4Md",
+            "name": "Condition Branch",
+            "title": "No",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.local.variable_workflow_01YOQJDGNOT7F3HMAUEQ2UnnEnPv0E5P1O9$",
+                  "operator": "ne",
+                  "right_operand": 200
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.input.variable_workflow_01YOQPOAQNLAE5sN8lcv7bgyKvrBZ9Rbx55$",
+                  "operator": "gt",
+                  "right_operand": 0
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "No",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01YOQMSEANXPA7E58AyqaePzIJ4LfNdM9RQ",
+                "name": "HTTP Request",
+                "title": "API Request",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "display_name": "API Request",
+                  "method": "POST",
+                  "relative_url": "/as/token.oauth2?grant_type=client_credentials\u0026client_id=$global.variable_01YG617PUJ7811zEWBkeV3S9CulnhNEwgoK.global.variable_01YG617PUJ7811zEWBkeV3S9CulnhNEwgoK$\u0026client_secret=$global.variable_01YG6DOGZ7OFI3Fsd1IQ0CvOKwTuXniOR6q.global.variable_01YG6DOGZ7OFI3Fsd1IQ0CvOKwTuXniOR6q$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01YOQMLJGE4WE1cArL9KyRcdJwNQSEYwWFw",
+                "name": "Set Variables",
+                "title": "Set Status Code and Retry Count and Response Body",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Status Code and Retry Count and Response Body",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.local.variable_workflow_01YOQJDGNOT7F3HMAUEQ2UnnEnPv0E5P1O9$",
+                      "variable_value_new": "$activity.definition_activity_01YOQMSEANXPA7E58AyqaePzIJ4LfNdM9RQ.output.status_code$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.input.variable_workflow_01YOQPOAQNLAE5sN8lcv7bgyKvrBZ9Rbx55$",
+                      "variable_value_new": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.input.variable_workflow_01YOQPOAQNLAE5sN8lcv7bgyKvrBZ9Rbx55$-1"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.local.variable_workflow_01YOQRBK9M6486L5TzSnAGj7mOQtV479WRX$",
+                      "variable_value_new": "$activity.definition_activity_01YOQMSEANXPA7E58AyqaePzIJ4LfNdM9RQ.output.response_body$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01YOQNQ2BUMSY2vcxzKQG8Eogu8tvWxGEi3",
+                "name": "Condition Block",
+                "title": "Status Good?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Status Good?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01YOQNQ3BHQDZ08P7Kx2Go0xufhxtjEdEEg",
+                    "name": "Condition Branch",
+                    "title": "No",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.local.variable_workflow_01YOQJDGNOT7F3HMAUEQ2UnnEnPv0E5P1O9$",
+                        "operator": "ne",
+                        "right_operand": 200
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "No",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01YOQOVS4QLKJ4XLjXzpfIde1lhbLWyzxXl",
+                        "name": "Sleep",
+                        "title": "Sleep",
+                        "type": "core.sleep",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Sleep",
+                          "skip_execution": false,
+                          "sleep_interval": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.input.variable_workflow_01YOQPUU6B77L7UVU2BcDLXVEt4ScdpYhzO$"
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01YG6KCIQ8EPJ0XYNF5wA0JoAGPT5uLRTmg",
+        "name": "JSONPath Query",
+        "title": "Get Token",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get Token",
+          "input_json": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.local.variable_workflow_01YOQRBK9M6486L5TzSnAGj7mOQtV479WRX$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.access_token",
+              "jsonpath_query_name": "Cisco API Token",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01YG6L2WMV6RF7MrOqDrcazCLyQzg5w3y7Z",
+        "name": "Set Variables",
+        "title": "Set Cisco API Token",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Cisco API Token",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.output.variable_workflow_01YG9AL0TFIIG3nWb66Sm2s8tgJ680dbjKm$",
+              "variable_value_new": "$activity.definition_activity_01YG6KCIQ8EPJ0XYNF5wA0JoAGPT5uLRTmg.output.jsonpath_queries.Cisco API Token$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01YG5Z1RVJ63F6yTHHsiXAY1S9GWaUpFKBY.static.variable_workflow_01YG8U19OQA7T6pXCaQzLHs6bYkIsy6jJ3s$",
+              "variable_value_new": "$activity.definition_activity_01YG6KCIQ8EPJ0XYNF5wA0JoAGPT5uLRTmg.output.jsonpath_queries.Cisco API Token$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01YG5Z7QRSV8B16yFF5DjOT25uHf3TKz7OM"
+    ]
+  },
+  "categories": {
+    "category_01YG5Z7QRSV8B16yFF5DjOT25uHf3TKz7OM": {
+      "unique_name": "category_01YG5Z7QRSV8B16yFF5DjOT25uHf3TKz7OM",
+      "name": "Cisco API",
+      "title": "Cisco API",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01YG5YSLD2FBJ5ofYXcAHiHsI7inVdNNv7A": {
+      "unique_name": "definition_target_01YG5YSLD2FBJ5ofYXcAHiHsI7inVdNNv7A",
+      "name": "Cisco API Authorization",
+      "title": "Cisco API Authorization",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "Cisco API Authorization",
+        "host": "cloudsso.cisco.com",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01YG9197X4N250SqJN21i7yMiLjGvIlQCzV": {
+      "unique_name": "definition_target_01YG9197X4N250SqJN21i7yMiLjGvIlQCzV",
+      "name": "Cisco API Smart Accounts",
+      "title": "Cisco API Smart Accounts",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "Cisco API Smart Accounts",
+        "host": "swapi.cisco.com",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "variables": {
+    "variable_01YG617PUJ7811zEWBkeV3S9CulnhNEwgoK": {
+      "unique_name": "variable_01YG617PUJ7811zEWBkeV3S9CulnhNEwgoK",
+      "properties": {
+        "value": "1d35cda7-7f4f-46fe-8eb2-ef94e737043c",
+        "scope": "global",
+        "name": "Cisco App Client ID",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01YG6DOGZ7OFI3Fsd1IQ0CvOKwTuXniOR6q": {
+      "unique_name": "variable_01YG6DOGZ7OFI3Fsd1IQ0CvOKwTuXniOR6q",
+      "properties": {
+        "value": "a1922ddf-e5ce-4e87-8b32-fdbea9cea071",
+        "scope": "global",
+        "name": "Cisco App Client Secret",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  }
+}
