@@ -7,29 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.boolean",
         "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Device ID",
-          "type": "datatype.string",
+          "value": false,
+          "scope": "input",
+          "name": "Debug",
+          "type": "datatype.boolean",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XIXLR16E0KR72roaEycnqCtAXzuihWG7A",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Device Information (JSON)",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XIXHDPB2J086DQOyJMtKkqS3wQ6r4BfgL",
+        "unique_name": "variable_workflow_01Y53BRCPLHUH1wemBSPw6wRlPzMGQe1jSR",
         "object_type": "variable_workflow"
       },
       {
@@ -50,25 +37,38 @@
         "properties": {
           "value": "",
           "scope": "input",
+          "name": "Device Information (JSON)",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XIXHDPB2J086DQOyJMtKkqS3wQ6r4BfgL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Device ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XIXLR16E0KR72roaEycnqCtAXzuihWG7A",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
           "name": "DNAC Token",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01Y53BEXO4OIW1OlrZpFoWcDy1qnxSbOSlb",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.boolean",
-        "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug",
-          "type": "datatype.boolean",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01Y53BRCPLHUH1wemBSPw6wRlPzMGQe1jSR",
         "object_type": "variable_workflow"
       }
     ],
