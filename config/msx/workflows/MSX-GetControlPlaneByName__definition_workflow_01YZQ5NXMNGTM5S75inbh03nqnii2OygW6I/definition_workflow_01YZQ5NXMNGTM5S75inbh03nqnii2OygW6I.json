@@ -20,19 +20,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.secure_string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "MSX Token",
-          "type": "datatype.secure_string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01YZQ67QFMWEN6NVqKcwD2alh4dQ9HxsdSv",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
@@ -56,6 +43,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01YZQA1KA72C941sGhid4WpgETz58DeIltD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "MSX Token",
+          "type": "datatype.secure_string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YZQ67QFMWEN6NVqKcwD2alh4dQ9HxsdSv",
         "object_type": "variable_workflow"
       },
       {
