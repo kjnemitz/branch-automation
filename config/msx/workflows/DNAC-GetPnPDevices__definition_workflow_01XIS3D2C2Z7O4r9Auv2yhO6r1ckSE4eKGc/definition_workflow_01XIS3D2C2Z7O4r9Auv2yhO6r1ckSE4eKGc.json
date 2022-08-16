@@ -9,14 +9,15 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "/dna/intent/api/v1/onboarding/pnp-device",
-          "scope": "local",
-          "name": "Relative URL",
+          "value": "",
+          "scope": "input",
+          "name": "Token",
           "type": "datatype.string",
+          "description": "DNAC authorization token",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ",
+        "unique_name": "variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk",
         "object_type": "variable_workflow"
       },
       {
@@ -49,15 +50,14 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Token",
+          "value": "/dna/intent/api/v1/onboarding/pnp-device",
+          "scope": "local",
+          "name": "Relative URL",
           "type": "datatype.string",
-          "description": "DNAC authorization token",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk",
+        "unique_name": "variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ",
         "object_type": "variable_workflow"
       }
     ],
