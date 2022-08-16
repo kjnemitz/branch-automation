@@ -9,14 +9,14 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": " ",
+          "value": "",
           "scope": "local",
-          "name": "Space",
+          "name": "Item",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XP2U0JWMFZ30aJvPRjTXUoC1RG1Hyjsah",
+        "unique_name": "variable_workflow_01XP2N05AUOIQ0Cs4S9w3vxtaKR9o4thTQZ",
         "object_type": "variable_workflow"
       },
       {
@@ -47,6 +47,19 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": " ",
+          "scope": "local",
+          "name": "Space",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XP2U0JWMFZ30aJvPRjTXUoC1RG1Hyjsah",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "[\n    \"Item 1\",\n    \"Item 2\"\n]",
           "scope": "input",
           "name": "Input (JSON List)",
@@ -55,19 +68,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01XP1NOZL23QA3fA39V8JZbGfQ9j1YEFp4y",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "Item",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XP2N05AUOIQ0Cs4S9w3vxtaKR9o4thTQZ",
         "object_type": "variable_workflow"
       }
     ],
