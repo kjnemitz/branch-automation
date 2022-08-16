@@ -7,6 +7,32 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Target Name",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01ZA1D65700OU1BkiU60F0fDFM4WSPCLqPt",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Target ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01ZA1DB6LXJYA0RZnxBEj0UmVIRSrp02RvH",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.boolean",
         "properties": {
           "value": false,
@@ -30,32 +56,6 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01ZA1CW5DS2OZ0OYlyQf8KVEyhGNB9F801V",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Target ID",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01ZA1DB6LXJYA0RZnxBEj0UmVIRSrp02RvH",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Target Name",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01ZA1D65700OU1BkiU60F0fDFM4WSPCLqPt",
         "object_type": "variable_workflow"
       }
     ],
@@ -380,20 +380,6 @@
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "Request Type",
-              "type": "datatype.string",
-              "description": "GET, PUT, etc.",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01ZA05J8Y4RTE0soU1oVTiMoDkEkrexxeaP",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
               "name": "Relative API URL",
               "type": "datatype.string",
               "is_required": true,
@@ -416,6 +402,19 @@
             "object_type": "variable_workflow"
           },
           {
+            "schema_id": "datatype.boolean",
+            "properties": {
+              "value": false,
+              "scope": "input",
+              "name": "Debug",
+              "type": "datatype.boolean",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01ZA04UYBPRJY1dQGnXgu6losxdAz0LhCi0",
+            "object_type": "variable_workflow"
+          },
+          {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
@@ -432,6 +431,20 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
+              "scope": "input",
+              "name": "Request Type",
+              "type": "datatype.string",
+              "description": "GET, PUT, etc.",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01ZA05J8Y4RTE0soU1oVTiMoDkEkrexxeaP",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
               "scope": "local",
               "name": "X-Csco-Trxid",
               "type": "datatype.string",
@@ -439,19 +452,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01ZA0FLYPV0C328J5sa8ZBKzk0S64VXmn5B",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.boolean",
-            "properties": {
-              "value": false,
-              "scope": "input",
-              "name": "Debug",
-              "type": "datatype.boolean",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01ZA04UYBPRJY1dQGnXgu6losxdAz0LhCi0",
             "object_type": "variable_workflow"
           }
         ],
@@ -623,16 +623,16 @@
             "base_type": "workflow",
             "variables": [
               {
-                "schema_id": "datatype.integer",
+                "schema_id": "datatype.secure_string",
                 "properties": {
-                  "value": 0,
-                  "scope": "local",
-                  "name": "Counter",
-                  "type": "datatype.integer",
+                  "value": "",
+                  "scope": "output",
+                  "name": "MSX Token",
+                  "type": "datatype.secure_string",
                   "is_required": false,
                   "is_invisible": false
                 },
-                "unique_name": "variable_workflow_01Y1PLSS8CJ876wxge16b55IvBrSRUfJQJA",
+                "unique_name": "variable_workflow_01Y0X6AB5H2BV7mTirwXhqiHnIp9bQl4r5k",
                 "object_type": "variable_workflow"
               },
               {
@@ -649,32 +649,6 @@
                 "object_type": "variable_workflow"
               },
               {
-                "schema_id": "datatype.string",
-                "properties": {
-                  "value": "",
-                  "scope": "local",
-                  "name": "Token Result",
-                  "type": "datatype.string",
-                  "is_required": false,
-                  "is_invisible": false
-                },
-                "unique_name": "variable_workflow_01Y1PP6HRZ2WJ3iktsrvTEGJTZRxb8VvsRj",
-                "object_type": "variable_workflow"
-              },
-              {
-                "schema_id": "datatype.secure_string",
-                "properties": {
-                  "value": "",
-                  "scope": "output",
-                  "name": "MSX Token",
-                  "type": "datatype.secure_string",
-                  "is_required": false,
-                  "is_invisible": false
-                },
-                "unique_name": "variable_workflow_01Y0X6AB5H2BV7mTirwXhqiHnIp9bQl4r5k",
-                "object_type": "variable_workflow"
-              },
-              {
                 "schema_id": "datatype.boolean",
                 "properties": {
                   "value": false,
@@ -685,6 +659,32 @@
                   "is_invisible": false
                 },
                 "unique_name": "variable_workflow_01Y1PLO5HZVWR5P69poAsMn5g6jOFT5VF7w",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.integer",
+                "properties": {
+                  "value": 0,
+                  "scope": "local",
+                  "name": "Counter",
+                  "type": "datatype.integer",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01Y1PLSS8CJ876wxge16b55IvBrSRUfJQJA",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "local",
+                  "name": "Token Result",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01Y1PP6HRZ2WJ3iktsrvTEGJTZRxb8VvsRj",
                 "object_type": "variable_workflow"
               },
               {
@@ -1107,14 +1107,14 @@
                   {
                     "schema_id": "datatype.string",
                     "properties": {
-                      "value": "",
-                      "scope": "output",
-                      "name": "output_encoded_url",
+                      "value": "Hellö Wörld@Python",
+                      "scope": "input",
+                      "name": "url_to_encode",
                       "type": "datatype.string",
-                      "is_required": false,
+                      "is_required": true,
                       "is_invisible": false
                     },
-                    "unique_name": "variable_workflow_01XJMIULHNDMJ2fwMEKx4Wxryk77Qr11kRp",
+                    "unique_name": "variable_workflow_01XJMIULHNBVP4LFMSNBDrdeWkPa4uTxiTh",
                     "object_type": "variable_workflow"
                   },
                   {
@@ -1147,14 +1147,14 @@
                   {
                     "schema_id": "datatype.string",
                     "properties": {
-                      "value": "Hellö Wörld@Python",
-                      "scope": "input",
-                      "name": "url_to_encode",
+                      "value": "",
+                      "scope": "output",
+                      "name": "output_encoded_url",
                       "type": "datatype.string",
-                      "is_required": true,
+                      "is_required": false,
                       "is_invisible": false
                     },
-                    "unique_name": "variable_workflow_01XJMIULHNBVP4LFMSNBDrdeWkPa4uTxiTh",
+                    "unique_name": "variable_workflow_01XJMIULHNDMJ2fwMEKx4Wxryk77Qr11kRp",
                     "object_type": "variable_workflow"
                   }
                 ],
