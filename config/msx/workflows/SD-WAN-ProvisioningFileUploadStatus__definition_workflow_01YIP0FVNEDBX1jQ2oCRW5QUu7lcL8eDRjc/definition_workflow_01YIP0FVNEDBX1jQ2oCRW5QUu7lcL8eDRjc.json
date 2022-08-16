@@ -1,0 +1,92 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01YIP0FVNEDBX1jQ2oCRW5QUu7lcL8eDRjc",
+    "name": "SD-WAN - Provisioning File Upload Status",
+    "title": "SD-WAN - Provisioning File Upload Status",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "input",
+          "name": "Status",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YIP1J4BUMXY6y1mCyBCSuzn25xAUgY3m5",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SD-WAN - Provisioning File Upload Status",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01YIP0VB7WTPK2oKl1gKE26dcM9uJ8VbJUD",
+        "name": "Set Variables",
+        "title": "Set Upload Status",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Upload Status",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$global.variable_01YIOZTFF34MI1JlSKqA6Yun1HvISnPLWYD.global.variable_01YIOZTFF34MI1JlSKqA6Yun1HvISnPLWYD$",
+              "variable_value_new": "$workflow.definition_workflow_01YIP0FVNEDBX1jQ2oCRW5QUu7lcL8eDRjc.input.variable_workflow_01YIP1J4BUMXY6y1mCyBCSuzn25xAUgY3m5$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01YG9PZ26DCXK1uMd6Q6IXn4eqLCMvsftk2"
+    ]
+  },
+  "categories": {
+    "category_01YG9PZ26DCXK1uMd6Q6IXn4eqLCMvsftk2": {
+      "unique_name": "category_01YG9PZ26DCXK1uMd6Q6IXn4eqLCMvsftk2",
+      "name": "SD-WAN",
+      "title": "SD-WAN",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "variables": {
+    "variable_01YIOZTFF34MI1JlSKqA6Yun1HvISnPLWYD": {
+      "unique_name": "variable_01YIOZTFF34MI1JlSKqA6Yun1HvISnPLWYD",
+      "properties": {
+        "value": true,
+        "scope": "global",
+        "name": "PNP Provisioning File Uploaded",
+        "type": "datatype.boolean",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  }
+}
