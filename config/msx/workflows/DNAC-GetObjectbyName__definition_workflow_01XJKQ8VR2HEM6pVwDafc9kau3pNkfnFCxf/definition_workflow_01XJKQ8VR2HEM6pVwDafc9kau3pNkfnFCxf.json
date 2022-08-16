@@ -34,32 +34,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Object Name",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XJLF2NN89IX0nzv8N4oF1wxCBqgAV36XD",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Object ID",
-          "type": "datatype.string",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XJLJKYS6U166Sje0vizWbGdbR1QI6HAF0",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "tabletype_01XJLI3GT12H90MEHBMF0OY5Xd3KE7WXbBR",
         "properties": {
           "value": [
@@ -85,6 +59,32 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01XJLPUAI6L2G2c430GpjAJmLAcre9d4LKY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Object Name",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJLF2NN89IX0nzv8N4oF1wxCBqgAV36XD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Object ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJLJKYS6U166Sje0vizWbGdbR1QI6HAF0",
         "object_type": "variable_workflow"
       }
     ],
@@ -548,17 +548,16 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.boolean",
+            "schema_id": "datatype.string",
             "properties": {
-              "value": false,
-              "scope": "input",
-              "name": "encode_with_plus_sign",
-              "type": "datatype.boolean",
-              "description": "select true to encode with plus sign over %20 for space",
+              "value": "",
+              "scope": "output",
+              "name": "output_encoded_url",
+              "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01XJMIULHN6SN6UtohHt05WbJ5GjZI86qaB",
+            "unique_name": "variable_workflow_01XJMIULHNDMJ2fwMEKx4Wxryk77Qr11kRp",
             "object_type": "variable_workflow"
           },
           {
@@ -575,16 +574,17 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.string",
+            "schema_id": "datatype.boolean",
             "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "output_encoded_url",
-              "type": "datatype.string",
+              "value": false,
+              "scope": "input",
+              "name": "encode_with_plus_sign",
+              "type": "datatype.boolean",
+              "description": "select true to encode with plus sign over %20 for space",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01XJMIULHNDMJ2fwMEKx4Wxryk77Qr11kRp",
+            "unique_name": "variable_workflow_01XJMIULHN6SN6UtohHt05WbJ5GjZI86qaB",
             "object_type": "variable_workflow"
           }
         ],
