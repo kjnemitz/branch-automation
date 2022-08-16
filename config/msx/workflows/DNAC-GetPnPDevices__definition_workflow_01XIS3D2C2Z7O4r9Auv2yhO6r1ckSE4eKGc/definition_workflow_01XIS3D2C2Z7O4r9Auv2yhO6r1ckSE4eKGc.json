@@ -10,20 +10,6 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
-          "name": "Token",
-          "type": "datatype.string",
-          "description": "DNAC authorization token",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
           "scope": "output",
           "name": "PnP Devices (JSON)",
           "type": "datatype.string",
@@ -45,6 +31,20 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01XIX2HA9NAG507jXjn0S3L0HKvLbe7W3WE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Token",
+          "type": "datatype.string",
+          "description": "DNAC authorization token",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XIS4BECD9NA1ruT2ubsIlgJtfgAwHZcmk",
         "object_type": "variable_workflow"
       },
       {
