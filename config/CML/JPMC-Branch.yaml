@@ -2,7 +2,7 @@ lab:
   description: ''
   notes: ''
   title: JPMC-Branch
-  version: 0.1.0
+  version: 0.0.5
 nodes:
   - id: n0
     label: BR-2-SW1
