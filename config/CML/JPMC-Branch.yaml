@@ -9,7 +9,7 @@ nodes:
     node_definition: c9kv-20220216
     x: 700
     y: 300
-    configuration: hostname inserthostname_here
+    configuration:
     hide_links: null
     image_definition: C9Kv-17-7
     ram: 16384
@@ -45,7 +45,7 @@ nodes:
     node_definition: c9kv-20220216
     x: 700
     y: 450
-    configuration: hostname inserthostname_here
+    configuration:
     hide_links: null
     image_definition: C9Kv-17-7
     ram: 16384
