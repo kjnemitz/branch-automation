@@ -18,7 +18,7 @@
     ],
     "CML": {
       "lab": {
-        "description": "",
+        "description": "Branch Automation Lab",
         "notes": "",
         "title": "JPMC-Branch",
         "version": "0.0.5"
