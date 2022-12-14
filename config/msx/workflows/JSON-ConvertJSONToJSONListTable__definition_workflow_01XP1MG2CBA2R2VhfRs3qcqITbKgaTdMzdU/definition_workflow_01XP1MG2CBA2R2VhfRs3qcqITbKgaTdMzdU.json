@@ -1,0 +1,281 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XP1MG2CBA2R2VhfRs3qcqITbKgaTdMzdU",
+    "name": "JSON - Convert JSON to JSON List Table",
+    "title": "JSON - Convert JSON to JSON List Table",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Item",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XP2N05AUOIQ0Cs4S9w3vxtaKR9o4thTQZ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "\n",
+          "scope": "local",
+          "name": "Line Feed",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XP1WRANB44F6sIs8GsaW2i4qzDPciXEVb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01XP1MCVY1RNP28K9xBu0672VkUoC5n0yQS",
+        "properties": {
+          "scope": "output",
+          "name": "Items",
+          "type": "datatype.table",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XP2KXKX2EMV0zZ1CaG0a5WMYpDv82V12p",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": " ",
+          "scope": "local",
+          "name": "Space",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XP2U0JWMFZ30aJvPRjTXUoC1RG1Hyjsah",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "[\n    \"Item 1\",\n    \"Item 2\"\n]",
+          "scope": "input",
+          "name": "Input (JSON List)",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XP1NOZL23QA3fA39V8JZbGfQ9j1YEFp4y",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "JSON - Convert JSON to JSON List Table",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XP204PLPZEX6T0iSfekZa8UJEZrbAHcgA",
+        "name": "Replace String",
+        "title": "Remove Quotes",
+        "type": "core.replacestring",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Remove Quotes",
+          "input_string": "$workflow.definition_workflow_01XP1MG2CBA2R2VhfRs3qcqITbKgaTdMzdU.input.variable_workflow_01XP1NOZL23QA3fA39V8JZbGfQ9j1YEFp4y$",
+          "replace_list": [
+            {
+              "replaced_string": "\"",
+              "replacement_string": ""
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XP1O9JFG21F7ZsFZHKH4PLIvDBJtsGaxu",
+        "name": "Trim String",
+        "title": "Trim JSON Leading",
+        "type": "core.trim_string",
+        "base_type": "activity",
+        "properties": {
+          "characters_to_trim": "[$workflow.definition_workflow_01XP1MG2CBA2R2VhfRs3qcqITbKgaTdMzdU.local.variable_workflow_01XP1WRANB44F6sIs8GsaW2i4qzDPciXEVb$",
+          "continue_on_failure": false,
+          "display_name": "Trim JSON Leading",
+          "skip_execution": false,
+          "source": "$activity.definition_activity_01XP204PLPZEX6T0iSfekZa8UJEZrbAHcgA.output.result_string$",
+          "trim_leading": true,
+          "trim_trailing": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XP1OY150CHL5H6OxYVR2HmeJbEfWiYa8C",
+        "name": "Trim String",
+        "title": "Trim JSON Trailing",
+        "type": "core.trim_string",
+        "base_type": "activity",
+        "properties": {
+          "characters_to_trim": "]",
+          "continue_on_failure": false,
+          "display_name": "Trim JSON Trailing",
+          "skip_execution": false,
+          "source": "$activity.definition_activity_01XP1O9JFG21F7ZsFZHKH4PLIvDBJtsGaxu.output.trimmed$",
+          "trim_leading": false,
+          "trim_trailing": true
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XP1YL9NVBFL41oPjsota96ZACPevxngB2",
+        "name": "Read Table from Text",
+        "title": "Create List Table",
+        "type": "core.read_table_from_text",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "delimiters": [
+            {
+              "delimiter": ","
+            }
+          ],
+          "display_name": "Create List Table",
+          "input_text": "$activity.definition_activity_01XP1OY150CHL5H6OxYVR2HmeJbEfWiYa8C.output.trimmed$",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "Item",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XP2L2Q388BZ6V6M6LnFkPOVjAzWHWBCuo",
+        "name": "For Each",
+        "title": "Convert to Table to List Table",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Convert to Table to List Table",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01XP1YL9NVBFL41oPjsota96ZACPevxngB2.output.read_table_from_text$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01XP2V9IKWKHO3BGLktDJqbcS5h2qFaAj0X",
+            "name": "Trim String",
+            "title": "Trim Item Leading",
+            "type": "core.trim_string",
+            "base_type": "activity",
+            "properties": {
+              "characters_to_trim": "$workflow.definition_workflow_01XP1MG2CBA2R2VhfRs3qcqITbKgaTdMzdU.local.variable_workflow_01XP2U0JWMFZ30aJvPRjTXUoC1RG1Hyjsah$",
+              "continue_on_failure": false,
+              "display_name": "Trim Item Leading",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01XP2L2Q388BZ6V6M6LnFkPOVjAzWHWBCuo.input.source_array[@].Item$",
+              "trim_leading": true,
+              "trim_trailing": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01XP2LL6Y25ZF1Pl3jBfOkr6mQHl1evCVIv",
+            "name": "Add Row to Table",
+            "title": "Add Row to List Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Add Row to List Table",
+              "input_table": "$workflow.definition_workflow_01XP1MG2CBA2R2VhfRs3qcqITbKgaTdMzdU.output.variable_workflow_01XP2KXKX2EMV0zZ1CaG0a5WMYpDv82V12p$",
+              "row": [
+                {
+                  "key": "ListItem",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01XP2V9IKWKHO3BGLktDJqbcS5h2qFaAj0X.output.trimmed$"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01XP1Z4FQL6264ms5npW1ZbpxDVb8btht1H",
+        "name": "Set Variables",
+        "title": "Set Header",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Header",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XP1MG2CBA2R2VhfRs3qcqITbKgaTdMzdU.input.variable_workflow_01XP1NOZL23QA3fA39V8JZbGfQ9j1YEFp4y$",
+              "variable_value_new": "Item$workflow.definition_workflow_01XP1MG2CBA2R2VhfRs3qcqITbKgaTdMzdU.local.variable_workflow_01XP1WRANB44F6sIs8GsaW2i4qzDPciXEVb$$activity.definition_activity_01XP1OY150CHL5H6OxYVR2HmeJbEfWiYa8C.output.trimmed$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01XP24JEEZ4CH7bQT5Ij2ocLiqlAdbq2buV"
+    ]
+  },
+  "categories": {
+    "category_01XP24JEEZ4CH7bQT5Ij2ocLiqlAdbq2buV": {
+      "unique_name": "category_01XP24JEEZ4CH7bQT5Ij2ocLiqlAdbq2buV",
+      "name": "JSON",
+      "title": "JSON",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "table_types": {
+    "tabletype_01XP1MCVY1RNP28K9xBu0672VkUoC5n0yQS": {
+      "unique_name": "tabletype_01XP1MCVY1RNP28K9xBu0672VkUoC5n0yQS",
+      "data_type": "datatype.tabletype",
+      "display_name": "JSON List",
+      "columns": [
+        {
+          "name": "ListItem",
+          "title": "List Item",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}

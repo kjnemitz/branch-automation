@@ -402,6 +402,7 @@
     "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7": {
       "unique_name": "definition_target_01AP3HJWRWFX42IV83Wb0RzVJV6vseowkU7",
       "name": "MSX API",
+      "title": "MSX API",
       "description": "MSX API",
       "type": "msx-api.endpoint",
       "base_type": "target",
@@ -421,6 +422,7 @@
     "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt": {
       "unique_name": "definition_runtime_user_01AP3ABOXO4GP34LXxefnUlt5r8mJbCHCgt",
       "name": "MSX System",
+      "title": "MSX System",
       "description": "MSX System",
       "type": "runtime_user.msx-api_credentials",
       "base_type": "runtime_user",

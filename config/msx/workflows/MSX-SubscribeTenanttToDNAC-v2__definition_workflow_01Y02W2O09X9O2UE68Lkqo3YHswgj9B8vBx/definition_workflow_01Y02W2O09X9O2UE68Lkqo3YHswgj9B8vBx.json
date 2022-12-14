@@ -7,19 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "{\n  \"enterprise\": {\n    \"organization\": [\n      {\n        \"description\": \"Branch Networking\",\n        \"email\": \"jnemitz@cisco.com\",\n        \"name\": \"JPMC\",\n        \"url\": \"https://www.jpmorganchase.com/\"\n      }\n    ],\n    \"CML\": {\n      \"title\": \"Auto Test Lab\",\n      \"owner\": \"jnemitz\",\n      \"external_connections\": [\n        {\n          \"x\": 1326,\n          \"y\": 253,\n          \"label\": \"Enterprise\",\n          \"configuration\": \"\",\n          \"node_definition\": \"external_connector\",\n          \"cpu_limit\": 100,\n          \"hide_links\": false,\n          \"tags\": []\n        }\n      ]\n    },\n    \"site\": [\n      {\n        \"name\": \"CDC 1\",\n        \"type\": \"datacenter\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"address1\": \"880 Powder Mill Road\",\n              \"city\": \"Wilmington\",\n              \"state\": \"DE\",\n              \"zipcode\": \"19803\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"CDC 2\",\n        \"type\": \"datacenter\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"street\": \"36 E Midland Ave\",\n              \"city\": \"Paramus\",\n              \"state\": \"NJ\",\n              \"zipcode\": \"07652\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Yamhill Branch\",\n        \"type\": \"branch\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"street\": \"811 Southwest 6th Avenue\",\n              \"city\": \"Portland\",\n              \"state\": \"OR\",\n              \"zipcode\": \"97204\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": [\n                  {\n                    \"devicename\": \"Switch-1\",\n                    \"hostname\": \"Switch-1\",\n                    \"CML\": {\n                      \"x\": 1326,\n                      \"y\": 395,\n                      \"label\": \"Switch-1\",\n                      \"configuration\": \"\",\n                      \"node_definition\": \"c9kv-20220216\",\n                      \"cpu_limit\": 100,\n                      \"hide_links\": false,\n                      \"tags\": []\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Greenwich Branch\",\n        \"type\": \"branch\",\n        \"building\": [\n          {\n            \"name\": \"Westfield World Trade Center\",\n            \"address\": {\n              \"street\": \"285 Greenwich St\",\n              \"city\": \"New York\",\n              \"state\": \"NY\",\n              \"zipcode\": \"10006\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 2\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"template\": [\n      {\n        \"name\": \"Switch-Base-Config\",\n        \"description\": \"Base configuration for switch\",\n        \"deviceTypes\": [\n          {\n            \"productFamily\": \"Switches and Hubs\"\n          }\n        ],\n        \"softwareType\": \"IOS-XE\",\n        \"softwareVariant\": \"XE\",\n        \"templateContent\": \"hostname {{ HOSTNAME }}\",\n        \"templateParams\": [\n          {\n            \"parameterName\": \"HOSTNAME\",\n            \"dataType\": \"STRING\",\n            \"description\": \"Host Name\",\n            \"required\": true,\n            \"notParam\": false,\n            \"paramArray\": false,\n            \"displayName\": \"Host Name\",\n            \"order\": 1,\n            \"customOrder\": 0\n          }\n        ],\n        \"customParamsOrder\": false,\n        \"projectName\": \"Onboarding Configuration\",\n        \"projectAssociated\": true,\n        \"documentDatabase\": false\n      }\n    ],\n    \"network_profile\": [\n      {\n        \"name\": \"Switch Profile\",\n        \"namespace\": \"switching\",\n        \"templates\": [\n          \"Switch-Base-Config\"\n        ]\n      }\n    ]\n  }\n}",
-          "scope": "input",
-          "name": "Network Design",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01Y02X54H3RQ021jlLDmCkfftp44Exzt75h",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.secure_string",
         "properties": {
           "value": "",
@@ -43,6 +30,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01Y02WWGMIWY111t4aN8UDYE4q62alYQArH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "{\n  \"enterprise\": {\n    \"organization\": [\n      {\n        \"description\": \"Branch Networking\",\n        \"email\": \"jnemitz@cisco.com\",\n        \"name\": \"JPMC\",\n        \"url\": \"https://www.jpmorganchase.com/\"\n      }\n    ],\n    \"CML\": {\n      \"title\": \"Auto Test Lab\",\n      \"owner\": \"jnemitz\",\n      \"external_connections\": [\n        {\n          \"x\": 1326,\n          \"y\": 253,\n          \"label\": \"Enterprise\",\n          \"configuration\": \"\",\n          \"node_definition\": \"external_connector\",\n          \"cpu_limit\": 100,\n          \"hide_links\": false,\n          \"tags\": []\n        }\n      ]\n    },\n    \"site\": [\n      {\n        \"name\": \"CDC 1\",\n        \"type\": \"datacenter\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"address1\": \"880 Powder Mill Road\",\n              \"city\": \"Wilmington\",\n              \"state\": \"DE\",\n              \"zipcode\": \"19803\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"CDC 2\",\n        \"type\": \"datacenter\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"street\": \"36 E Midland Ave\",\n              \"city\": \"Paramus\",\n              \"state\": \"NJ\",\n              \"zipcode\": \"07652\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Yamhill Branch\",\n        \"type\": \"branch\",\n        \"building\": [\n          {\n            \"name\": \"Building A\",\n            \"address\": {\n              \"street\": \"811 Southwest 6th Avenue\",\n              \"city\": \"Portland\",\n              \"state\": \"OR\",\n              \"zipcode\": \"97204\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"devices\": [\n                  {\n                    \"devicename\": \"Switch-1\",\n                    \"hostname\": \"Switch-1\",\n                    \"CML\": {\n                      \"x\": 1326,\n                      \"y\": 395,\n                      \"label\": \"Switch-1\",\n                      \"configuration\": \"\",\n                      \"node_definition\": \"c9kv-20220216\",\n                      \"cpu_limit\": 100,\n                      \"hide_links\": false,\n                      \"tags\": []\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Greenwich Branch\",\n        \"type\": \"branch\",\n        \"building\": [\n          {\n            \"name\": \"Westfield World Trade Center\",\n            \"address\": {\n              \"street\": \"285 Greenwich St\",\n              \"city\": \"New York\",\n              \"state\": \"NY\",\n              \"zipcode\": \"10006\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 2\",\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"template\": [\n      {\n        \"name\": \"Switch-Base-Config\",\n        \"description\": \"Base configuration for switch\",\n        \"deviceTypes\": [\n          {\n            \"productFamily\": \"Switches and Hubs\"\n          }\n        ],\n        \"softwareType\": \"IOS-XE\",\n        \"softwareVariant\": \"XE\",\n        \"templateContent\": \"hostname {{ HOSTNAME }}\",\n        \"templateParams\": [\n          {\n            \"parameterName\": \"HOSTNAME\",\n            \"dataType\": \"STRING\",\n            \"description\": \"Host Name\",\n            \"required\": true,\n            \"notParam\": false,\n            \"paramArray\": false,\n            \"displayName\": \"Host Name\",\n            \"order\": 1,\n            \"customOrder\": 0\n          }\n        ],\n        \"customParamsOrder\": false,\n        \"projectName\": \"Onboarding Configuration\",\n        \"projectAssociated\": true,\n        \"documentDatabase\": false\n      }\n    ],\n    \"network_profile\": [\n      {\n        \"name\": \"Switch Profile\",\n        \"namespace\": \"switching\",\n        \"templates\": [\n          \"Switch-Base-Config\"\n        ]\n      }\n    ]\n  }\n}",
+          "scope": "input",
+          "name": "Network Design",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y02X54H3RQ021jlLDmCkfftp44Exzt75h",
         "object_type": "variable_workflow"
       }
     ],
@@ -397,7 +397,7 @@
                 "properties": {
                   "action_timeout": 180,
                   "body": "{\n  \"offerId\": \"$activity.definition_activity_01Y0QISUJP6197DQspa3JfoWEkZtHn17jdF.output.read_table_from_json[0].id$\",\n  \"serviceId\": \"$activity.definition_activity_01Y0Q776EH7231XLDfpOQdhVuNnDbqE8pUq.output.read_table_from_json[0].id$\",\n  \"tenantId\": \"$activity.definition_activity_01Y0Q45P1AKX0241FzuIg0x97tFTy0Z4ceD.output.read_table_from_json[0].tenantId$\"\n}",
-                  "continueOnError": false,
+                  "continueOnError": true,
                   "continue_on_failure": false,
                   "display_name": "Subscribe Tenant to Offer",
                   "expectEnvelope": false,
@@ -417,6 +417,64 @@
                   }
                 },
                 "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01Y0SO1K15SGR0AV1sR4898v4F2NMMdeX0T",
+                "name": "Condition Block",
+                "title": "Subscription Error",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Subscription Error",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01Y0SS9EV1D0Y6whCSnHsUhobbovvSs0fSZ",
+                    "name": "Condition Branch",
+                    "title": "Yes",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": "$activity.definition_activity_01Y0PDZAA9X576nh5ErdIq12WZVplnU1smt.output.status$",
+                          "operator": "nmw",
+                          "right_operand": "*OK*"
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01Y0PDZAA9X576nh5ErdIq12WZVplnU1smt.output.body$",
+                          "operator": "nmw",
+                          "right_operand": "*Order offer was already made*"
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Yes",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01Y0SU7G7XLGP0iRm13qeOLNXZazEZcX5ng",
+                        "name": "Completed",
+                        "title": "Failure",
+                        "type": "logic.completed",
+                        "base_type": "activity",
+                        "properties": {
+                          "completion_type": "failed-completed",
+                          "continue_on_failure": false,
+                          "display_name": "Failure",
+                          "result_message": "$activity.definition_activity_01Y0PDZAA9X576nh5ErdIq12WZVplnU1smt.output.status$",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }

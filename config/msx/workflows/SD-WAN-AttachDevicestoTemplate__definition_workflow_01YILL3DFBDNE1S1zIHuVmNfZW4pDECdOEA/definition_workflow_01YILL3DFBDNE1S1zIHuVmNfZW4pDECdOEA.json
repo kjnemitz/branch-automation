@@ -1,0 +1,1161 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01YILL3DFBDNE1S1zIHuVmNfZW4pDECdOEA",
+    "name": "SD-WAN - Attach Devices to Template",
+    "title": "SD-WAN - Attach Devices to Template",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "{\n  \"configurations\": [\n    {\n      \"id\": \"0\",\n   \"devicename\":\"DC-1-R1\",\n   \"cml_label\":\"DC-1-R1\",\n      \"uuid\": \"C8K-90F3F387-7D99-7C1B-5871-E6245F1702A8\",\n      \"configuration\": \"#cloud-config\\nvinitparam:\\n - org : jpmc-branch-auto\\n - vbond : 10.30.2.6\\n - uuid : C8K-90F3F387-7D99-7C1B-5871-E6245F1702A8\\n - otp : 8f3705c6a33c4a72b61cd0d4d5b4ad22\\n\\n--// \\nContent-Type: text/cloud-boothook; charset=\\\"us-ascii\\\"\\nMIME-Version: 1.0\\nContent-Transfer-Encoding: 7bit\\nContent-Disposition: attachment; filename=\\\"config-C8K-90F3F387-7D99-7C1B-5871-E6245F1702A8\\\"\\n\\n#cloud-boothook\\nsystem\\nchassis-number    C8K-90F3F387-7D99-7C1B-5871-E6245F1702A8\\nsystem-ip              11.11.11.1\\nsite-id               11\\norganization-name     jpmc-branch-auto\\nvbond 10.30.2.6 port 12346\\nexit\\n!\\n!\\ninterface GigabitEthernet1\\nno shutdown\\narp timeout 1200\\nip address dhcp client-id GigabitEthernet1\\nexit\\n!\\ninterface Tunnel1\\nno shutdown\\nip unnumbered GigabitEthernet1\\ntunnel source GigabitEthernet1\\ntunnel mode sdwan\\nexit\\nsdwan\\ninterface GigabitEthernet1\\ntunnel-interface\\nencapsulation ipsec weight 1\\ncolor mpls restrict\\n!\\nusername admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\\n\\n--//--\"\n    },\n    {\n      \"id\": \"1\",\n   \"devicename\":\"DC-2-R1\",\n   \"cml_label\":\"DC-2-R1\",\n      \"uuid\": \"C8K-69E4471B-510E-9137-23FE-03A820F9498C\",\n      \"configuration\": \"#cloud-config\\nvinitparam:\\n - uuid : C8K-69E4471B-510E-9137-23FE-03A820F9498C\\n - vbond : 10.30.2.6\\n - otp : b48b37520a1e4da89404f068d1ee12da\\n - org : jpmc-branch-auto\\n\\n--// \\nContent-Type: text/cloud-boothook; charset=\\\"us-ascii\\\"\\nMIME-Version: 1.0\\nContent-Transfer-Encoding: 7bit\\nContent-Disposition: attachment; filename=\\\"config-C8K-69E4471B-510E-9137-23FE-03A820F9498C\\\"\\n\\n#cloud-boothook\\nsystem\\nchassis-number    C8K-69E4471B-510E-9137-23FE-03A820F9498C\\nsystem-ip              22.22.22.1\\nsite-id               22\\norganization-name     jpmc-branch-auto\\nvbond 10.30.2.6 port 12346\\nexit\\n!\\n!\\ninterface GigabitEthernet1\\nno shutdown\\narp timeout 1200\\nip address dhcp client-id GigabitEthernet1\\nexit\\n!\\ninterface Tunnel1\\nno shutdown\\nip unnumbered GigabitEthernet1\\ntunnel source GigabitEthernet1\\ntunnel mode sdwan\\nexit\\nsdwan\\ninterface GigabitEthernet1\\ntunnel-interface\\nencapsulation ipsec weight 1\\ncolor mpls restrict\\n!\\nusername admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\\n\\n--//--\"\n    },\n    {\n      \"id\": \"2\",\n   \"devicename\":\"BR-1-R1\",\n   \"cml_label\":\"BR-1-R1\",\n      \"uuid\": \"C8K-7887A288-1849-4E60-EDCE-22DA56008CF4\",\n      \"configuration\": \"#cloud-config\\nvinitparam:\\n - vbond : 10.30.2.6\\n - otp : 5a1f07b662754c939b015a44d4a3689e\\n - uuid : C8K-7887A288-1849-4E60-EDCE-22DA56008CF4\\n - org : jpmc-branch-auto\\n\\n--// \\nContent-Type: text/cloud-boothook; charset=\\\"us-ascii\\\"\\nMIME-Version: 1.0\\nContent-Transfer-Encoding: 7bit\\nContent-Disposition: attachment; filename=\\\"config-C8K-7887A288-1849-4E60-EDCE-22DA56008CF4\\\"\\n\\n#cloud-boothook\\nsystem\\nchassis-number    C8K-7887A288-1849-4E60-EDCE-22DA56008CF4\\nsystem-ip              7.7.7.1\\nsite-id               7\\norganization-name     jpmc-branch-auto\\nvbond 10.30.2.6 port 12346\\nexit\\n!\\n!\\ninterface GigabitEthernet1\\nno shutdown\\narp timeout 1200\\nip address dhcp client-id GigabitEthernet1\\nexit\\n!\\ninterface Tunnel1\\nno shutdown\\nip unnumbered GigabitEthernet1\\ntunnel source GigabitEthernet1\\ntunnel mode sdwan\\nexit\\nsdwan\\ninterface GigabitEthernet1\\ntunnel-interface\\nencapsulation ipsec weight 1\\ncolor mpls restrict\\n!\\nusername admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\\n\\n--//--\"\n    },\n    {\n      \"id\": \"3\",\n   \"devicename\":\"BR-2-R1\",\n   \"cml_label\":\"BR-2-R1\",\n      \"uuid\": \"C8K-6C975E1E-E62B-29C1-07D5-0A4B36BFCC4F\",\n      \"configuration\": \"#cloud-config\\nvinitparam:\\n - org : jpmc-branch-auto\\n - otp : 683bce48158440f3b8dd2c442c45d36d\\n - uuid : C8K-6C975E1E-E62B-29C1-07D5-0A4B36BFCC4F\\n - vbond : 10.30.2.6\\n\\n--// \\nContent-Type: text/cloud-boothook; charset=\\\"us-ascii\\\"\\nMIME-Version: 1.0\\nContent-Transfer-Encoding: 7bit\\nContent-Disposition: attachment; filename=\\\"config-C8K-6C975E1E-E62B-29C1-07D5-0A4B36BFCC4F\\\"\\n\\n#cloud-boothook\\nsystem\\nchassis-number    C8K-6C975E1E-E62B-29C1-07D5-0A4B36BFCC4F\\nsystem-ip              8.8.8.1\\nsite-id               8\\norganization-name     jpmc-branch-auto\\nvbond 10.30.2.6 port 12346\\nexit\\n!\\n!\\ninterface GigabitEthernet1\\nno shutdown\\narp timeout 1200\\nip address dhcp client-id GigabitEthernet1\\nexit\\n!\\ninterface Tunnel1\\nno shutdown\\nip unnumbered GigabitEthernet1\\ntunnel source GigabitEthernet1\\ntunnel mode sdwan\\nexit\\nsdwan\\ninterface GigabitEthernet1\\ntunnel-interface\\nencapsulation ipsec weight 1\\ncolor mpls restrict\\n!\\nusername admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\\n\\n--//--\"\n    },\n    {\n      \"id\": \"4\",\n   \"devicename\":\"BR-2-R2\",\n   \"cml_label\":\"BR-2-R2\",\n      \"uuid\": \"C8K-DC9F8FDB-1497-5C29-2C6D-B14CDB84E466\",\n      \"configuration\": \"#cloud-config\\nvinitparam:\\n - uuid : C8K-DC9F8FDB-1497-5C29-2C6D-B14CDB84E466\\n - org : jpmc-branch-auto\\n - vbond : 10.30.2.6\\n - otp : b4d5826e352d47e2b58b659aa27c2113\\n\\n--// \\nContent-Type: text/cloud-boothook; charset=\\\"us-ascii\\\"\\nMIME-Version: 1.0\\nContent-Transfer-Encoding: 7bit\\nContent-Disposition: attachment; filename=\\\"config-C8K-DC9F8FDB-1497-5C29-2C6D-B14CDB84E466\\\"\\n\\n#cloud-boothook\\nsystem\\nchassis-number    C8K-DC9F8FDB-1497-5C29-2C6D-B14CDB84E466\\nsystem-ip              8.8.8.2\\nsite-id               8\\norganization-name     jpmc-branch-auto\\nvbond 10.30.2.6 port 12346\\nexit\\n!\\n!\\ninterface GigabitEthernet1\\nno shutdown\\narp timeout 1200\\nip address dhcp client-id GigabitEthernet1\\nexit\\n!\\ninterface Tunnel1\\nno shutdown\\nip unnumbered GigabitEthernet1\\ntunnel source GigabitEthernet1\\ntunnel mode sdwan\\nexit\\nsdwan\\ninterface GigabitEthernet1\\ntunnel-interface\\nencapsulation ipsec weight 1\\ncolor public-internet restrict\\n!\\nusername admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\\n\\n--//--\"\n    }\n  ]\n}",
+          "scope": "input",
+          "name": "Device to UUID Map",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YISEEXB0GCT1iaBLj5OPjPgXunIJh7RqB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "{\n  \"enterprise\": {\n    \"organization\": [\n      {\n        \"description\": \"Branch Networking\",\n        \"email\": \"jnemitz@cisco.com\",\n        \"name\": \"JPMC\",\n        \"url\": \"https://www.jpmorganchase.com/\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          },\n          {\n            \"name\": \"sdwan\"\n          }\n        ]\n      }\n    ],\n    \"CML\": {\n      \"lab\": {\n        \"description\": \"\",\n        \"notes\": \"\",\n        \"title\": \"JPMC-Branch\",\n        \"version\": \"0.0.5\"\n      },\n      \"lab_definition\": \"config/CML/JPMC-Branch.yaml\"\n    },\n    \"dnac_controller\": [\n      {\n        \"address\": \"7025 Kit Creek Rd, Morrisville, NC 27560\",\n        \"host\": \"dnac.lab.local\",\n        \"name\": \"DNAC-East\",\n        \"password\": \"10-9=One\",\n        \"port\": 443,\n        \"username\": \"admin\"\n      }\n    ],\n    \"site\": [\n      {\n        \"name\": \"CDC 1\",\n        \"type\": \"datacenter\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"CDC 1 - Building A\",\n            \"address\": {\n              \"address1\": \"880 Powder Mill Road\",\n              \"city\": \"Wilmington\",\n              \"state\": \"DE\",\n              \"zipcode\": \"19803\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"DC-1-R1\",\n                    \"sdwan\": {\n                      \"ip_address\": \"11.11.11.1\",\n                      \"site_id\": \"11\",\n                      \"vbond\": {\n                        \"ip_address\": \"10.30.2.6\",\n                        \"port\": \"12346\"\n                      },\n                      \"bootstrap_tunnel_interface_color\": \"mpls\",\n                      \"template\": {\n                        \"name\": \"DC_Single_Router\",\n                        \"data\": {\n                          \"csv-deviceIP\": \"11.11.11.1\",\n                          \"csv-host-name\": \"DC-1-R1\",\n                          \"/0/Cellular_VPN_0_if_name/interface/if-name\": \"GigabitEthernet3\",\n                          \"//system/site-id\": \"11\",\n                          \"/0/MPLS_VPN_0_if_name/interface/if-name\": \"GigabitEthernet1\",\n                          \"//system/host-name\": \"DC-1-R1\",\n                          \"/0/INET_VPN_0_if_name/interface/if-name\": \"GigabitEthernet2\",\n                          \"//system/system-ip\": \"11.11.11.1\",\n                          \"/55/LAN_VPN_55_if_name/interface/if-name\": \"GigabitEthernet4.55\",\n                          \"/55/LAN_VPN_55_if_name/interface/ip/address\": \"172.50.155.2/24\",\n                          \"/55//router/bgp/as-num\": \"65111\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address\": \"172.50.155.1\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as\": \"65111\",\n                          \"/33/LAN_VPN_33_if_name/interface/if-name\": \"GigabitEthernet4.33\",\n                          \"/33/LAN_VPN_33_if_name/interface/ip/address\": \"172.50.133.2/24\",\n                          \"/33//router/bgp/as-num\": \"65111\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address\": \"172.50.133.1\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as\": \"65111\",\n                          \"/11/LAN_VPN_11_if_name/interface/if-name\": \"GigabitEthernet4.11\",\n                          \"/11/LAN_VPN_11_if_name/interface/ip/address\": \"172.50.111.2/24\",\n                          \"/11//router/bgp/as-num\": \"65111\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address\": \"172.50.111.1\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as\": \"65111\",\n                          \"/0/LAN_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet4\"\n                        }\n                      }\n                    },\n                    \"CML\": {\n                      \"label\": \"DC-1-R1\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"CDC 2\",\n        \"type\": \"datacenter\",\n        \"building\": [\n          {\n            \"name\": \"CDC 2 - Building 1\",\n            \"address\": {\n              \"street\": \"36 E Midland Ave\",\n              \"city\": \"Paramus\",\n              \"state\": \"NJ\",\n              \"zipcode\": \"07652\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"DC-2-R1\",\n                    \"sdwan\": {\n                      \"ip_address\": \"22.22.22.1\",\n                      \"site_id\": \"22\",\n                      \"vbond\": {\n                        \"ip_address\": \"10.30.2.6\",\n                        \"port\": \"12346\"\n                      },\n                      \"bootstrap_tunnel_interface_color\": \"mpls\",\n                      \"template\": {\n                        \"name\": \"DC_Single_Router\",\n                        \"data\": {\n                          \"csv-deviceIP\": \"22.22.22.1\",\n                          \"csv-host-name\": \"DC-2-R1\",\n                          \"/0/Cellular_VPN_0_if_name/interface/if-name\": \"GigabitEthernet3\",\n                          \"//system/site-id\": \"22\",\n                          \"/0/MPLS_VPN_0_if_name/interface/if-name\": \"GigabitEthernet1\",\n                          \"//system/host-name\": \"DC-2-R1\",\n                          \"/0/INET_VPN_0_if_name/interface/if-name\": \"GigabitEthernet2\",\n                          \"//system/system-ip\": \"22.22.22.1\",\n                          \"/55/LAN_VPN_55_if_name/interface/if-name\": \"GigabitEthernet4.55\",\n                          \"/55/LAN_VPN_55_if_name/interface/ip/address\": \"172.50.205.2/24\",\n                          \"/55//router/bgp/as-num\": \"65222\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address\": \"172.50.205.1\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as\": \"65222\",\n                          \"/33/LAN_VPN_33_if_name/interface/if-name\": \"GigabitEthernet4.33\",\n                          \"/33/LAN_VPN_33_if_name/interface/ip/address\": \"172.50.233.2/24\",\n                          \"/33//router/bgp/as-num\": \"65222\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address\": \"172.50.233.1\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as\": \"65222\",\n                          \"/11/LAN_VPN_11_if_name/interface/if-name\": \"GigabitEthernet4.11\",\n                          \"/11/LAN_VPN_11_if_name/interface/ip/address\": \"172.50.211.2/24\",\n                          \"/11//router/bgp/as-num\": \"65222\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address\": \"172.50.211.1\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as\": \"65222\",\n                          \"/0/LAN_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet4\"\n                        }\n                      }\n                    },\n                    \"CML\": {\n                      \"label\": \"DC-2-R1\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Yamhill Branch\",\n        \"type\": \"branch\",\n        \"sda\": {\n          \"dnac_controller\": \"DNAC-East\"\n        },\n        \"building\": [\n          {\n            \"name\": \"Yamhill - Branch\",\n            \"address\": {\n              \"street\": \"811 Southwest 6th Avenue\",\n              \"city\": \"Portland\",\n              \"state\": \"OR\",\n              \"zipcode\": \"97204\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"BR-1-R1\",\n                    \"sdwan\": {\n                      \"ip_address\": \"7.7.7.1\",\n                      \"site_id\": \"7\",\n                      \"vbond\": {\n                        \"ip_address\": \"10.30.2.6\",\n                        \"port\": \"12346\"\n                      },\n                      \"bootstrap_tunnel_interface_color\": \"mpls\",\n                      \"template\": {\n                        \"name\": \"Branch_Single_Router\",\n                        \"data\": {\n                          \"csv-deviceIP\": \"7.7.7.1\",\n                          \"csv-host-name\": \"BR-1-R1\",\n                          \"//system/site-id\": \"7\",\n                          \"/0/MPLS_VPN_0_if_name/interface/if-name\": \"GigabitEthernet1\",\n                          \"//system/host-name\": \"BR-1-R1\",\n                          \"/0/INET_VPN_0_if_name/interface/if-name\": \"GigabitEthernet2\",\n                          \"//system/system-ip\": \"7.7.7.1\",\n                          \"/0/CELL_VPN_0_if_name/interface/if-name\": \"GigabitEthernet3\",\n                          \"/55/LAN_VPN_55_if_name/interface/if-name\": \"GigabitEthernet4.55\",\n                          \"/55/LAN_VPN_55_if_name/interface/ip/address\": \"172.50.15.2/24\",\n                          \"/55//router/bgp/as-num\": \"65001\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address\": \"172.50.15.1\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as\": \"65001\",\n                          \"/33/LAN_VPN_33_if_name/interface/if-name\": \"GigabitEthernet4.33\",\n                          \"/33/LAN_VPN_33_if_name/interface/ip/address\": \"172.50.13.2/24\",\n                          \"/33//router/bgp/as-num\": \"65001\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address\": \"172.50.13.1\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as\": \"65001\",\n                          \"/11/LAN_VPN_11_if_name/interface/if-name\": \"GigabitEthernet4.11\",\n                          \"/11/LAN_VPN_11_if_name/interface/ip/address\": \"172.50.11.2/24\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/if-name\": \"GigabitEthernet6\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/ip/address\": \"172.50.1.1/24\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/dhcp-helper\": \"111.111.99.130\",\n                          \"/11//router/bgp/as-num\": \"65001\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address\": \"172.50.11.1\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as\": \"65001\",\n                          \"/0/LAN_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet4\"\n                        }\n                      }\n                    },\n                    \"CML\": {\n                      \"label\": \"BR-1-R1\"\n                    }\n                  },\n                  {\n                    \"devicename\": \"BR-1-SW1\",\n                    \"sda\": {},\n                    \"CML\": {\n                      \"label\": \"BR-1-SW1\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Greenwich Branch\",\n        \"type\": \"branch\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Westfield World Trade Center\",\n            \"address\": {\n              \"street\": \"285 Greenwich St\",\n              \"city\": \"New York\",\n              \"state\": \"NY\",\n              \"zipcode\": \"10006\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 2\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"BR-2-R1\",\n                    \"sdwan\": {\n                      \"ip_address\": \"8.8.8.1\",\n                      \"site_id\": \"8\",\n                      \"vbond\": {\n                        \"ip_address\": \"10.30.2.6\",\n                        \"port\": \"12346\"\n                      },\n                      \"bootstrap_tunnel_interface_color\": \"mpls\",\n                      \"template\": {\n                        \"name\": \"Branch_Dual_Router-MPLS-CELL_TLOC-INET\",\n                        \"data\": {\n                          \"csv-deviceIP\": \"8.8.8.1\",\n                          \"csv-host-name\": \"BR-2-R1\",\n                          \"/0/MPLS_VPN_0_TLOC_xconn_if_name/interface/tloc-extension\": \"GigabitEthernet1\",\n                          \"//system/site-id\": \"8\",\n                          \"/0/MPLS_VPN_0_if_name/interface/if-name\": \"GigabitEthernet1\",\n                          \"//system/host-name\": \"BR-2-R1\",\n                          \"/0/INET_VPN_0_if_name/interface/if-name\": \"GigabitEthernet3.200\",\n                          \"//system/system-ip\": \"8.8.8.1\",\n                          \"/0/MPLS_VPN_0_TLOC_xconn_if_name/interface/if-name\": \"GigabitEthernet3.100\",\n                          \"/0/vpn-instance/ip/route/0.0.0.0/0/next-hop/vpn_INET_xconn_next_hop_ip_address_0/address\": \"192.168.1.2\",\n                          \"/0/CELL_VPN_0_if_name/interface/if-name\": \"GigabitEthernet2\",\n                          \"/0/WAN_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet3\",\n                          \"/0/MPLS_VPN_0_TLOC_xconn_if_name/interface/ip/address\": \"192.168.2.1/30\",\n                          \"/0/INET_VPN_0_if_name/interface/ip/address\": \"192.168.1.1/30\",\n                          \"/55/LAN_SW2_VPN_55_if_name/interface/if-name\": \"GigabitEthernet5.55\",\n                          \"/55/LAN_SW2_VPN_55_if_name/interface/ip/address\": \"172.50.26.2/24\",\n                          \"/55/LAN_VPN_55_if_name/interface/if-name\": \"GigabitEthernet4.55\",\n                          \"/55/LAN_VPN_55_if_name/interface/ip/address\": \"172.50.25.2/24\",\n                          \"/55//router/bgp/as-num\": \"65002\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address\": \"172.50.25.1\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/address\": \"172.50.26.1\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as\": \"65002\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/remote-as\": \"65002\",\n                          \"/33/LAN_SW2_VPN_33_if_name/interface/if-name\": \"GigabitEthernet5.33\",\n                          \"/33/LAN_SW2_VPN_33_if_name/interface/ip/address\": \"172.50.24.2/24\",\n                          \"/33/LAN_VPN_33_if_name/interface/if-name\": \"GigabitEthernet4.33\",\n                          \"/33/LAN_VPN_33_if_name/interface/ip/address\": \"172.50.23.2/24\",\n                          \"/33//router/bgp/as-num\": \"65002\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address\": \"172.50.23.1\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/address\": \"172.50.24.1\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as\": \"65002\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/remote-as\": \"65002\",\n                          \"/11/LAN_SW2_VPN_11_if_name/interface/if-name\": \"GigabitEthernet5.11\",\n                          \"/11/LAN_SW2_VPN_11_if_name/interface/ip/address\": \"172.50.22.2/24\",\n                          \"/11/LAN_VPN_11_if_name/interface/if-name\": \"GigabitEthernet4.11\",\n                          \"/11/LAN_VPN_11_if_name/interface/ip/address\": \"172.50.21.2/24\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/if-name\": \"GigabitEthernet6\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/ip/address\": \"172.50.2.1/24\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/dhcp-helper\": \"111.111.99.130\",\n                          \"/11//router/bgp/as-num\": \"65002\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address\": \"172.50.21.1\",\n                          \"/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/address\": \"172.50.22.1\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as\": \"65002\",\n                          \"/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/remote-as\": \"65002\",\n                          \"/0/LAN_SW2_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet5\",\n                          \"/0/LAN_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet4\"\n                        }\n                      }\n                    },\n                    \"CML\": {\n                      \"label\": \"BR-2-R1\"\n                    }\n                  },\n                  {\n                    \"devicename\": \"BR-2-R2\",\n                    \"sdwan\": {\n                      \"ip_address\": \"8.8.8.2\",\n                      \"site_id\": \"8\",\n                      \"vbond\": {\n                        \"ip_address\": \"10.30.2.6\",\n                        \"port\": \"12346\"\n                      },\n                      \"bootstrap_tunnel_interface_color\": \"public-internet\",\n                      \"template\": {\n                        \"name\": \"Branch_Dual_Router-INET-CELL_TLOC-MPLS\",\n                        \"data\": {\n                          \"csv-deviceIP\": \"8.8.8.2\",\n                          \"csv-host-name\": \"BR-2-R2\",\n                          \"/0/INET_VPN_0_TLOC-xconn_if_name/interface/ip/address\": \"192.168.1.2/30\",\n                          \"/0/INET_VPN_0_TLOC-xconn_if_name/interface/tloc-extension\": \"GigabitEthernet1\",\n                          \"//system/site-id\": \"8\",\n                          \"/0/MPLS_VPN_0_if_name/interface/if-name\": \"GigabitEthernet3.100\",\n                          \"/0/INET_VPN_0_TLOC-xconn_if_name/interface/if-name\": \"GigabitEthernet3.200\",\n                          \"//system/host-name\": \"BR-2-R2\",\n                          \"/0/INET_VPN_0_if_name/interface/if-name\": \"GigabitEthernet1\",\n                          \"//system/system-ip\": \"8.8.8.2\",\n                          \"/0/vpn-instance/ip/route/0.0.0.0/0/next-hop/vpn0_MPLS-TLOC_next_hop_ip_address_1/address\": \"192.168.2.1\",\n                          \"/0/CELL_VPN_0_if_name/interface/if-name\": \"GigabitEthernet2\",\n                          \"/0/WAN_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet3\",\n                          \"/55/LAN_SW2_VPN_55_if_name/interface/if-name\": \"GigabitEthernet4.55\",\n                          \"/55/LAN_SW2_VPN_55_if_name/interface/ip/address\": \"172.50.36.2/24\",\n                          \"/55/LAN_VPN_55_if_name/interface/if-name\": \"GigabitEthernet5.55\",\n                          \"/55/LAN_VPN_55_if_name/interface/ip/address\": \"172.50.35.2/24\",\n                          \"/55//router/bgp/as-num\": \"65002\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address\": \"172.50.35.1\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/address\": \"172.50.36.1\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as\": \"65002\",\n                          \"/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/remote-as\": \"65002\",\n                          \"/33/LAN_SW2_VPN_33_if_name/interface/if-name\": \"GigabitEthernet4.33\",\n                          \"/33/LAN_SW2_VPN_33_if_name/interface/ip/address\": \"172.50.34.2/24\",\n                          \"/33/LAN_VPN_33_if_name/interface/if-name\": \"GigabitEthernet5.33\",\n                          \"/33/LAN_VPN_33_if_name/interface/ip/address\": \"172.50.33.2/24\",\n                          \"/33//router/bgp/as-num\": \"65002\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address\": \"172.50.33.1\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/address\": \"172.50.34.1\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as\": \"65002\",\n                          \"/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/remote-as\": \"65002\",\n                          \"/11/LAN_SW2_VPN_11_if_name/interface/if-name\": \"GigabitEthernet4.11\",\n                          \"/11/LAN_SW2_VPN_11_if_name/interface/ip/address\": \"172.50.32.2/24\",\n                          \"/11/LAN_VPN_11_if_name/interface/if-name\": \"GigabitEthernet5.11\",\n                          \"/11/LAN_VPN_11_if_name/interface/ip/address\": \"172.50.31.2/24\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/if-name\": \"GigabitEthernet6\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/ip/address\": \"172.50.3.1/24\",\n                          \"/11/LAN_MGMT_VPN_11_if_name/interface/dhcp-helper\": \"111.111.99.130\",\n                          \"/11//router/bgp/as-num\": \"65002\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address\": \"172.50.31.1\",\n                          \"/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/address\": \"172.50.32.1\",\n                          \"/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as\": \"65002\",\n                          \"/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/remote-as\": \"65002\",\n                          \"/0/LAN_SW2_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet4\",\n                          \"/0/LAN_MAIN_for_SUB_INT/interface/if-name\": \"GigabitEthernet5\",\n                          \"/0/MPLS_VPN_0_if_name/interface/ip/address\": \"192.168.2.2/30\"\n                        }\n                      }\n                    },\n                    \"CML\": {\n                      \"label\": \"BR-2-R2\"\n                    }\n                  },\n                  {\n                    \"devicename\": \"BR-2-SW1\",\n                    \"sda\": {},\n                    \"CML\": {\n                      \"label\": \"BR-2-SW1\"\n                    }\n                  },\n                  {\n                    \"devicename\": \"BR-2-SW2\",\n                    \"sda\": {},\n                    \"CML\": {\n                      \"label\": \"BR-2-SW2\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"template\": [\n      {\n        \"name\": \"Switch-Base-Config\",\n        \"description\": \"Base configuration for switch\",\n        \"deviceTypes\": [\n          {\n            \"productFamily\": \"Switches and Hubs\"\n          }\n        ],\n        \"softwareType\": \"IOS-XE\",\n        \"softwareVariant\": \"XE\",\n        \"templateContent\": \"hostname {{ HOSTNAME }}\",\n        \"templateParams\": [\n          {\n            \"parameterName\": \"HOSTNAME\",\n            \"dataType\": \"STRING\",\n            \"description\": \"Host Name\",\n            \"required\": true,\n            \"notParam\": false,\n            \"paramArray\": false,\n            \"displayName\": \"Host Name\",\n            \"order\": 1,\n            \"customOrder\": 0\n          }\n        ],\n        \"customParamsOrder\": false,\n        \"projectName\": \"Onboarding Configuration\",\n        \"projectAssociated\": true,\n        \"documentDatabase\": false\n      }\n    ],\n    \"network_profile\": [\n      {\n        \"name\": \"Switch Profile\",\n        \"namespace\": \"switching\",\n        \"templates\": [\n          \"Switch-Base-Config\"\n        ]\n      }\n    ]\n  }\n}",
+          "scope": "input",
+          "name": "Network Design",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YIS7RWI9MVI5rPRD5KJWMMpoEZmnHHWAJ",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SD-WAN - Attach Devices to Template",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01YIRZBZEUT6V5l823jubyXJZrTkWkKXklk",
+        "name": "Get SDWAN Templates",
+        "title": "Get SDWAN Templates",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get SDWAN Templates",
+          "input": {
+            "variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV": "/dataservice/template/device",
+            "variable_workflow_01YGWAOTSTHI62EWVCm5aTWeQMUCZhqLeQo": "GET",
+            "variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba": ""
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "execute_on_this_target": true,
+            "target_id": "definition_target_01YG9MWAIAULD0zqtSwWeIZ4Tp1BIGTanYK",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01YIS7B3KTQKZ4i4NRX3QbAj4o4tDo1MfMi",
+        "name": "Read Table from JSON",
+        "title": "Get SD-WAN Devices",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get SD-WAN Devices",
+          "input_json": "$workflow.definition_workflow_01YILL3DFBDNE1S1zIHuVmNfZW4pDECdOEA.input.variable_workflow_01YIS7RWI9MVI5rPRD5KJWMMpoEZmnHHWAJ$",
+          "jsonpath_query": "$..devices[?(@.sdwan)]",
+          "persist_output": false,
+          "populate_columns": false,
+          "skip_execution": false,
+          "table_columns": [
+            {
+              "column_name": "devicename",
+              "column_type": "string"
+            },
+            {
+              "column_name": "sdwan",
+              "column_type": "string"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01YIS8TCVD25D14XDxYrRNQ3ZdJ4llMi5Sb",
+        "name": "For Each",
+        "title": "For Each Device",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For Each Device",
+          "skip_execution": false,
+          "source_array": "$activity.definition_activity_01YIS7B3KTQKZ4i4NRX3QbAj4o4tDo1MfMi.output.read_table_from_json$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01YISKW39PYQZ1dgb2v52oHXNZQf2ZHZk5a",
+            "name": "Read Table from JSON",
+            "title": "Get Device UUID",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Get Device UUID",
+              "input_json": "$workflow.definition_workflow_01YILL3DFBDNE1S1zIHuVmNfZW4pDECdOEA.input.variable_workflow_01YISEEXB0GCT1iaBLj5OPjPgXunIJh7RqB$",
+              "jsonpath_query": "$.configurations[?(@.devicename === \"$activity.definition_activity_01YIS8TCVD25D14XDxYrRNQ3ZdJ4llMi5Sb.input.source_array[@].devicename$\")]",
+              "persist_output": false,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "id",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "devicename",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "uuid",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01YJM9VSOLUQO5LnZB1yCnuRseweqrGutO6",
+            "name": "JSONPath Query",
+            "title": "Get Device Template Name and Data",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Get Device Template Name and Data",
+              "input_json": "$activity.definition_activity_01YIS8TCVD25D14XDxYrRNQ3ZdJ4llMi5Sb.input.source_array[@].sdwan$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.template.name",
+                  "jsonpath_query_name": "Template Name",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$.template.data",
+                  "jsonpath_query_name": "Template Data",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01YISBHVSRT1F6DTMx97Jbs1mCUvSAvHpTj",
+            "name": "Read Table from JSON",
+            "title": "Get Template ID",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Get Template ID",
+              "input_json": "$activity.definition_activity_01YIRZBZEUT6V5l823jubyXJZrTkWkKXklk.output.variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS$",
+              "jsonpath_query": "$.data[?(@.templateName === \"$activity.definition_activity_01YJM9VSOLUQO5LnZB1yCnuRseweqrGutO6.output.jsonpath_queries.Template Name$\")]",
+              "persist_output": false,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "templateId",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01YJM89ZMJ6B04PeSo4UErzP1w2AZj1jI50",
+            "name": "Trim String",
+            "title": "Trim Data Left",
+            "type": "core.trim_string",
+            "base_type": "activity",
+            "properties": {
+              "characters_to_trim": "{",
+              "continue_on_failure": false,
+              "display_name": "Trim Data Left",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01YJM9VSOLUQO5LnZB1yCnuRseweqrGutO6.output.jsonpath_queries.Template Data$",
+              "trim_leading": true,
+              "trim_trailing": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01YJM8M5LBUHE4SwNqIq0kGgRXRMy3yRxd3",
+            "name": "Trim String",
+            "title": "Trim Data Right",
+            "type": "core.trim_string",
+            "base_type": "activity",
+            "properties": {
+              "characters_to_trim": "}",
+              "continue_on_failure": false,
+              "display_name": "Trim Data Right",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01YJM89ZMJ6B04PeSo4UErzP1w2AZj1jI50.output.trimmed$",
+              "trim_leading": false,
+              "trim_trailing": true
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01YIRZUXBY2UQ0bDRPxI7iMlHNAXUkXUeHh",
+            "name": "Attach Device to Template",
+            "title": "Attach Device to Template",
+            "type": "workflow.sub_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Attach Device to Template",
+              "input": {
+                "variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV": "/dataservice/template/device/config/attachfeature",
+                "variable_workflow_01YGWAOTSTHI62EWVCm5aTWeQMUCZhqLeQo": "POST",
+                "variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba": "{\n\"deviceTemplateList\": [\n{\n\"templateId\": \"$activity.definition_activity_01YISBHVSRT1F6DTMx97Jbs1mCUvSAvHpTj.output.read_table_from_json[0].templateId$\",\n\"device\": [\n{\n\"csv-status\": \"complete\",\n\"csv-deviceId\": \"$activity.definition_activity_01YISKW39PYQZ1dgb2v52oHXNZQf2ZHZk5a.output.read_table_from_json[0].uuid$\",\n$activity.definition_activity_01YJM8M5LBUHE4SwNqIq0kGgRXRMy3yRxd3.output.trimmed$,\n\"csv-templateId\": \"$activity.definition_activity_01YISBHVSRT1F6DTMx97Jbs1mCUvSAvHpTj.output.read_table_from_json[0].templateId$\",\n\"selected\": \"true\"\n}\n],\n\"isEdited\": false,\n\"isMasterEdited\": false,\n\"isDraftDisabled\": false\n}\n]\n}"
+              },
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "execute_on_this_target": true,
+                "target_id": "definition_target_01YG9MWAIAULD0zqtSwWeIZ4Tp1BIGTanYK",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "categories": {
+    "category_01YG9PZ26DCXK1uMd6Q6IXn4eqLCMvsftk2": {
+      "unique_name": "category_01YG9PZ26DCXK1uMd6Q6IXn4eqLCMvsftk2",
+      "name": "SD-WAN",
+      "title": "SD-WAN",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01YG9MWAIAULD0zqtSwWeIZ4Tp1BIGTanYK": {
+      "unique_name": "definition_target_01YG9MWAIAULD0zqtSwWeIZ4Tp1BIGTanYK",
+      "name": "SD-WAN vManage",
+      "title": "SD-WAN vManage",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "SD-WAN vManage",
+        "host": "vmanage.lab.local",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "variables": {
+    "variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn": {
+      "unique_name": "variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn",
+      "properties": {
+        "value": "application/json",
+        "scope": "global",
+        "name": "Web Service Header - Accept JSON",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01YG9W74D1IJ01WrH71eMX50POYd7nJm7KC": {
+      "unique_name": "variable_01YG9W74D1IJ01WrH71eMX50POYd7nJm7KC",
+      "properties": {
+        "value": "admin",
+        "scope": "global",
+        "name": "SD-WAN Username",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    },
+    "variable_01YG9WBTRT3L95WBCSX50gGoX97D2BLmcvX": {
+      "unique_name": "variable_01YG9WBTRT3L95WBCSX50gGoX97D2BLmcvX",
+      "properties": {
+        "value": "c1sco123",
+        "scope": "global",
+        "name": "SD-WAN Password",
+        "type": "datatype.string",
+        "is_required": false,
+        "is_invisible": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk",
+        "name": "SD-WAN - Execute Request",
+        "title": "SD-WAN - Execute Request",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Response Status Code",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YGWDHV214QD1Y5rFMQOkKgEMalvAj5TLy",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Response Status Text",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YGWDP1QG17V5xVlmTnI4rv1n7uK9NLDbg",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Relative API URL",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Request Body",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Response Body",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Request Type",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01YGWAOTSTHI62EWVCm5aTWeQMUCZhqLeQo",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "description": "This is used to test SD-WAN request payloads",
+          "display_name": "SD-WAN - Execute Request",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "target_type": "web-service.endpoint",
+            "target_id": "definition_target_01YG9MWAIAULD0zqtSwWeIZ4Tp1BIGTanYK",
+            "execute_on_workflow_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01YGWB8XDYXK41DBogTsiNVbbta1Mkdp7mi",
+            "name": "SD-WAN - Get Token and Session ID",
+            "title": "SD-WAN - Get Token and Session ID",
+            "type": "workflow.sub_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "display_name": "SD-WAN - Get Token and Session ID",
+              "runtime_user": {
+                "target_default": true
+              },
+              "target": {
+                "execute_on_this_target": true,
+                "target_id": "definition_target_01YG9MWAIAULD0zqtSwWeIZ4Tp1BIGTanYK",
+                "target_type": "web-service.endpoint"
+              },
+              "workflow_id": "definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01YGWWAOM52QE6LAWLzISCm3hVZ6BTksjqA",
+            "name": "Condition Block",
+            "title": "File Upload?",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "File Upload?",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01YGWWAPUGYEQ0S8LmY2L1AEyJQb0DcHEHt",
+                "name": "Condition Branch",
+                "title": "Yes",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAOTSTHI62EWVCm5aTWeQMUCZhqLeQo$",
+                    "operator": "eq",
+                    "right_operand": "UPLOAD"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "Yes",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01YH4GY3HK2RE3OAFWgDlt7waPre7frj1ec",
+                    "name": "Execute Python Script",
+                    "title": "Get String Length",
+                    "type": "python3.script",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Get String Length",
+                      "script": "import urllib.parse, sys\nstr_len = len(sys.argv[1])",
+                      "script_arguments": [
+                        "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba$"
+                      ],
+                      "script_queries": [
+                        {
+                          "script_query": "str_len",
+                          "script_query_name": "String-Length",
+                          "script_query_type": "integer"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01YH0NWD1G1L21y5uhQBEoC3yrxWWjTSZNW",
+                    "name": "HTTP Request",
+                    "title": "Make Request",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "accept": "*.*",
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "body": "--X-INSOMNIA-BOUNDARY\nContent-Disposition: form-data; name=\"data\"\n{\"validity\":\"invalid\",\"upload\":true}\n--X-INSOMNIA-BOUNDARY\nContent-Disposition: form-data; name=\"file\"; filename=\"vedge-devices.csv\"\nContent-Type: text/csv\nC8K-B7E14C38-F84F-D217-8014-8A338115CF9B,C8000V,C8K-B7E14C38-F84F-D217-8014-8A338115CF9B,\nC8K-E2AFA37C-21A0-4345-F226-A6EB11C1C5DC,C8000V,C8K-E2AFA37C-21A0-4345-F226-A6EB11C1C5DC,\nC8K-9742A6FE-CB34-D1ED-002C-417D42500794,C8000V,C8K-9742A6FE-CB34-D1ED-002C-417D42500794,\nC8K-F4B7C162-AFF5-44CA-EE33-408772B1AD65,C8000V,C8K-F4B7C162-AFF5-44CA-EE33-408772B1AD65,\nC8K-408C47AB-AB1E-01E3-30B9-7EE2699DC872,C8000V,C8K-408C47AB-AB1E-01E3-30B9-7EE2699DC872,\nC8K-7887A288-1849-4E60-EDCE-22DA56008CF4,C8000V,C8K-7887A288-1849-4E60-EDCE-22DA56008CF4,\n--X-INSOMNIA-BOUNDARY--",
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "custom_headers": [
+                        {
+                          "name": "Content-Type",
+                          "value": "multipart/form-data; boundary=X-INSOMNIA-BOUNDARY"
+                        },
+                        {
+                          "name": "Cookie",
+                          "value": "$activity.definition_activity_01YGWB8XDYXK41DBogTsiNVbbta1Mkdp7mi.output.variable_workflow_01YG9K6BYA4DM6PwHrbzwINBEdNA93WLPgu$"
+                        },
+                        {
+                          "name": "X-XSRF-TOKEN",
+                          "value": "$activity.definition_activity_01YGWB8XDYXK41DBogTsiNVbbta1Mkdp7mi.output.variable_workflow_01YG9K0234DIB3laq0YknZ9lVknRkJ1SYX4$"
+                        },
+                        {
+                          "name": "Accept",
+                          "value": "*.*"
+                        },
+                        {
+                          "name": "Content-Length",
+                          "value": "798"
+                        }
+                      ],
+                      "display_name": "Make Request",
+                      "method": "POST",
+                      "relative_url": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV$",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": false,
+                        "override_workflow_target_group_criteria": false,
+                        "use_workflow_target": true,
+                        "use_workflow_target_group": false
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01YGWW6V09HT26q1Mo3mJsLRK43JTUVXLgE",
+                    "name": "Upload File",
+                    "title": "Upload File",
+                    "type": "email.upload_file",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Upload File",
+                      "http_request": {
+                        "allow_auto_redirect": true,
+                        "body_data": {
+                          "body_type": "form-data",
+                          "form_data": [
+                            {
+                              "key": "data",
+                              "key_type": "text",
+                              "value": "{\"validity\":\"invalid\",\"upload\":true}"
+                            },
+                            {
+                              "key_type": "file"
+                            }
+                          ]
+                        },
+                        "continue_on_error_status_code": false,
+                        "custom_headers": [
+                          {
+                            "name": "Cookie",
+                            "value": "$activity.definition_activity_01YGWB8XDYXK41DBogTsiNVbbta1Mkdp7mi.output.variable_workflow_01YG9K6BYA4DM6PwHrbzwINBEdNA93WLPgu$"
+                          },
+                          {
+                            "name": "X-XSRF-TOKEN",
+                            "value": "$activity.definition_activity_01YGWB8XDYXK41DBogTsiNVbbta1Mkdp7mi.output.variable_workflow_01YG9K0234DIB3laq0YknZ9lVknRkJ1SYX4$"
+                          }
+                        ],
+                        "method": "POST",
+                        "relative_url": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV$"
+                      },
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": true,
+                      "target": {
+                        "override_workflow_target": false,
+                        "override_workflow_target_group_criteria": false,
+                        "use_workflow_target": true,
+                        "use_workflow_target_group": false
+                      },
+                      "target_type": "web-service.endpoint"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01YGWZPGOHVQL2SSuoBnlxJugSx4FhtlCq0",
+                    "name": "Set Variables",
+                    "title": "Set Output",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Set Output",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.output.variable_workflow_01YGWDHV214QD1Y5rFMQOkKgEMalvAj5TLy$",
+                          "variable_value_new": "200"
+                        },
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.output.variable_workflow_01YGWDP1QG17V5xVlmTnI4rv1n7uK9NLDbg$",
+                          "variable_value_new": "OK"
+                        },
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.output.variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS$",
+                          "variable_value_new": "$activity.definition_activity_01YH0NWD1G1L21y5uhQBEoC3yrxWWjTSZNW.output.response_body$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01YGWWTXNRGTM4WKyuOXEPBW4FjQ4IS5hDZ",
+                "name": "Condition Branch",
+                "title": "No",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAOTSTHI62EWVCm5aTWeQMUCZhqLeQo$",
+                    "operator": "ne",
+                    "right_operand": "UPLOAD"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "No",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01YGWBD547HJ94peTZKsM9WzQd6WbuFczmm",
+                    "name": "HTTP Request",
+                    "title": "Make Request",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "body": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAX15H5TS3kI0TDnTZFO12V9hYl9Hba$",
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "custom_headers": [
+                        {
+                          "name": "Content-Type",
+                          "value": "$global.variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn.global.variable_01XJLUCLXTVQZ5eHA6cBUawVqtS5clih4Nn$"
+                        },
+                        {
+                          "name": "Cookie",
+                          "value": "$activity.definition_activity_01YGWB8XDYXK41DBogTsiNVbbta1Mkdp7mi.output.variable_workflow_01YG9K6BYA4DM6PwHrbzwINBEdNA93WLPgu$"
+                        },
+                        {
+                          "name": "X-XSRF-TOKEN",
+                          "value": "$activity.definition_activity_01YGWB8XDYXK41DBogTsiNVbbta1Mkdp7mi.output.variable_workflow_01YG9K0234DIB3laq0YknZ9lVknRkJ1SYX4$"
+                        }
+                      ],
+                      "display_name": "Make Request",
+                      "method": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAOTSTHI62EWVCm5aTWeQMUCZhqLeQo$",
+                      "relative_url": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.input.variable_workflow_01YGWAHRDSBTJ0fjKmxgibNcD8RPWzd20kV$",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": false,
+                        "override_workflow_target_group_criteria": false,
+                        "use_workflow_target": true,
+                        "use_workflow_target_group": false
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01YGWD51QR7TU3Z2udosDF54PpKbLj5A6Jq",
+                    "name": "Set Variables",
+                    "title": "Set Output",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Set Output",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.output.variable_workflow_01YGWDHV214QD1Y5rFMQOkKgEMalvAj5TLy$",
+                          "variable_value_new": "$activity.definition_activity_01YGWBD547HJ94peTZKsM9WzQd6WbuFczmm.output.status_code$"
+                        },
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.output.variable_workflow_01YGWDP1QG17V5xVlmTnI4rv1n7uK9NLDbg$",
+                          "variable_value_new": "$activity.definition_activity_01YGWBD547HJ94peTZKsM9WzQd6WbuFczmm.output.status_text$"
+                        },
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01YGW9LBTE1462v2w15LAXwZSFYAzRLtOmk.output.variable_workflow_01YGWB3GEAV8Y3RS2WoESE8pJLaFPLUr7qS$",
+                          "variable_value_new": "$activity.definition_activity_01YGWBD547HJ94peTZKsM9WzQd6WbuFczmm.output.response_body$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "categories": [
+          "category_01YG9PZ26DCXK1uMd6Q6IXn4eqLCMvsftk2"
+        ]
+      },
+      "subworkflows": [
+        {
+          "workflow": {
+            "unique_name": "definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ",
+            "name": "SD-WAN - Get Token and Session ID",
+            "title": "SD-WAN - Get Token and Session ID",
+            "type": "generic.workflow",
+            "base_type": "workflow",
+            "variables": [
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "SD-WAN Session ID",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01YG9K6BYA4DM6PwHrbzwINBEdNA93WLPgu",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "JSESSIONID=ZNL_fIPFmBv1grnplkVvgMPy3rl2P4zEYXYjC_k2.5bcbb5a7-8071-4600-b7f8-a9f6d0074d06; Path=/; HttpOnly; Secure",
+                  "scope": "static",
+                  "name": "Session ID",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01YG9TN6SHXR02QMKLQkmtv2eW7Rw674zEf",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "BA303C4E5A86E2A075AE63355269A97DED17FD9F4DCB4D304499E24DEC0252B5671C4E588370B89453AD48063CD08C1E2CB8",
+                  "scope": "static",
+                  "name": "Token",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01YG9U4MUJRI62da0tG2iEEfyaywXlhgj8N",
+                "object_type": "variable_workflow"
+              },
+              {
+                "schema_id": "datatype.string",
+                "properties": {
+                  "value": "",
+                  "scope": "output",
+                  "name": "SD-WAN Token",
+                  "type": "datatype.string",
+                  "is_required": false,
+                  "is_invisible": false
+                },
+                "unique_name": "variable_workflow_01YG9K0234DIB3laq0YknZ9lVknRkJ1SYX4",
+                "object_type": "variable_workflow"
+              }
+            ],
+            "properties": {
+              "atomic": {
+                "is_atomic": false
+              },
+              "delete_workflow_instance": false,
+              "display_name": "SD-WAN - Get Token and Session ID",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "specify_on_workflow_start": false,
+                "target_default": true
+              },
+              "target": {
+                "target_type": "web-service.endpoint",
+                "target_id": "definition_target_01YG9MWAIAULD0zqtSwWeIZ4Tp1BIGTanYK",
+                "execute_on_workflow_target": true
+              }
+            },
+            "object_type": "definition_workflow",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01YG9KM1VE7Q16d9DET8uASq2OpYlcSrshY",
+                "name": "Condition Block",
+                "title": "Token or Session Empty?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Token or Session Empty?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01YG9KM2L8UQU3d4cX0H7Zb1UBr9tXvlOiS",
+                    "name": "Condition Branch",
+                    "title": "No",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": {
+                          "left_operand": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.static.variable_workflow_01YG9U4MUJRI62da0tG2iEEfyaywXlhgj8N$",
+                          "operator": "ne",
+                          "right_operand": ""
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.static.variable_workflow_01YG9TN6SHXR02QMKLQkmtv2eW7Rw674zEf$",
+                          "operator": "ne",
+                          "right_operand": ""
+                        }
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "No",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01YG9LXSLQ3VS5noMnj3mmGkcbGPtryKM0i",
+                        "name": "HTTP Request",
+                        "title": "Get Network Status",
+                        "type": "web-service.http_request",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "allow_auto_redirect": true,
+                          "continue_on_error_status_code": false,
+                          "continue_on_failure": true,
+                          "custom_headers": [
+                            {
+                              "name": "Cookie",
+                              "value": "JSESSIONID=$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.output.variable_workflow_01YG9K6BYA4DM6PwHrbzwINBEdNA93WLPgu$"
+                            },
+                            {
+                              "name": "X-XSRF-TOKEN",
+                              "value": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.output.variable_workflow_01YG9K0234DIB3laq0YknZ9lVknRkJ1SYX4$"
+                            }
+                          ],
+                          "display_name": "Get Network Status",
+                          "method": "GET",
+                          "relative_url": "/network/status",
+                          "runtime_user": {
+                            "override_target_runtime_user": false,
+                            "target_default": true
+                          },
+                          "skip_execution": false,
+                          "target": {
+                            "override_workflow_target": false,
+                            "override_workflow_target_group_criteria": false,
+                            "use_workflow_target": true,
+                            "use_workflow_target_group": false
+                          }
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_01YGXGB2523UZ19loWkz9Nd6AfEs9mS2GSJ",
+                        "name": "Condition Block",
+                        "title": "Check Successful?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Check Successful?",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_01YGXGB3G47CZ4YqoNFLTj7eiUH1GB4h0d7",
+                            "name": "Condition Branch",
+                            "title": "Yes",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_01YG9LXSLQ3VS5noMnj3mmGkcbGPtryKM0i.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": true
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Yes",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_01YG9SUK3CRJD41Jl2xsa1z5cZZQz32Re60",
+                                "name": "Condition Block",
+                                "title": "Token and Session ID Valid?",
+                                "type": "logic.if_else",
+                                "base_type": "activity",
+                                "properties": {
+                                  "continue_on_failure": false,
+                                  "display_name": "Token and Session ID Valid?",
+                                  "skip_execution": false
+                                },
+                                "object_type": "definition_activity",
+                                "blocks": [
+                                  {
+                                    "unique_name": "definition_activity_01YG9SUKZRFRH3NLLPqRqPEA1HjJriimI4O",
+                                    "name": "Condition Branch",
+                                    "title": "Yes",
+                                    "type": "logic.condition_block",
+                                    "base_type": "activity",
+                                    "properties": {
+                                      "condition": {
+                                        "left_operand": "$activity.definition_activity_01YG9LXSLQ3VS5noMnj3mmGkcbGPtryKM0i.output.status_code$",
+                                        "operator": "eq",
+                                        "right_operand": 200
+                                      },
+                                      "continue_on_failure": false,
+                                      "display_name": "Yes",
+                                      "skip_execution": false
+                                    },
+                                    "object_type": "definition_activity",
+                                    "actions": [
+                                      {
+                                        "unique_name": "definition_activity_01YG9USR7BHA404wS6gn2ofEy39IHnY1AUy",
+                                        "name": "Set Variables",
+                                        "title": "Set Output Session and Token",
+                                        "type": "core.set_multiple_variables",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "continue_on_failure": false,
+                                          "display_name": "Set Output Session and Token",
+                                          "skip_execution": false,
+                                          "variables_to_update": [
+                                            {
+                                              "variable_to_update": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.output.variable_workflow_01YG9K6BYA4DM6PwHrbzwINBEdNA93WLPgu$",
+                                              "variable_value_new": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.static.variable_workflow_01YG9TN6SHXR02QMKLQkmtv2eW7Rw674zEf$"
+                                            },
+                                            {
+                                              "variable_to_update": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.output.variable_workflow_01YG9K0234DIB3laq0YknZ9lVknRkJ1SYX4$",
+                                              "variable_value_new": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.static.variable_workflow_01YG9U4MUJRI62da0tG2iEEfyaywXlhgj8N$"
+                                            }
+                                          ]
+                                        },
+                                        "object_type": "definition_activity"
+                                      },
+                                      {
+                                        "unique_name": "definition_activity_01YG9VFVRPCNM5WEU7ZsH2YrmM3q439vpA0",
+                                        "name": "Completed",
+                                        "title": "Completed",
+                                        "type": "logic.completed",
+                                        "base_type": "activity",
+                                        "properties": {
+                                          "completion_type": "succeeded",
+                                          "continue_on_failure": false,
+                                          "display_name": "Completed",
+                                          "skip_execution": false
+                                        },
+                                        "object_type": "definition_activity"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01YG9WQ3C02FL7js3qRzbPrjSQSX9UnFOZD",
+                "name": "HTTP Request",
+                "title": "Get Session ID",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "j_username=$global.variable_01YG9W74D1IJ01WrH71eMX50POYd7nJm7KC.global.variable_01YG9W74D1IJ01WrH71eMX50POYd7nJm7KC$\u0026j_password=$global.variable_01YG9WBTRT3L95WBCSX50gGoX97D2BLmcvX.global.variable_01YG9WBTRT3L95WBCSX50gGoX97D2BLmcvX$",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Content-Type",
+                      "value": "application/x-www-form-urlencoded"
+                    }
+                  ],
+                  "display_name": "Get Session ID",
+                  "method": "POST",
+                  "relative_url": "/j_security_check",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01YGW3STJ58YY1CKl8nyRTSO7eWCay4mNUt",
+                "name": "Split String",
+                "title": "Get JSESSIONID",
+                "type": "core.splitstring",
+                "base_type": "activity",
+                "properties": {
+                  "boundaries": [
+                    {
+                      "boundary": ";"
+                    }
+                  ],
+                  "continue_on_failure": false,
+                  "display_name": "Get JSESSIONID",
+                  "input_string": "$activity.definition_activity_01YG9WQ3C02FL7js3qRzbPrjSQSX9UnFOZD.output.cookie[0]$",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01YG9ZILVVQMQ0o9jGBIhnN9PqUs9kbb9iV",
+                "name": "HTTP Request",
+                "title": "Get Token",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "name": "Cookie",
+                      "value": "$activity.definition_activity_01YGW3STJ58YY1CKl8nyRTSO7eWCay4mNUt.output.parts[0]$"
+                    }
+                  ],
+                  "display_name": "Get Token",
+                  "method": "GET",
+                  "relative_url": "/dataservice/client/token",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01YGA717L8I2C5u7UZu8CpmvPm6BX7Lznvb",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.static.variable_workflow_01YG9TN6SHXR02QMKLQkmtv2eW7Rw674zEf$",
+                      "variable_value_new": "$activity.definition_activity_01YG9WQ3C02FL7js3qRzbPrjSQSX9UnFOZD.output.cookie[0]$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.static.variable_workflow_01YG9U4MUJRI62da0tG2iEEfyaywXlhgj8N$",
+                      "variable_value_new": "$activity.definition_activity_01YG9ZILVVQMQ0o9jGBIhnN9PqUs9kbb9iV.output.response_body$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.output.variable_workflow_01YG9K6BYA4DM6PwHrbzwINBEdNA93WLPgu$",
+                      "variable_value_new": "$activity.definition_activity_01YG9WQ3C02FL7js3qRzbPrjSQSX9UnFOZD.output.cookie[0]$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01YG9ITPRT4RQ1fUExI77PHILCJbxdfsEbQ.output.variable_workflow_01YG9K0234DIB3laq0YknZ9lVknRkJ1SYX4$",
+                      "variable_value_new": "$activity.definition_activity_01YG9ZILVVQMQ0o9jGBIhnN9PqUs9kbb9iV.output.response_body$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ],
+            "categories": [
+              "category_01YG9PZ26DCXK1uMd6Q6IXn4eqLCMvsftk2"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

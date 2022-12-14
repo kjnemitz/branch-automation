@@ -11,12 +11,38 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Device ID",
+          "name": "Serial Number",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XIXLR16E0KR72roaEycnqCtAXzuihWG7A",
+        "unique_name": "variable_workflow_01XIYDX6BCCHO5vvrS3YMCKiQthZMdfxKCW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "DNAC Token",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y53BEXO4OIW1OlrZpFoWcDy1qnxSbOSlb",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Debug",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y53BRCPLHUH1wemBSPw6wRlPzMGQe1jSR",
         "object_type": "variable_workflow"
       },
       {
@@ -24,12 +50,12 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Serial Number",
+          "name": "Device ID",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01XIYDX6BCCHO5vvrS3YMCKiQthZMdfxKCW",
+        "unique_name": "variable_workflow_01XIXLR16E0KR72roaEycnqCtAXzuihWG7A",
         "object_type": "variable_workflow"
       },
       {
@@ -65,23 +91,77 @@
     "object_type": "definition_workflow",
     "actions": [
       {
-        "unique_name": "definition_activity_01XIUJIMFEHW03UaRyQTeF84hO72Wv6C4ue",
-        "name": "DNAC - Get Authorization Token",
-        "title": "DNAC - Get Authorization Token",
-        "type": "workflow.sub_workflow",
-        "base_type": "subworkflow",
+        "unique_name": "definition_activity_01Y53BJCJBOY54RIJqGf91LsvFwMMvj06zr",
+        "name": "Condition Block",
+        "title": "Debug?",
+        "type": "logic.if_else",
+        "base_type": "activity",
         "properties": {
-          "display_name": "DNAC - Get Authorization Token",
-          "runtime_user": {
-            "target_default": true
-          },
-          "target": {
-            "target_type": "web-service.endpoint",
-            "use_workflow_target": true
-          },
-          "workflow_id": "definition_workflow_01XI2X5R64QBJ59Z3GGvevswdTgd9ZFEmH4"
+          "continue_on_failure": false,
+          "display_name": "Debug?",
+          "skip_execution": false
         },
-        "object_type": "definition_activity"
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01Y53BJDREXYE0rItSpqTPIOdb6pa38jkel",
+            "name": "Condition Branch",
+            "title": "Yes",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01XIUJ1ZK5AM823T2gPzcwhIxvJvE6bmWtL.input.variable_workflow_01Y53BRCPLHUH1wemBSPw6wRlPzMGQe1jSR$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "Yes",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01XIUJIMFEHW03UaRyQTeF84hO72Wv6C4ue",
+                "name": "DNAC - Get Authorization Token",
+                "title": "DNAC - Get Authorization Token",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "display_name": "DNAC - Get Authorization Token",
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "target": {
+                    "target_type": "web-service.endpoint",
+                    "use_workflow_target": true
+                  },
+                  "workflow_id": "definition_workflow_01XI2X5R64QBJ59Z3GGvevswdTgd9ZFEmH4"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01Y53C3X6VLZ86FzDHwvj4bZGnXp2YPJDew",
+                "name": "Set Variables",
+                "title": "Set DNAC Token",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set DNAC Token",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01XIUJ1ZK5AM823T2gPzcwhIxvJvE6bmWtL.input.variable_workflow_01Y53BEXO4OIW1OlrZpFoWcDy1qnxSbOSlb$",
+                      "variable_value_new": "$activity.definition_activity_01XIUJIMFEHW03UaRyQTeF84hO72Wv6C4ue.output.variable_workflow_01XI43BPXULHV3vHsRSbBuPGldrn0CNiw2v$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
       },
       {
         "unique_name": "definition_activity_01XIUJYB125O05keEyIn8UZUJaIZaLy2Hpv",
@@ -93,14 +173,14 @@
           "accept": "application/json",
           "action_timeout": 180,
           "allow_auto_redirect": true,
-          "body": "$workflow.definition_workflow_01XIUJ1ZK5AM823T2gPzcwhIxvJvE6bmWtL.input.variable_workflow_01XIXHDPB2J086DQOyJMtKkqS3wQ6r4BfgL$",
+          "body": "{\n    \"serialNumber\": \"9BIT3F663GJ\",\n    \"name\": \"9BIT3F663GJ\",\n    \"pid\": \"C9300-8V\",\n    \"state\": \"Planned\",\n    \"projectId\": \"6298bcf6e053be1eb85b998c\",\n    \"workflowId\": \"6298f320e053be1eb85b9f3b\",\n    \"projectName\": \"Default\",\n    \"workflowName\": \"Default_6298f320e053be1eb85b9f3a\",\n    \"siteId\": \"f105d510-1e80-4988-831c-4fb4c3f550a9\",\n    \"siteName\": \"Global/Porlland/Yamhill Branch/Suite 200\",\n    \"hostname\": \"Switch-1\",\n    \"reloadRequested\": false,\n    \"populateInventory\": true,\n    \"poeSupported\": false,\n    \"capwapBackOff\": false,\n    \"redirectionState\": \"NONE\",\n    \"dayN\": false,\n    \"dayNClaimOperation\": \"NO_OP\",\n    \"tlsState\": \"NO_OP\",\n    \"reProvision\": false,\n    \"authOperation\": \"AUTHORIZATION_NOT_REQUIRED\",\n    \"stack\": false,\n    \"sudiRequired\": false,\n    \"siteClaimType\": \"Default\"                      \n  }",
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "continue_on_failure": true,
           "custom_headers": [
             {
               "name": "X-Auth-Token",
-              "value": "$activity.definition_activity_01XIUJIMFEHW03UaRyQTeF84hO72Wv6C4ue.output.variable_workflow_01XI43BPXULHV3vHsRSbBuPGldrn0CNiw2v$"
+              "value": "$workflow.definition_workflow_01XIUJ1ZK5AM823T2gPzcwhIxvJvE6bmWtL.input.variable_workflow_01Y53BEXO4OIW1OlrZpFoWcDy1qnxSbOSlb$"
             }
           ],
           "display_name": "Add PnP Device",
@@ -633,6 +713,19 @@
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
+              "scope": "output",
+              "name": "PnP Devices (JSON)",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01XIWIOS5D3O41fi565fBu9tWW3GkLZV2sf",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
               "scope": "input",
               "name": "Query Parameters (JSON)",
               "type": "datatype.string",
@@ -654,19 +747,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01XIW8C4A2ENP5wt3GIj9MiiOIMJLea73jQ",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "PnP Devices (JSON)",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01XIWIOS5D3O41fi565fBu9tWW3GkLZV2sf",
             "object_type": "variable_workflow"
           }
         ],

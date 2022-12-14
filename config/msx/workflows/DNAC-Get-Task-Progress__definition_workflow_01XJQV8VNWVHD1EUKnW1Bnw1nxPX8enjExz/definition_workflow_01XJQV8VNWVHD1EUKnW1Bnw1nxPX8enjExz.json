@@ -9,19 +9,6 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "f7a0c716-c7db-4898-abd5-b81a18f7d8a6",
-          "scope": "input",
-          "name": "Task ID",
-          "type": "datatype.string",
-          "is_required": true,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01XJQY3TJ4R821ZL1ox4RvLOOjLwlQFbO96",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
           "value": "",
           "scope": "input",
           "name": "DNAC Authorization Token",
@@ -30,6 +17,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01XJQVUOK2BR54sTNeBTweC6dAJI5hUxhWL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "f7a0c716-c7db-4898-abd5-b81a18f7d8a6",
+          "scope": "input",
+          "name": "Task ID",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01XJQY3TJ4R821ZL1ox4RvLOOjLwlQFbO96",
         "object_type": "variable_workflow"
       }
     ],

@@ -7,16 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "datatype.string",
         "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "Debug",
-          "type": "datatype.boolean",
+          "value": "",
+          "scope": "local",
+          "name": "Lab Definition",
+          "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01Y551DFENXT41kfNw0joAlhApZFXptvwga",
+        "unique_name": "variable_workflow_01Y60MHT8FSPS31HJTkTSv2G3lWBRZUCdnC",
         "object_type": "variable_workflow"
       },
       {
@@ -35,7 +35,7 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "{\n  \"enterprise\": {\n    \"organization\": [\n      {\n        \"description\": \"Branch Networking\",\n        \"email\": \"jnemitz@cisco.com\",\n        \"name\": \"JPMC\",\n        \"url\": \"https://www.jpmorganchase.com/\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          },\n          {\n            \"name\": \"sdwan\"\n          }\n        ]\n      }\n    ],\n    \"CML\": {\n      \"title\": \"Auto Test Lab\",\n      \"owner\": \"admin\",\n      \"external_connections\": [\n        {\n          \"connection\": {\n            \"x\": 1300,\n            \"y\": 200,\n            \"label\": \"Enterprise\",\n            \"configuration\": \"bridge302\",\n            \"node_definition\": \"external_connector\",\n            \"cpu_limit\": 100,\n            \"hide_links\": false,\n            \"tags\": []\n          }\n        },\n        {\n          \"connection\": {\n            \"x\": 1400,\n            \"y\": 200,\n            \"label\": \"MPLS\",\n            \"configuration\": \"bridge301\",\n            \"node_definition\": \"external_connector\",\n            \"cpu_limit\": 100,\n            \"hide_links\": false,\n            \"tags\": []\n          }\n        }\n      ]\n    },\n    \"dnac_controller\": [\n      {\n        \"address\": \"7025 Kit Creek Rd, Morrisville, NC 27560\",\n        \"host\": \"dnac.lab.local\",\n        \"name\": \"DNAC-East\",\n        \"password\": \"10-9=One\",\n        \"port\": 443,\n        \"username\": \"admin\"\n      }\n    ],\n    \"site\": [\n      {\n        \"name\": \"CDC 1\",\n        \"type\": \"datacenter\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"CDC 1 - Building A\",\n            \"address\": {\n              \"address1\": \"880 Powder Mill Road\",\n              \"city\": \"Wilmington\",\n              \"state\": \"DE\",\n              \"zipcode\": \"19803\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"CDC 2\",\n        \"type\": \"datacenter\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"CDC 2 - Building 1\",\n            \"address\": {\n              \"street\": \"36 E Midland Ave\",\n              \"city\": \"Paramus\",\n              \"state\": \"NJ\",\n              \"zipcode\": \"07652\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Yamhill Branch\",\n        \"type\": \"branch\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Yamhill - Branch\",\n            \"address\": {\n              \"street\": \"811 Southwest 6th Avenue\",\n              \"city\": \"Portland\",\n              \"state\": \"OR\",\n              \"zipcode\": \"97204\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Greenwich Branch\",\n        \"type\": \"branch\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Westfield World Trade Center\",\n            \"address\": {\n              \"street\": \"285 Greenwich St\",\n              \"city\": \"New York\",\n              \"state\": \"NY\",\n              \"zipcode\": \"10006\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 2\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"BR02-SW01\",\n                    \"hostname\": \"BR02-SW01\",\n                    \"dnac\": {\n                      \"serialNumber\": \"9BIT3F663GJ\",\n                      \"name\": \"9BIT3F663GJ\",\n                      \"pid\": \"C9300-8V\",\n                      \"hostname\": \"BR02-SW01\"\n                    },\n                    \"CML\": {\n                      \"device\": {\n                        \"x\": 1350,\n                        \"y\": 200,\n                        \"label\": \"BR02-SW01\",\n                        \"configuration\": \"\",\n                        \"node_definition\": \"c9kv-20220216\",\n                        \"cpu_limit\": 100,\n                        \"hide_links\": false,\n                        \"tags\": []\n                      }\n                    },\n                    \"interfaces\": [\n                      {\n                        \"name\": \"GigabitEthernet0/0\"\n                      }\n                    ]\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"template\": [\n      {\n        \"name\": \"Switch-Base-Config\",\n        \"description\": \"Base configuration for switch\",\n        \"deviceTypes\": [\n          {\n            \"productFamily\": \"Switches and Hubs\"\n          }\n        ],\n        \"softwareType\": \"IOS-XE\",\n        \"softwareVariant\": \"XE\",\n        \"templateContent\": \"hostname {{ HOSTNAME }}\",\n        \"templateParams\": [\n          {\n            \"parameterName\": \"HOSTNAME\",\n            \"dataType\": \"STRING\",\n            \"description\": \"Host Name\",\n            \"required\": true,\n            \"notParam\": false,\n            \"paramArray\": false,\n            \"displayName\": \"Host Name\",\n            \"order\": 1,\n            \"customOrder\": 0\n          }\n        ],\n        \"customParamsOrder\": false,\n        \"projectName\": \"Onboarding Configuration\",\n        \"projectAssociated\": true,\n        \"documentDatabase\": false\n      }\n    ],\n    \"network_profile\": [\n      {\n        \"name\": \"Switch Profile\",\n        \"namespace\": \"switching\",\n        \"templates\": [\n          \"Switch-Base-Config\"\n        ]\n      }\n    ]\n  }\n}",
+          "value": "{\n  \"enterprise\": {\n    \"organization\": [\n      {\n        \"description\": \"Branch Networking\",\n        \"email\": \"jnemitz@cisco.com\",\n        \"name\": \"JPMC\",\n        \"url\": \"https://www.jpmorganchase.com/\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          },\n          {\n            \"name\": \"sdwan\"\n          }\n        ]\n      }\n    ],\n    \"CML\": {\n      \"lab\": {\n        \"description\": \"\",\n        \"notes\": \"\",\n        \"title\": \"SDWAN-AUTO-TEST\",\n        \"version\": \"0.0.5\"\n      },\n      \"lab_definition\": \"/config/CML/SD-WAN-JPMC-BRANCH.yaml\"\n    },\n    \"dnac_controller\": [\n      {\n        \"address\": \"7025 Kit Creek Rd, Morrisville, NC 27560\",\n        \"host\": \"dnac.lab.local\",\n        \"name\": \"DNAC-East\",\n        \"password\": \"10-9=One\",\n        \"port\": 443,\n        \"username\": \"admin\"\n      }\n    ],\n    \"site\": [\n      {\n        \"name\": \"CDC 1\",\n        \"type\": \"datacenter\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"CDC 1 - Building A\",\n            \"address\": {\n              \"address1\": \"880 Powder Mill Road\",\n              \"city\": \"Wilmington\",\n              \"state\": \"DE\",\n              \"zipcode\": \"19803\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"CDC 2\",\n        \"type\": \"datacenter\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"CDC 2 - Building 1\",\n            \"address\": {\n              \"street\": \"36 E Midland Ave\",\n              \"city\": \"Paramus\",\n              \"state\": \"NJ\",\n              \"zipcode\": \"07652\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Yamhill Branch\",\n        \"type\": \"branch\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Yamhill - Branch\",\n            \"address\": {\n              \"street\": \"811 Southwest 6th Avenue\",\n              \"city\": \"Portland\",\n              \"state\": \"OR\",\n              \"zipcode\": \"97204\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Greenwich Branch\",\n        \"type\": \"branch\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Westfield World Trade Center\",\n            \"address\": {\n              \"street\": \"285 Greenwich St\",\n              \"city\": \"New York\",\n              \"state\": \"NY\",\n              \"zipcode\": \"10006\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 2\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"BR02-SW01\",\n                    \"hostname\": \"BR02-SW01\",\n                    \"dnac\": {\n                      \"serialNumber\": \"9BIT3F663GJ\",\n                      \"name\": \"9BIT3F663GJ\",\n                      \"pid\": \"C9300-8V\",\n                      \"hostname\": \"BR02-SW01\"\n                    },\n                    \"CML\": {\n                      \"label\": \"BR02-SW01\"\n                    },\n                    \"interfaces\": [\n                      {\n                        \"name\": \"GigabitEthernet0/0\"\n                      }\n                    ]\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"template\": [\n      {\n        \"name\": \"Switch-Base-Config\",\n        \"description\": \"Base configuration for switch\",\n        \"deviceTypes\": [\n          {\n            \"productFamily\": \"Switches and Hubs\"\n          }\n        ],\n        \"softwareType\": \"IOS-XE\",\n        \"softwareVariant\": \"XE\",\n        \"templateContent\": \"hostname {{ HOSTNAME }}\",\n        \"templateParams\": [\n          {\n            \"parameterName\": \"HOSTNAME\",\n            \"dataType\": \"STRING\",\n            \"description\": \"Host Name\",\n            \"required\": true,\n            \"notParam\": false,\n            \"paramArray\": false,\n            \"displayName\": \"Host Name\",\n            \"order\": 1,\n            \"customOrder\": 0\n          }\n        ],\n        \"customParamsOrder\": false,\n        \"projectName\": \"Onboarding Configuration\",\n        \"projectAssociated\": true,\n        \"documentDatabase\": false\n      }\n    ],\n    \"network_profile\": [\n      {\n        \"name\": \"Switch Profile\",\n        \"namespace\": \"switching\",\n        \"templates\": [\n          \"Switch-Base-Config\"\n        ]\n      }\n    ]\n  }\n}",
           "scope": "input",
           "name": "Network Design",
           "type": "datatype.string",
@@ -43,6 +43,19 @@
           "is_invisible": false
         },
         "unique_name": "variable_workflow_01Y54FXEYTMWE7T4H0pM3Zi0znZ7eJKRyv1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "input",
+          "name": "Debug",
+          "type": "datatype.boolean",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y551DFENXT41kfNw0joAlhApZFXptvwga",
         "object_type": "variable_workflow"
       }
     ],
@@ -143,31 +156,107 @@
         ]
       },
       {
-        "unique_name": "definition_activity_01Y555MIU3XEH2J58OvaSb1EsLXDY4kytah",
+        "unique_name": "definition_activity_01Y60CJDV9I165foyp0lAfux3Ua6QotokIi",
+        "name": "JSONPath Query",
+        "title": "Get CML Data",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get CML Data",
+          "input_json": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.input.variable_workflow_01Y54FXEYTMWE7T4H0pM3Zi0znZ7eJKRyv1$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.enterprise.CML.lab",
+              "jsonpath_query_name": "Lab",
+              "jsonpath_query_type": "string"
+            },
+            {
+              "jsonpath_query": "$.enterprise.CML.lab_definition",
+              "jsonpath_query_name": "Lab Definition",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Y60ECKEEPTF0SO8ZFIz7HIvdUW6hcxjxl",
+        "name": "HTTP Request",
+        "title": "GIT - Query Lab Definition",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "GIT - Query Lab Definition",
+          "method": "GET",
+          "relative_url": "$activity.definition_activity_01Y60CJDV9I165foyp0lAfux3Ua6QotokIi.output.jsonpath_queries.Lab Definition$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Y60H263ODM11QMDs5mLXbST3wTmUiDwoV",
+        "name": "Convert YAML to JSON",
+        "title": "Convert YAML to JSON",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Convert YAML to JSON",
+          "input": {
+            "variable_workflow_01Y5ZV0S07G2528G4LhjACqcz7XzWENyzYf": "$activity.definition_activity_01Y60ECKEEPTF0SO8ZFIz7HIvdUW6hcxjxl.output.response_body$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_01Y5ZUO232SYM21oRpjyXHkWdtIh6RDzGv2"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Y60HM0HEBQ133fGiQSqkJ1rfH1tt3ks5Z",
         "name": "Read Table from JSON",
-        "title": "Get Lab Information from Network Design",
+        "title": "Get Lab Definition",
         "type": "corejava.read_table_from_json",
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
           "continue_on_failure": false,
-          "display_name": "Get Lab Information from Network Design",
-          "input_json": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.input.variable_workflow_01Y54FXEYTMWE7T4H0pM3Zi0znZ7eJKRyv1$",
-          "jsonpath_query": "$.enterprise.CML",
-          "persist_output": false,
+          "display_name": "Get Lab Definition",
+          "input_json": "$activity.definition_activity_01Y60H263ODM11QMDs5mLXbST3wTmUiDwoV.output.variable_workflow_01Y5ZV5892F8P1mQVdIkfmtwvvULxagvQgq$",
+          "jsonpath_query": "$.",
+          "persist_output": true,
           "populate_columns": false,
           "skip_execution": false,
           "table_columns": [
             {
-              "column_name": "title",
+              "column_name": "lab",
               "column_type": "string"
             },
             {
-              "column_name": "owner",
+              "column_name": "nodes",
               "column_type": "string"
             },
             {
-              "column_name": "external_connections",
+              "column_name": "links",
               "column_type": "string"
             }
           ]
@@ -175,46 +264,62 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01Y550BF2EQ9O2f0Te2FTmiVqkEwrifmODo",
-        "name": "CML - Get User ID",
-        "title": "CML - Get User ID",
+        "unique_name": "definition_activity_01Y60MKKJ7RKO6dCFblVaM1DTWGLq3YIIUP",
+        "name": "Set Variables",
+        "title": "Set Lab Definition",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Lab Definition",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.local.variable_workflow_01Y60MHT8FSPS31HJTkTSv2G3lWBRZUCdnC$",
+              "variable_value_new": "{\n\"lab\": $activity.definition_activity_01Y60CJDV9I165foyp0lAfux3Ua6QotokIi.output.jsonpath_queries.Lab$,\n\"nodes\": $activity.definition_activity_01Y60HM0HEBQ133fGiQSqkJ1rfH1tt3ks5Z.output.read_table_from_json[0].nodes$,\n\"links\": $activity.definition_activity_01Y60HM0HEBQ133fGiQSqkJ1rfH1tt3ks5Z.output.read_table_from_json[0].links$\n}"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Y6140ZOAJYW1pXkKNFLQr4ecSrHzXtQeX",
+        "name": "Convert JSON to YAML",
+        "title": "Convert JSON to YAML",
         "type": "workflow.sub_workflow",
         "base_type": "subworkflow",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "CML - Get User ID",
+          "display_name": "Convert JSON to YAML",
           "input": {
-            "variable_workflow_01Y54J509Z96B3eBddQ2g5hYcvNbct2McQe": "",
-            "variable_workflow_01Y54J8Z7R9JZ14dJNMetNJVp8hDMWGNoE3": "$activity.definition_activity_01Y555MIU3XEH2J58OvaSb1EsLXDY4kytah.output.read_table_from_json[0].owner$",
-            "variable_workflow_01Y54JWW5ZM3H621TPUra4O4J2wvYOm8wXh": true
+            "variable_workflow_01Y610RTFWACQ1jbg5lY08NNdzB0pTGvL1o": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.local.variable_workflow_01Y60MHT8FSPS31HJTkTSv2G3lWBRZUCdnC$"
           },
           "runtime_user": {
             "target_default": true
           },
           "skip_execution": false,
           "target": {
-            "target_type": "web-service.endpoint",
-            "use_workflow_target": true
+            "no_target": true
           },
-          "workflow_id": "definition_workflow_01Y54H5FSPXO019lkwk3wSHAQ0mzRYKG3kA"
+          "workflow_id": "definition_workflow_01Y610FQQE35413CjLz9gXflwcztVrly3ny"
         },
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01Y550UADH1SW2eg7JWQojxSLwrOJMnvTfN",
-        "name": "CML - Create New Lab",
-        "title": "CML - Create New Lab",
+        "unique_name": "definition_activity_01Y60Z070IPYI3THER57ehDKrh9dRBqIzEZ",
+        "name": "CML - Import Lab",
+        "title": "CML - Import Lab",
         "type": "workflow.sub_workflow",
         "base_type": "subworkflow",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "CML - Create New Lab",
+          "display_name": "CML - Import Lab",
           "input": {
             "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI": false,
             "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.input.variable_workflow_01Y552XE3EYJA03b1gVd2fLrTG3kSdHZ1vR$",
-            "variable_workflow_01Y54C2J5Q9LP6gVCXkFIbZ6klsjsNzzv7W": "/labs",
+            "variable_workflow_01Y54C2J5Q9LP6gVCXkFIbZ6klsjsNzzv7W": "/import",
             "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A": "POST",
-            "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR": "{\n\"title\": \"$activity.definition_activity_01Y555MIU3XEH2J58OvaSb1EsLXDY4kytah.output.read_table_from_json[0].title$\",\n\"owner\": \"$activity.definition_activity_01Y550BF2EQ9O2f0Te2FTmiVqkEwrifmODo.output.variable_workflow_01Y554EK0UCM22CTfEjzKa5oAJ801Cup45j$\"\n}",
+            "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR": "$activity.definition_activity_01Y6140ZOAJYW1pXkKNFLQr4ecSrHzXtQeX.output.variable_workflow_01Y610WIE1XJI2fj2JLHhHJTSFqkJkFwlQk$",
             "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK": "",
             "variable_workflow_01Y54MQYR244F5UAVPKfa9ZhrXAo7dVw1KL": ""
           },
@@ -223,273 +328,13 @@
           },
           "skip_execution": false,
           "target": {
-            "target_type": "web-service.endpoint",
-            "use_workflow_target": true
+            "execute_on_this_target": true,
+            "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
+            "target_type": "web-service.endpoint"
           },
           "workflow_id": "definition_workflow_01Y544HY40OAV50eSV3dE2TpBR0Hd865Shq"
         },
         "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_01Y56E22IEW4E4N6K1UEETjqaCQhCKNx6U1",
-        "name": "Read Table from JSON",
-        "title": "Read Lab ID",
-        "type": "corejava.read_table_from_json",
-        "base_type": "activity",
-        "properties": {
-          "action_timeout": 180,
-          "continue_on_failure": false,
-          "display_name": "Read Lab ID",
-          "input_json": "$activity.definition_activity_01Y550UADH1SW2eg7JWQojxSLwrOJMnvTfN.output.variable_workflow_01Y54M76QZPFA2zglLJWhgQk2gxv2LlUP2J$",
-          "jsonpath_query": "$.",
-          "persist_output": false,
-          "populate_columns": false,
-          "skip_execution": false,
-          "table_columns": [
-            {
-              "column_name": "id",
-              "column_type": "string"
-            }
-          ]
-        },
-        "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_01Y56JB4NSLT51Wr2ASyRI5S9VURj3HdsKv",
-        "name": "Read Table from JSON",
-        "title": "Get External Connections",
-        "type": "corejava.read_table_from_json",
-        "base_type": "activity",
-        "properties": {
-          "action_timeout": 180,
-          "continue_on_failure": false,
-          "display_name": "Get External Connections",
-          "input_json": "$activity.definition_activity_01Y555MIU3XEH2J58OvaSb1EsLXDY4kytah.output.read_table_from_json[0].external_connections$",
-          "jsonpath_query": "$.",
-          "persist_output": false,
-          "populate_columns": false,
-          "skip_execution": false,
-          "table_columns": [
-            {
-              "column_name": "connection",
-              "column_type": "string"
-            }
-          ]
-        },
-        "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_01Y56IKSGSY9E07vRvJPuz1EvAD4wRpdzv4",
-        "name": "For Each",
-        "title": "For Each External Connection",
-        "type": "logic.for_each",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "For Each External Connection",
-          "skip_execution": false,
-          "source_array": "$activity.definition_activity_01Y56JB4NSLT51Wr2ASyRI5S9VURj3HdsKv.output.read_table_from_json$"
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01Y56CDD3GEAH1UTsdExQ6KajJa5BY5xWGp",
-            "name": "CML - Lab - Add External Connections",
-            "title": "CML - Lab - Add External Connections",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "CML - Lab - Add External Connections",
-              "input": {
-                "variable_workflow_01Y568E3KBGGN0ymtXiJhL4Fd8yOZlPZMyN": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.input.variable_workflow_01Y552XE3EYJA03b1gVd2fLrTG3kSdHZ1vR$",
-                "variable_workflow_01Y568O9I2B8F6hVjfF8U5QHys6zOJmXRhM": "$activity.definition_activity_01Y56IKSGSY9E07vRvJPuz1EvAD4wRpdzv4.input.source_array[@].connection$",
-                "variable_workflow_01Y56910107BM0DmQ4u8zfy1fUvP8kt4AQG": "$activity.definition_activity_01Y56E22IEW4E4N6K1UEETjqaCQhCKNx6U1.output.read_table_from_json[0].id$"
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "execute_on_this_target": true,
-                "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-                "target_type": "web-service.endpoint"
-              },
-              "workflow_id": "definition_workflow_01Y563SX4AU6H6fw2hjYwMnoVI5KsKDQ9z1"
-            },
-            "object_type": "definition_activity"
-          }
-        ]
-      },
-      {
-        "unique_name": "definition_activity_01Y57OHAYLHQ95GWeGsaUHkfi9cn9jBAUQp",
-        "name": "Read Table from JSON",
-        "title": "Get Devices From Network Design with CML",
-        "type": "corejava.read_table_from_json",
-        "base_type": "activity",
-        "properties": {
-          "action_timeout": 180,
-          "continue_on_failure": false,
-          "display_name": "Get Devices From Network Design with CML",
-          "input_json": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.input.variable_workflow_01Y54FXEYTMWE7T4H0pM3Zi0znZ7eJKRyv1$",
-          "jsonpath_query": "$..devices[?(@.CML)]",
-          "persist_output": false,
-          "populate_columns": false,
-          "skip_execution": false,
-          "table_columns": [
-            {
-              "column_name": "CML",
-              "column_type": "string"
-            },
-            {
-              "column_name": "interfaces",
-              "column_type": "string"
-            }
-          ]
-        },
-        "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_01Y57RWHSC7LD7LQ1ALbKBxFGEpjMhau98z",
-        "name": "For Each",
-        "title": "For Each Device",
-        "type": "logic.for_each",
-        "base_type": "activity",
-        "properties": {
-          "continue_on_failure": false,
-          "display_name": "For Each Device",
-          "skip_execution": false,
-          "source_array": "$activity.definition_activity_01Y57OHAYLHQ95GWeGsaUHkfi9cn9jBAUQp.output.read_table_from_json$"
-        },
-        "object_type": "definition_activity",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01Y588O7XSPE24Jfq1VJoYR318midFPql96",
-            "name": "Read Table from JSON",
-            "title": "Get CML Device",
-            "type": "corejava.read_table_from_json",
-            "base_type": "activity",
-            "properties": {
-              "action_timeout": 180,
-              "continue_on_failure": false,
-              "display_name": "Get CML Device",
-              "input_json": "$activity.definition_activity_01Y57RWHSC7LD7LQ1ALbKBxFGEpjMhau98z.input.source_array[@].CML$",
-              "jsonpath_query": "$.",
-              "persist_output": false,
-              "populate_columns": false,
-              "skip_execution": false,
-              "table_columns": [
-                {
-                  "column_name": "device",
-                  "column_type": "string"
-                }
-              ]
-            },
-            "object_type": "definition_activity"
-          },
-          {
-            "unique_name": "definition_activity_01Y57PT3TIFSP225HQ636CUS4kqDKgi2k9L",
-            "name": "CML - Add Device To Lab",
-            "title": "CML - Add Device To Lab",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "CML - Add Device To Lab",
-              "input": {
-                "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI": false,
-                "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.input.variable_workflow_01Y552XE3EYJA03b1gVd2fLrTG3kSdHZ1vR$",
-                "variable_workflow_01Y54C2J5Q9LP6gVCXkFIbZ6klsjsNzzv7W": "/labs/$activity.definition_activity_01Y56E22IEW4E4N6K1UEETjqaCQhCKNx6U1.output.read_table_from_json[0].id$/nodes",
-                "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A": "POST",
-                "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR": "$activity.definition_activity_01Y588O7XSPE24Jfq1VJoYR318midFPql96.output.read_table_from_json[0].device$",
-                "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK": "\"\n}",
-                "variable_workflow_01Y54MQYR244F5UAVPKfa9ZhrXAo7dVw1KL": "{\n\"id\": \""
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "execute_on_this_target": true,
-                "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-                "target_type": "web-service.endpoint"
-              },
-              "workflow_id": "definition_workflow_01Y544HY40OAV50eSV3dE2TpBR0Hd865Shq"
-            },
-            "object_type": "definition_activity"
-          },
-          {
-            "unique_name": "definition_activity_01Y57SKBKVNC901B0mtpHrprv2EfeDsmqdo",
-            "name": "Read Table from JSON",
-            "title": "Get Device Interfaces",
-            "type": "corejava.read_table_from_json",
-            "base_type": "activity",
-            "properties": {
-              "action_timeout": 180,
-              "continue_on_failure": false,
-              "display_name": "Get Device Interfaces",
-              "input_json": "$activity.definition_activity_01Y57RWHSC7LD7LQ1ALbKBxFGEpjMhau98z.input.source_array[@].interfaces$",
-              "jsonpath_query": "$.*",
-              "persist_output": false,
-              "populate_columns": false,
-              "skip_execution": false,
-              "table_columns": [
-                {
-                  "column_name": "name",
-                  "column_type": "string"
-                }
-              ]
-            },
-            "object_type": "definition_activity"
-          },
-          {
-            "unique_name": "definition_activity_01Y57UWESTQNP3CZQKcMJc5ozsWqGj5hjEs",
-            "name": "For Each",
-            "title": "For Each Interface",
-            "type": "logic.for_each",
-            "base_type": "activity",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "For Each Interface",
-              "skip_execution": false,
-              "source_array": "$activity.definition_activity_01Y57SKBKVNC901B0mtpHrprv2EfeDsmqdo.output.read_table_from_json$"
-            },
-            "object_type": "definition_activity",
-            "actions": [
-              {
-                "unique_name": "definition_activity_01Y57V509C9RI2VNo45bdYiOpsPIBJa7EeD",
-                "name": "CML - Add Interface To Lab",
-                "title": "CML - Add Interface To Lab",
-                "type": "workflow.sub_workflow",
-                "base_type": "subworkflow",
-                "properties": {
-                  "continue_on_failure": false,
-                  "display_name": "CML - Add Interface To Lab",
-                  "input": {
-                    "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI": false,
-                    "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ": "$workflow.definition_workflow_01Y54F32HR94Z3EFTbx1CQTgNmK9w4mwjmk.input.variable_workflow_01Y552XE3EYJA03b1gVd2fLrTG3kSdHZ1vR$",
-                    "variable_workflow_01Y54C2J5Q9LP6gVCXkFIbZ6klsjsNzzv7W": "/labs/$activity.definition_activity_01Y56E22IEW4E4N6K1UEETjqaCQhCKNx6U1.output.read_table_from_json[0].id$/interfaces",
-                    "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A": "POST",
-                    "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR": "{\n\"node\": \"$activity.definition_activity_01Y57PT3TIFSP225HQ636CUS4kqDKgi2k9L.output.variable_workflow_01Y54M76QZPFA2zglLJWhgQk2gxv2LlUP2J$\"\n}",
-                    "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK": "\"\n}",
-                    "variable_workflow_01Y54MQYR244F5UAVPKfa9ZhrXAo7dVw1KL": "{\n\"id\": \""
-                  },
-                  "runtime_user": {
-                    "target_default": true
-                  },
-                  "skip_execution": false,
-                  "target": {
-                    "execute_on_this_target": true,
-                    "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-                    "target_type": "web-service.endpoint"
-                  },
-                  "workflow_id": "definition_workflow_01Y544HY40OAV50eSV3dE2TpBR0Hd865Shq"
-                },
-                "object_type": "definition_activity"
-              }
-            ]
-          }
-        ]
       }
     ],
     "categories": [
@@ -497,6 +342,15 @@
     ]
   },
   "categories": {
+    "category_01XTYJFWCEOFX64OkJu6rjCOFod6NH9XYv0": {
+      "unique_name": "category_01XTYJFWCEOFX64OkJu6rjCOFod6NH9XYv0",
+      "name": "Utility",
+      "title": "Utility",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
     "category_01Y5403M85XIC6BVgysDSs8lZteKgkYJDAt": {
       "unique_name": "category_01Y5403M85XIC6BVgysDSs8lZteKgkYJDAt",
       "name": "CML",
@@ -508,16 +362,34 @@
     }
   },
   "targets": {
-    "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ": {
-      "unique_name": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-      "name": "CML",
-      "title": "CML",
+    "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE": {
+      "unique_name": "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE",
+      "name": "GitHub",
+      "title": "GitHub",
       "type": "web-service.endpoint",
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
         "disable_certificate_validation": true,
-        "display_name": "CML",
+        "display_name": "GitHub",
+        "host": "raw.githubusercontent.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "path": "kjnemitz/branch-automation/main/",
+        "port": 443,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ": {
+      "unique_name": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
+      "name": "Cisco Modelling Labs",
+      "title": "Cisco Modelling Labs",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "Cisco Modelling Labs",
         "host": "10.2.1.177",
         "ignore_proxy": false,
         "no_runtime_user": true,
@@ -556,158 +428,23 @@
   "subworkflows": [
     {
       "workflow": {
-        "unique_name": "definition_workflow_01Y54H5FSPXO019lkwk3wSHAQ0mzRYKG3kA",
-        "name": "CML - Get User ID",
-        "title": "CML - Get User ID",
-        "type": "generic.workflow",
-        "base_type": "workflow",
-        "variables": [
-          {
-            "schema_id": "datatype.secure_string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "CML Token",
-              "type": "datatype.secure_string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54J509Z96B3eBddQ2g5hYcvNbct2McQe",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "jnemitz",
-              "scope": "input",
-              "name": "User Name",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54J8Z7R9JZ14dJNMetNJVp8hDMWGNoE3",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.boolean",
-            "properties": {
-              "value": false,
-              "scope": "input",
-              "name": "Debug",
-              "type": "datatype.boolean",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54JWW5ZM3H621TPUra4O4J2wvYOm8wXh",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "User UUID",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y554EK0UCM22CTfEjzKa5oAJ801Cup45j",
-            "object_type": "variable_workflow"
-          }
-        ],
-        "properties": {
-          "atomic": {
-            "is_atomic": false
-          },
-          "delete_workflow_instance": false,
-          "display_name": "CML - Get User ID",
-          "runtime_user": {
-            "override_target_runtime_user": false,
-            "specify_on_workflow_start": false,
-            "target_default": true
-          },
-          "target": {
-            "target_type": "web-service.endpoint",
-            "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-            "execute_on_workflow_target": true
-          }
-        },
-        "object_type": "definition_workflow",
-        "actions": [
-          {
-            "unique_name": "definition_activity_01Y54HJOUTHW21CUpoeWns7zjgpdMO6tlCJ",
-            "name": "Get User UUID",
-            "title": "Get User UUID",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "Get User UUID",
-              "input": {
-                "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI": "$workflow.definition_workflow_01Y54H5FSPXO019lkwk3wSHAQ0mzRYKG3kA.input.variable_workflow_01Y54JWW5ZM3H621TPUra4O4J2wvYOm8wXh$",
-                "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ": "",
-                "variable_workflow_01Y54C2J5Q9LP6gVCXkFIbZ6klsjsNzzv7W": "/users/$workflow.definition_workflow_01Y54H5FSPXO019lkwk3wSHAQ0mzRYKG3kA.input.variable_workflow_01Y54J8Z7R9JZ14dJNMetNJVp8hDMWGNoE3$/id",
-                "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A": "GET",
-                "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR": "",
-                "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK": "\"\n",
-                "variable_workflow_01Y54MQYR244F5UAVPKfa9ZhrXAo7dVw1KL": "\""
-              },
-              "runtime_user": {
-                "target_default": true
-              },
-              "skip_execution": false,
-              "target": {
-                "target_type": "web-service.endpoint",
-                "use_workflow_target": true
-              },
-              "workflow_id": "definition_workflow_01Y544HY40OAV50eSV3dE2TpBR0Hd865Shq"
-            },
-            "object_type": "definition_activity"
-          },
-          {
-            "unique_name": "definition_activity_01Y5549GN1XHU4hJRWR8AAtzVbaa93j1pfk",
-            "name": "Set Variables",
-            "title": "Set User UUID Output",
-            "type": "core.set_multiple_variables",
-            "base_type": "activity",
-            "properties": {
-              "continue_on_failure": false,
-              "display_name": "Set User UUID Output",
-              "skip_execution": false,
-              "variables_to_update": [
-                {
-                  "variable_to_update": "$workflow.definition_workflow_01Y54H5FSPXO019lkwk3wSHAQ0mzRYKG3kA.output.variable_workflow_01Y554EK0UCM22CTfEjzKa5oAJ801Cup45j$",
-                  "variable_value_new": "$activity.definition_activity_01Y54HJOUTHW21CUpoeWns7zjgpdMO6tlCJ.output.variable_workflow_01Y54M76QZPFA2zglLJWhgQk2gxv2LlUP2J$"
-                }
-              ]
-            },
-            "object_type": "definition_activity"
-          }
-        ],
-        "categories": [
-          "category_01Y5403M85XIC6BVgysDSs8lZteKgkYJDAt"
-        ]
-      }
-    },
-    {
-      "workflow": {
         "unique_name": "definition_workflow_01Y540XDTCEHP624P46GGMQtJrPd3cANdSW",
-        "name": "CML - Get Token",
-        "title": "CML - Get Token",
+        "name": "CML - Get  Authorization Token",
+        "title": "CML - Get  Authorization Token",
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "datatype.secure_string",
+            "schema_id": "datatype.string",
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "Password",
-              "type": "datatype.secure_string",
+              "name": "Username",
+              "type": "datatype.string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y541O0ZW21N4DSSwDKbnJy3KniUmAveMk",
+            "unique_name": "variable_workflow_01Y541BTB26L00DqMxS8NVpsJG038yCZbgN",
             "object_type": "variable_workflow"
           },
           {
@@ -724,16 +461,16 @@
             "object_type": "variable_workflow"
           },
           {
-            "schema_id": "datatype.string",
+            "schema_id": "datatype.secure_string",
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "Username",
-              "type": "datatype.string",
+              "name": "Password",
+              "type": "datatype.secure_string",
               "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y541BTB26L00DqMxS8NVpsJG038yCZbgN",
+            "unique_name": "variable_workflow_01Y541O0ZW21N4DSSwDKbnJy3KniUmAveMk",
             "object_type": "variable_workflow"
           }
         ],
@@ -742,7 +479,7 @@
             "is_atomic": false
           },
           "delete_workflow_instance": false,
-          "display_name": "CML - Get Token",
+          "display_name": "CML - Get  Authorization Token",
           "runtime_user": {
             "override_target_runtime_user": false,
             "specify_on_workflow_start": false,
@@ -887,49 +624,36 @@
     },
     {
       "workflow": {
-        "unique_name": "definition_workflow_01Y563SX4AU6H6fw2hjYwMnoVI5KsKDQ9z1",
-        "name": "CML - Lab - Add External Connections",
-        "title": "CML - Lab - Add External Connections",
+        "unique_name": "definition_workflow_01Y610FQQE35413CjLz9gXflwcztVrly3ny",
+        "name": "Convert JSON to YAML",
+        "title": "Convert JSON to YAML",
         "type": "generic.workflow",
         "base_type": "workflow",
         "variables": [
           {
-            "schema_id": "datatype.secure_string",
+            "schema_id": "datatype.string",
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "CML Token",
-              "type": "datatype.secure_string",
+              "name": "JSON",
+              "type": "datatype.string",
               "is_required": true,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y568E3KBGGN0ymtXiJhL4Fd8yOZlPZMyN",
+            "unique_name": "variable_workflow_01Y610RTFWACQ1jbg5lY08NNdzB0pTGvL1o",
             "object_type": "variable_workflow"
           },
           {
             "schema_id": "datatype.string",
             "properties": {
               "value": "",
-              "scope": "input",
-              "name": "External Connection (JSON)",
+              "scope": "output",
+              "name": "YAML",
               "type": "datatype.string",
-              "is_required": true,
+              "is_required": false,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y568O9I2B8F6hVjfF8U5QHys6zOJmXRhM",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Lab ID",
-              "type": "datatype.string",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y56910107BM0DmQ4u8zfy1fUvP8kt4AQG",
+            "unique_name": "variable_workflow_01Y610WIE1XJI2fj2JLHhHJTSFqkJkFwlQk",
             "object_type": "variable_workflow"
           }
         ],
@@ -938,54 +662,173 @@
             "is_atomic": false
           },
           "delete_workflow_instance": false,
-          "display_name": "CML - Lab - Add External Connections",
+          "display_name": "Convert JSON to YAML",
           "runtime_user": {
             "override_target_runtime_user": false,
             "specify_on_workflow_start": false,
             "target_default": true
           },
           "target": {
-            "target_type": "web-service.endpoint",
-            "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-            "execute_on_workflow_target": true
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
           }
         },
         "object_type": "definition_workflow",
         "actions": [
           {
-            "unique_name": "definition_activity_01Y56943QB29Q54anZ97s9J9jaXTYUbXWCg",
-            "name": "CML - Add External Connecton to Lab",
-            "title": "CML - Add External Connecton to Lab",
-            "type": "workflow.sub_workflow",
-            "base_type": "subworkflow",
+            "unique_name": "definition_activity_01Y61106KUBSK2HgMaeSvQGNMqSDpKcZZRb",
+            "name": "Execute Python Script",
+            "title": "Convert",
+            "type": "python3.script",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Convert",
+              "script": "import urllib.parse, sys\nimport yaml\n\nyml = yaml.dump(yaml.load(sys.argv[1]), default_flow_style=False)",
+              "script_arguments": [
+                "$workflow.definition_workflow_01Y610FQQE35413CjLz9gXflwcztVrly3ny.input.variable_workflow_01Y610RTFWACQ1jbg5lY08NNdzB0pTGvL1o$"
+              ],
+              "script_queries": [
+                {
+                  "script_query": "yml",
+                  "script_query_name": "YAML",
+                  "script_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01Y61126SO0MW4CXKhbXp2nG1AX6d5uHmCO",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
             "properties": {
               "continue_on_failure": false,
-              "display_name": "CML - Add External Connecton to Lab",
-              "input": {
-                "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI": false,
-                "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ": "$workflow.definition_workflow_01Y563SX4AU6H6fw2hjYwMnoVI5KsKDQ9z1.input.variable_workflow_01Y568E3KBGGN0ymtXiJhL4Fd8yOZlPZMyN$",
-                "variable_workflow_01Y54C2J5Q9LP6gVCXkFIbZ6klsjsNzzv7W": "/labs/$workflow.definition_workflow_01Y563SX4AU6H6fw2hjYwMnoVI5KsKDQ9z1.input.variable_workflow_01Y56910107BM0DmQ4u8zfy1fUvP8kt4AQG$/nodes",
-                "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A": "POST",
-                "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR": "$workflow.definition_workflow_01Y563SX4AU6H6fw2hjYwMnoVI5KsKDQ9z1.input.variable_workflow_01Y568O9I2B8F6hVjfF8U5QHys6zOJmXRhM$",
-                "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK": "",
-                "variable_workflow_01Y54MQYR244F5UAVPKfa9ZhrXAo7dVw1KL": ""
-              },
-              "runtime_user": {
-                "target_default": true
-              },
+              "display_name": "Set Variables",
               "skip_execution": false,
-              "target": {
-                "execute_on_this_target": true,
-                "target_id": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-                "target_type": "web-service.endpoint"
-              },
-              "workflow_id": "definition_workflow_01Y544HY40OAV50eSV3dE2TpBR0Hd865Shq"
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01Y610FQQE35413CjLz9gXflwcztVrly3ny.output.variable_workflow_01Y610WIE1XJI2fj2JLHhHJTSFqkJkFwlQk$",
+                  "variable_value_new": "$activity.definition_activity_01Y61106KUBSK2HgMaeSvQGNMqSDpKcZZRb.output.script_queries.YAML$"
+                }
+              ]
             },
             "object_type": "definition_activity"
           }
         ],
         "categories": [
-          "category_01Y5403M85XIC6BVgysDSs8lZteKgkYJDAt"
+          "category_01XTYJFWCEOFX64OkJu6rjCOFod6NH9XYv0"
+        ]
+      }
+    },
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01Y5ZUO232SYM21oRpjyXHkWdtIh6RDzGv2",
+        "name": "Convert YAML to JSON",
+        "title": "Convert YAML to JSON",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "lab:\n  description: ''\n  notes: ''\n  title: SD-WAN-JPMC-BRANCH\n  version: 0.0.5\nnodes:\n  - id: n0\n    label: BR-2-SW1\n    node_definition: c9kv-20220216\n    x: 700\n    y: 300\n    configuration: hostname inserthostname_here\n    hide_links: null\n    image_definition: C9Kv-17-7\n    ram: 16384\n    cpus: 4\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - Greenwich Branch\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet0/0\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet1/0/1\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet1/0/2\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet1/0/3\n        type: physical\n  - id: n1\n    label: BR-2-SW2\n    node_definition: c9kv-20220216\n    x: 700\n    y: 450\n    configuration: hostname inserthostname_here\n    hide_links: null\n    image_definition: C9Kv-17-7\n    ram: 16384\n    cpus: 4\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - Greenwich Branch\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet0/0\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet1/0/1\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet1/0/2\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet1/0/3\n        type: physical\n  - id: n2\n    label: BR-1-SW1\n    node_definition: c9kv-20220216\n    x: 650\n    y: -50\n    configuration: ''\n    hide_links: null\n    image_definition: C9Kv-17-7\n    ram: 16384\n    cpus: 4\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - Yamhill Branch\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet0/0\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet1/0/1\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet1/0/2\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet1/0/3\n        type: physical\n  - id: n3\n    label: bridge-302-1\n    node_definition: external_connector\n    x: -450\n    y: -150\n    configuration: bridge302\n    hide_links: null\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - unknown_location\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port\n        type: physical\n  - id: n4\n    label: MPLS\n    node_definition: cat8000v\n    x: 0\n    y: 50\n    configuration: |-\n      !\n      hostname MPLS\n      !\n      !\n      ip dhcp pool BR-1-R1\n       network 169.155.156.12 255.255.255.252\n       default-router 169.155.156.14\n      !\n      ip dhcp pool BR-2-R1\n       network 169.155.156.16 255.255.255.252\n       default-router 169.155.156.18\n      !\n      ip dhcp pool DC-1-R1\n       network 169.155.156.4 255.255.255.252\n       default-router 169.155.156.6\n      !\n      ip dhcp pool DC-2-R1\n       network 169.155.156.8 255.255.255.252\n       default-router 169.155.156.10\n      !\n      !\n      interface GigabitEthernet1\n       description BR-1-R1\n       ip address 169.155.156.14 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet2\n       description BR-2-R1\n       ip address 169.155.156.18 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet3\n       description DC-1-R1\n       ip address 169.155.156.6 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet4\n       description DC-2-R1\n       ip address 169.155.156.10 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet5\n       description SD-WAN_CONTROLLERS\n       ip address 169.155.156.2 255.255.255.252\n       no shut\n      !\n      !\n      router bgp 65200\n       bgp log-neighbor-changes\n       neighbor 169.155.156.1 remote-as 65999\n       !\n       address-family ipv4\n        network 169.155.156.4 mask 255.255.255.252\n        network 169.155.156.8 mask 255.255.255.252\n        network 169.155.156.12 mask 255.255.255.252\n        network 169.155.156.16 mask 255.255.255.252\n        neighbor 169.155.156.1 activate\n        neighbor 169.155.156.1 route-map RM_UNDER out\n       exit-address-family\n      !\n      !\n      ip prefix-list PL_UNDER seq 5 permit 169.155.156.4/30\n      ip prefix-list PL_UNDER seq 10 permit 169.155.156.8/30\n      ip prefix-list PL_UNDER seq 15 permit 169.155.156.12/30\n      ip prefix-list PL_UNDER seq 20 permit 169.155.156.16/30\n      ip prefix-list PL_UNDER seq 25 permit 169.155.156.28/30\n      !\n      route-map RM_UNDER permit 10\n       match ip address prefix-list PL_UNDER\n      !\n      !\n      !\n      !\n      end\n    hide_links: null\n    image_definition: Cat-8000v-17.6.3\n    ram: 4096\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - unknown_location\n      - simulated_provider\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n      - id: i5\n        slot: 4\n        label: GigabitEthernet5\n        type: physical\n      - id: i6\n        slot: 5\n        label: GigabitEthernet6\n        type: physical\n  - id: n5\n    label: INET\n    node_definition: cat8000v\n    x: 0\n    y: 200\n    configuration: |-\n      !\n      hostname INET\n      !\n      ip dhcp pool BR-1-R1\n       network 169.155.156.60 255.255.255.252\n       default-router 169.155.156.62\n      !\n      ip dhcp pool BR-2-R2\n       network 169.155.156.64 255.255.255.252\n       default-router 169.155.156.66\n      !\n      ip dhcp pool DC-1-R1\n       network 169.155.156.52 255.255.255.252\n       default-router 169.155.156.54\n      !\n      ip dhcp pool DC-2-R1\n       network 169.155.156.56 255.255.255.252\n       default-router 169.155.156.58\n      !\n\n      interface GigabitEthernet1\n       description BR-1-R1\n       ip address 169.155.156.62 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet2\n       description BR-2-R2\n       ip address 169.155.156.66 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet3\n       description DC-1-R1\n       ip address 169.155.156.54 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet4\n       description DC-2-R1\n       ip address 169.155.156.58 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet5\n       description SD-WAN_CONTROLLERS\n       ip address 169.155.156.50 255.255.255.252\n       no shut\n      !\n      router bgp 77\n       bgp log-neighbor-changes\n       neighbor 169.155.156.49 remote-as 65999\n       !\n       address-family ipv4\n        network 169.155.156.52 mask 255.255.255.252\n        network 169.155.156.56 mask 255.255.255.252\n        network 169.155.156.60 mask 255.255.255.252\n        network 169.155.156.64 mask 255.255.255.252\n        neighbor 169.155.156.49 activate\n        neighbor 169.155.156.49 route-map RM_UNDER out\n       exit-address-family\n      !\n      !\n      ip prefix-list PL_UNDER seq 5 permit 169.155.156.52/30\n      ip prefix-list PL_UNDER seq 10 permit 169.155.156.56/30\n      ip prefix-list PL_UNDER seq 15 permit 169.155.156.60/30\n      ip prefix-list PL_UNDER seq 20 permit 169.155.156.64/30\n      !\n      route-map RM_UNDER permit 10\n       match ip address prefix-list PL_UNDER\n      !\n    hide_links: null\n    image_definition: Cat-8000v-17.6.3\n    ram: 4096\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - unknown_location\n      - simulated_provider\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n      - id: i5\n        slot: 4\n        label: GigabitEthernet5\n        type: physical\n      - id: i6\n        slot: 5\n        label: GigabitEthernet6\n        type: physical\n  - id: n6\n    label: Cellular\n    node_definition: cat8000v\n    x: 0\n    y: 350\n    configuration: |\n      !\n      hostname CELLULAR\n      !\n      !\n      ip dhcp pool BR-1-R1\n       network 169.155.156.108 255.255.255.252\n       default-router 169.155.156.110\n      !\n      ip dhcp pool BR-2-TSG\n       network 169.155.156.112 255.255.255.252\n       default-router 169.155.156.114\n      !\n      ip dhcp pool DC-1-R1\n       network 169.155.156.100 255.255.255.252\n       default-router 169.155.156.102\n      !\n      ip dhcp pool DC-2-R1\n       network 169.155.156.104 255.255.255.252\n       default-router 169.155.156.106\n      !\n      !\n      interface GigabitEthernet1\n       description BR-1-R1\n       ip address 169.155.156.110 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet2\n       description BR-2-TSG\n       ip address 169.155.156.114 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet3\n       description DC-1-R1\n       ip address 169.155.156.102 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet4\n       description DC-2-R1\n       ip address 169.155.156.106 255.255.255.252\n       no shut\n      !\n      interface GigabitEthernet5\n       description SD-WAN_CONTROLLERS\n       ip address 169.155.156.98 255.255.255.252\n       no shut\n      !\n      !\n      router bgp 88\n       bgp log-neighbor-changes\n       neighbor 169.155.156.97 remote-as 65999\n       !\n       address-family ipv4\n        network 169.155.156.100 mask 255.255.255.252\n        network 169.155.156.104 mask 255.255.255.252\n        network 169.155.156.108 mask 255.255.255.252\n        network 169.155.156.112 mask 255.255.255.252\n        neighbor 169.155.156.97 activate\n        neighbor 169.155.156.97 route-map RM_UNDER out\n       exit-address-family\n      !\n      !\n      ip prefix-list PL_UNDER seq 5 permit 169.155.156.100/30\n      ip prefix-list PL_UNDER seq 10 permit 169.155.156.104/30\n      ip prefix-list PL_UNDER seq 15 permit 169.155.156.108/30\n      ip prefix-list PL_UNDER seq 20 permit 169.155.156.112/30\n      !\n      route-map RM_UNDER permit 10\n       match ip address prefix-list PL_UNDER\n      !\n    hide_links: null\n    image_definition: Cat-8000v-17.6.3\n    ram: 4096\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - unknown_location\n      - simulated_provider\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n      - id: i5\n        slot: 4\n        label: GigabitEthernet5\n        type: physical\n      - id: i6\n        slot: 5\n        label: GigabitEthernet6\n        type: physical\n      - id: i7\n        slot: 6\n        label: GigabitEthernet7\n        type: physical\n  - id: n7\n    label: SD-WAN-Controllers\n    node_definition: cat8000v\n    x: -250\n    y: -150\n    configuration: |-\n      platform console serial\n      !\n      hostname SD-WAN_CONTROLLERS\n      !\n      !\n      !\n      interface GigabitEthernet1\n       description MPLS\n       ip address 169.155.156.1 255.255.255.252\n       negotiation auto\n       no mop enabled\n       no mop sysid\n       no shutdown\n      !\n      interface GigabitEthernet2\n       description INET\n       ip address 169.155.156.49 255.255.255.252\n       negotiation auto\n       no mop enabled\n       no mop sysid\n       no shutdown\n      !\n      interface GigabitEthernet3\n       description CELLUAR\n       ip address 169.155.156.97 255.255.255.252\n       negotiation auto\n       no mop enabled\n       no mop sysid\n       no shutdown\n      !\n      interface GigabitEthernet4\n       description SD-WAN Management\n       ip address 10.30.2.10 255.255.255.0\n       negotiation auto\n       no mop enabled\n       no mop sysid\n       no shutdown\n      !\n      !\n      router bgp 65999\n       bgp log-neighbor-changes\n       neighbor 169.155.156.2 remote-as 65200\n       neighbor 169.155.156.50 remote-as 77\n       neighbor 169.155.156.98 remote-as 88\n       !\n       address-family ipv4\n        network 10.30.2.0 mask 255.255.255.0\n        neighbor 169.155.156.2 activate\n        neighbor 169.155.156.2 route-map RM_SDN out\n        neighbor 169.155.156.50 activate\n        neighbor 169.155.156.50 route-map RM_SDN out\n        neighbor 169.155.156.98 activate\n        neighbor 169.155.156.98 route-map RM_SDN out\n       exit-address-family\n      !\n      !\n      ip prefix-list PL_SDWAN seq 5 permit 10.30.2.0/24\n      !\n      !\n      route-map RM_SDN permit 10\n       match ip address prefix-list PL_SDWAN\n      !\n      !\n      !\n      !\n      !\n      end\n    hide_links: null\n    ram: 4096\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - unknown_location\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n  - id: n8\n    label: BR-2-TSG-Cell\n    node_definition: cat8000v\n    x: 400\n    y: 350\n    configuration: |-\n      platform console serial\n      !\n      hostname BR-2-TSG\n      !\n      !\n      ip dhcp pool R1\n       network 10.0.10.0 255.255.255.0\n       default-router 10.0.10.1\n      !\n      ip dhcp pool R2\n       network 10.0.20.0 255.255.255.0\n       default-router 10.0.20.1\n      !\n      !\n      interface GigabitEthernet1\n       description BR-2-R2\n       ip address 10.0.10.1 255.255.255.0\n       ip nat inside\n       negotiation auto\n       no mop enabled\n       no mop sysid\n       no shutdown\n      !\n      interface GigabitEthernet2\n       description BR-2-R2\n       ip address 10.0.20.1 255.255.255.0\n       ip nat inside\n       negotiation auto\n       no mop enabled\n       no mop sysid\n       no shutdown\n      !\n      interface GigabitEthernet3\n       description CELLUAR\n       ip address dhcp\n       ip nat outside\n       negotiation auto\n       no mop enabled\n       no mop sysid\n       no shutdown\n      !\n\n      ip nat inside source list R1-R2 interface GigabitEthernet3 overload\n      !\n      !\n      !\n      ip access-list standard R1-R2\n       permit 10.0.10.0 0.0.0.255\n       permit 10.0.20.0 0.0.0.255\n       deny any\n      !\n      !\n      !\n      end\n    hide_links: null\n    image_definition: Cat-8000v-17.6.3\n    ram: 4096\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - Greenwich Branch\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n  - id: n9\n    label: DC-1-access\n    node_definition: cat8000v\n    x: -750\n    y: 50\n    configuration: |2-\n\n      hostname DC-1-access\n      !\n      vrf definition GUEST\n       rd 65111:55\n       !\n       address-family ipv4\n       exit-address-family\n      !\n      vrf definition IOT\n       rd 65111:33\n       !\n       address-family ipv4\n       exit-address-family\n      !\n      !\n      !\n      interface Loopback133\n       description IOT LoopBack\n       vrf forwarding IOT\n       ip address 172.50.111.133 255.255.255.255\n      !\n      interface Loopback155\n       description GUEST LoopBack\n       vrf forwarding GUEST\n       ip address 172.50.111.155 255.255.255.255\n      !\n      interface GigabitEthernet1\n       description Main Interface for SD-WAN Subnets\n       no ip address\n       no shutdown\n      !\n      interface GigabitEthernet1.11\n       description SD_WAN User Subnet\n       encapsulation dot1Q 11\n       ip address 172.50.111.1 255.255.255.0\n      !\n      interface GigabitEthernet1.33\n       description SD_WAN IOT Subnet\n       encapsulation dot1Q 33\n       vrf forwarding IOT\n       ip address 172.50.133.1 255.255.255.0\n      !\n      interface GigabitEthernet1.55\n       description SD_WAN Guest Subnet\n       encapsulation dot1Q 55\n       vrf forwarding GUEST\n       ip address 172.50.155.1 255.255.255.0\n      !\n      !\n      interface GigabitEthernet2\n       description Link to Services\n       ip address 111.111.99.1 255.255.255.0\n       no shutdown\n      !\n      !\n      !\n      router bgp 65111\n       bgp log-neighbor-changes\n       neighbor 172.50.111.2 remote-as 65111\n       !\n       address-family ipv4\n        network 172.50.111.0 mask 255.255.255.0\n        network 111.111.99.0 mask 255.255.255.0\n        neighbor 172.50.111.2 activate\n       exit-address-family\n       !\n       address-family ipv4 vrf GUEST\n        network 172.50.111.155 mask 255.255.255.255\n        neighbor 172.50.155.2 remote-as 65111\n        neighbor 172.50.155.2 activate\n       exit-address-family\n       !\n       address-family ipv4 vrf IOT\n        network 172.50.111.133 mask 255.255.255.255\n        neighbor 172.50.133.2 remote-as 65111\n        neighbor 172.50.133.2 activate\n       exit-address-family\n      !\n    hide_links: null\n    image_definition: Cat-8000v-17.6.3\n    ram: 4096\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 1\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n  - id: n10\n    label: DC-2-access\n    node_definition: cat8000v\n    x: -750\n    y: 350\n    configuration: |-\n      hostname DC-2-access\n      !\n      vrf definition GUEST\n       rd 65222:55\n       !\n       address-family ipv4\n       exit-address-family\n      !\n      vrf definition IOT\n       rd 65222:33\n       !\n       address-family ipv4\n       exit-address-family\n      !\n      !\n      !\n      interface Loopback133\n       description IOT LoopBack\n       vrf forwarding IOT\n       ip address 172.50.222.133 255.255.255.255\n      !\n      interface Loopback155\n       description GUEST LoopBack\n       vrf forwarding GUEST\n       ip address 172.50.222.155 255.255.255.255\n      !\n      interface GigabitEthernet1\n       description Main Interface for SD-WAN Subnets\n       no ip address\n       no shutdown\n      !\n      interface GigabitEthernet1.11\n       description SD_WAN User Subnet\n       encapsulation dot1Q 11\n       ip address 172.50.211.1 255.255.255.0\n      !\n      interface GigabitEthernet1.33\n       description SD_WAN IOT Subnet\n       encapsulation dot1Q 33\n       vrf forwarding IOT\n       ip address 172.50.233.1 255.255.255.0\n      !\n      interface GigabitEthernet1.55\n       description SD_WAN Guest Subnet\n       encapsulation dot1Q 55\n       vrf forwarding GUEST\n       ip address 172.50.205.1 255.255.255.0\n      !\n      !\n      interface GigabitEthernet2\n       description Link to Services\n       ip address 222.222.99.1 255.255.255.0\n       no shutdown\n      !\n      !\n      !\n      router bgp 65222\n       bgp log-neighbor-changes\n       neighbor 172.50.211.2 remote-as 65222\n       !\n       address-family ipv4\n        network 172.50.211.0 mask 255.255.255.0\n        network 222.222.99.0 mask 255.255.255.0\n        neighbor 172.50.211.2 activate\n       exit-address-family\n       !\n       address-family ipv4 vrf GUEST\n        network 172.50.222.155 mask 255.255.255.255\n        neighbor 172.50.205.2 remote-as 65222\n        neighbor 172.50.205.2 activate\n       exit-address-family\n       !\n       address-family ipv4 vrf IOT\n        network 172.50.222.133 mask 255.255.255.255\n        neighbor 172.50.233.2 remote-as 65222\n        neighbor 172.50.233.2 activate\n       exit-address-family\n      !\n    hide_links: null\n    image_definition: Cat-8000v-17.6.3\n    ram: 4096\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 2\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n  - id: n11\n    label: BR-1-R1\n    node_definition: cedge\n    x: 500\n    y: -50\n    configuration: |-\n      Content-Type: multipart/mixed; boundary=\"===============1018914332445180618==\"\n      MIME-Version: 1.0\n\n      --===============1018914332445180618==\n      Content-Type: text/cloud-config; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"tmp2w96yq3a\"\n\n      #cloud-config\n      vinitparam:\n       - uuid : C8K-F4B7C162-AFF5-44CA-EE33-408772B1AD65\n       - org : jpmc-branch-auto\n       - otp : 75105ac7c7d84493be9605579b7a42a8\n       - vbond : 10.30.2.6\n\n      --===============1018914332445180618==\n      Content-Type: text/cloud-boothook; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"config-C8K-F4B7C162-AFF5-44CA-EE33-408772B1AD65.txt\"\n\n      #cloud-boothook\n        system\n         ztp-status            success\n         pseudo-confirm-commit 300\n         personality           vedge\n         device-model          vedge-C8000V\n         chassis-number        C8K-F4B7C162-AFF5-44CA-EE33-408772B1AD65\n         system-ip             7.7.7.1\n         overlay-id            1\n         site-id               7\n         port-offset           0\n         control-session-pps   300\n         admin-tech-on-failure\n         sp-organization-name  jpmc-branch-auto\n         organization-name     jpmc-branch-auto\n         port-hop\n         track-transport\n         track-default-gateway\n         console-baud-rate     115200\n         config-template-name  Branch_Single_Router\n         no on-demand enable\n         on-demand idle-timeout 10\n         vbond 10.30.2.6 port 12346\n         logging\n          disk\n           enable\n          !\n         !\n        !\n        bfd color lte\n         hello-interval 1000\n         no pmtu-discovery\n         multiplier     1\n        !\n        bfd default-dscp 48\n        bfd app-route multiplier 2\n        bfd app-route poll-interval 123400\n        security\n         ipsec\n          rekey               86400\n          replay-window       512\n          authentication-type ah-sha1-hmac sha1-hmac\n         !\n        !\n        sslproxy\n         no enable\n         rsa-key-modulus      2048\n         certificate-lifetime 730\n         eckey-type           P256\n         ca-tp-label          PROXY-SIGNING-CA\n         settings expired-certificate  drop\n         settings untrusted-certificate drop\n         settings unknown-status       drop\n         settings certificate-revocation-check none\n         settings unsupported-protocol-versions drop\n         settings unsupported-cipher-suites drop\n         settings failure-mode         close\n         settings minimum-tls-ver      TLSv1\n         dual-side optimization enable\n        !\n        sdwan\n         interface GigabitEthernet1\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color mpls restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       carrier1\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet2\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color public-internet restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet3\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color lte restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet4\n         exit\n         appqoe\n          no tcpopt enable\n          no dreopt enable\n         !\n         omp\n          no shutdown\n          send-path-limit  4\n          ecmp-limit       4\n          graceful-restart\n          no as-dot-notation\n          timers\n           holdtime               60\n           advertisement-interval 1\n           graceful-restart-timer 43200\n           eor-timer              300\n          exit\n          address-family ipv4\n           advertise bgp\n           advertise connected\n           advertise static\n          !\n          address-family ipv6\n           advertise connected\n           advertise static\n          !\n         !\n        !\n        banner login Un authorised Logins tracked\n        banner motd Restricted Use\n        service tcp-keepalives-in\n        service tcp-keepalives-out\n        no service tcp-small-servers\n        no service udp-small-servers\n        hostname BR-1-R1\n        username admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\n        vrf definition 11\n         rd 1:11\n         address-family ipv4\n          route-target export 65001:11\n          route-target import 65001:11\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 33\n         rd 1:33\n         address-family ipv4\n          route-target export 65001:33\n          route-target import 65001:33\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 55\n         rd 1:55\n         address-family ipv4\n          route-target export 65001:55\n          route-target import 65001:55\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition Mgmt-intf\n         description Management\n         rd          1:512\n         address-family ipv4\n          route-target export 65001:512\n          route-target import 65001:512\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        ip arp proxy disable\n        no ip finger\n        no ip rcmd rcp-enable\n        no ip rcmd rsh-enable\n        no ip dhcp use class\n        no ip ftp passive\n        ip bootp server\n        no ip source-route\n        no ip http server\n        no ip http secure-server\n        ip nat inside source list nat-dia-vpn-hop-access-list interface GigabitEthernet2 overload\n        ip nat translation tcp-timeout 3600\n        ip nat translation udp-timeout 60\n        ip nat settings central-policy\n        interface GigabitEthernet1\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet1\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet2\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet2\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         ip nat outside\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet3\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet3\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4.11\n         no shutdown\n         encapsulation dot1Q 11\n         vrf forwarding 11\n         ip address 172.50.11.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.33\n         no shutdown\n         encapsulation dot1Q 33\n         vrf forwarding 33\n         ip address 172.50.13.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.55\n         no shutdown\n         encapsulation dot1Q 55\n         vrf forwarding 55\n         ip address 172.50.15.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet6\n         no shutdown\n         arp timeout 1200\n         vrf forwarding 11\n         ip address 172.50.1.1 255.255.255.0\n         ip helper-address 111.111.99.130\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface Tunnel1\n         no shutdown\n         ip unnumbered GigabitEthernet1\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet1\n         no ipv6 redirects\n         tunnel source GigabitEthernet1\n         tunnel mode sdwan\n        exit\n        interface Tunnel2\n         no shutdown\n         ip unnumbered GigabitEthernet2\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet2\n         no ipv6 redirects\n         tunnel source GigabitEthernet2\n         tunnel mode sdwan\n        exit\n        interface Tunnel3\n         no shutdown\n         ip unnumbered GigabitEthernet3\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet3\n         no ipv6 redirects\n         tunnel source GigabitEthernet3\n         tunnel mode sdwan\n        exit\n        clock timezone UTC 0 0\n        logging persistent size 104857600 filesize 10485760\n        no logging monitor\n        logging buffered 512000\n        logging console\n        aaa authentication login default local\n        aaa authorization exec default local\n        aaa server radius dynamic-author\n        !\n        no crypto ikev2 diagnose error\n        no crypto isakmp diagnose error\n        no network-clock revertive\n        router bgp 65001\n         bgp log-neighbor-changes\n         address-family ipv4 unicast vrf 11\n          distance bgp 20 200 20\n          neighbor 172.50.11.1 remote-as 65001\n          neighbor 172.50.11.1 activate\n          neighbor 172.50.11.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 33\n          distance bgp 20 200 20\n          neighbor 172.50.13.1 remote-as 65001\n          neighbor 172.50.13.1 activate\n          neighbor 172.50.13.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 55\n          distance bgp 20 200 20\n          neighbor 172.50.15.1 remote-as 65001\n          neighbor 172.50.15.1 activate\n          neighbor 172.50.15.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         timers bgp 60 180\n        !\n        snmp-server ifindex persist\n        line con 0\n         speed    115200\n         stopbits 1\n        !\n        line vty 0 4\n         transport input ssh\n        !\n        line vty 5 80\n         transport input ssh\n        !\n        lldp run\n        nat64 translation timeout tcp 3600\n        nat64 translation timeout udp 300\n       !\n      !\n\n      --===============1018914332445180618==--\n    hide_links: false\n    image_definition: Cedge c8kv -17.3.6\n    ram: 4096\n    cpus: 2\n    cpu_limit: 30\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - Yamhill Branch\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n      - id: i5\n        slot: 4\n        label: GigabitEthernet5\n        type: physical\n      - id: i6\n        slot: 5\n        label: GigabitEthernet6\n        type: physical\n  - id: n12\n    label: BR-2-R1\n    node_definition: cedge\n    x: 550\n    y: 300\n    configuration: |-\n      Content-Type: multipart/mixed; boundary=\"===============2585368117674305274==\"\n      MIME-Version: 1.0\n\n      --===============2585368117674305274==\n      Content-Type: text/cloud-config; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"tmpt0aaor21\"\n\n      #cloud-config\n      vinitparam:\n       - uuid : C8K-9742A6FE-CB34-D1ED-002C-417D42500794\n       - vbond : 10.30.2.6\n       - org : jpmc-branch-auto\n       - otp : 1cee12f975644dc98c4455486f1a8988\n\n      --===============2585368117674305274==\n      Content-Type: text/cloud-boothook; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"config-C8K-9742A6FE-CB34-D1ED-002C-417D42500794.txt\"\n\n      #cloud-boothook\n        system\n         ztp-status            success\n         pseudo-confirm-commit 300\n         personality           vedge\n         device-model          vedge-C8000V\n         chassis-number        C8K-9742A6FE-CB34-D1ED-002C-417D42500794\n         system-ip             8.8.8.1\n         overlay-id            1\n         site-id               8\n         port-offset           0\n         control-session-pps   300\n         admin-tech-on-failure\n         sp-organization-name  jpmc-branch-auto\n         organization-name     jpmc-branch-auto\n         port-hop\n         track-transport\n         track-default-gateway\n         console-baud-rate     115200\n         config-template-name  Branch_Dual_Router-MPLS-CELL_TLOC-INET\n         no on-demand enable\n         on-demand idle-timeout 10\n         vbond 10.30.2.6 port 12346\n         logging\n          disk\n           enable\n          !\n         !\n        !\n        bfd color lte\n         hello-interval 1000\n         no pmtu-discovery\n         multiplier     1\n        !\n        bfd default-dscp 48\n        bfd app-route multiplier 2\n        bfd app-route poll-interval 123400\n        security\n         ipsec\n          rekey               86400\n          replay-window       512\n          authentication-type ah-sha1-hmac sha1-hmac\n         !\n        !\n        sslproxy\n         no enable\n         rsa-key-modulus      2048\n         certificate-lifetime 730\n         eckey-type           P256\n         ca-tp-label          PROXY-SIGNING-CA\n         settings expired-certificate  drop\n         settings untrusted-certificate drop\n         settings unknown-status       drop\n         settings certificate-revocation-check none\n         settings unsupported-protocol-versions drop\n         settings unsupported-cipher-suites drop\n         settings failure-mode         close\n         settings minimum-tls-ver      TLSv1\n         dual-side optimization enable\n        !\n        sdwan\n         interface GigabitEthernet1\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color mpls restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       carrier2\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet2\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color lte restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet3\n         exit\n         interface GigabitEthernet3.100\n          tloc-extension GigabitEthernet1\n         exit\n         interface GigabitEthernet3.200\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color public-internet restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet4\n         exit\n         interface GigabitEthernet5\n         exit\n         appqoe\n          no tcpopt enable\n          no dreopt enable\n         !\n         omp\n          no shutdown\n          send-path-limit  4\n          ecmp-limit       4\n          graceful-restart\n          no as-dot-notation\n          timers\n           holdtime               60\n           advertisement-interval 1\n           graceful-restart-timer 43200\n           eor-timer              300\n          exit\n          address-family ipv4\n           advertise bgp\n           advertise connected\n           advertise static\n          !\n          address-family ipv6\n           advertise connected\n           advertise static\n          !\n         !\n        !\n        banner login Un authorised Logins tracked\n        banner motd Restricted Use\n        service tcp-keepalives-in\n        service tcp-keepalives-out\n        no service tcp-small-servers\n        no service udp-small-servers\n        hostname BR-2-R1\n        username admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\n        vrf definition 11\n         rd 1:11\n         address-family ipv4\n          route-target export 65002:11\n          route-target import 65002:11\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 33\n         rd 1:33\n         address-family ipv4\n          route-target export 65002:33\n          route-target import 65002:33\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 55\n         rd 1:55\n         address-family ipv4\n          route-target export 65002:55\n          route-target import 65002:55\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition Mgmt-intf\n         description Management\n         rd          1:512\n         address-family ipv4\n          route-target export 65002:512\n          route-target import 65002:512\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        ip arp proxy disable\n        no ip finger\n        no ip rcmd rcp-enable\n        no ip rcmd rsh-enable\n        no ip dhcp use class\n        no ip ftp passive\n        ip route 0.0.0.0 0.0.0.0 192.168.1.2\n        ip bootp server\n        no ip source-route\n        no ip http server\n        no ip http secure-server\n        ip nat inside source list nat-dia-vpn-hop-access-list interface GigabitEthernet1 overload\n        ip nat translation tcp-timeout 3600\n        ip nat translation udp-timeout 60\n        ip nat settings central-policy\n        interface GigabitEthernet1\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet1\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         ip nat outside\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet2\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet2\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet3\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet3.100\n         no shutdown\n         encapsulation dot1Q 100\n         ip address 192.168.2.1 255.255.255.252\n         ip mtu 1500\n        exit\n        interface GigabitEthernet3.200\n         no shutdown\n         encapsulation dot1Q 200\n         ip address 192.168.1.1 255.255.255.252\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4.11\n         no shutdown\n         encapsulation dot1Q 11\n         vrf forwarding 11\n         ip address 172.50.21.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.33\n         no shutdown\n         encapsulation dot1Q 33\n         vrf forwarding 33\n         ip address 172.50.23.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.55\n         no shutdown\n         encapsulation dot1Q 55\n         vrf forwarding 55\n         ip address 172.50.25.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet5\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet5.11\n         no shutdown\n         encapsulation dot1Q 11\n         vrf forwarding 11\n         ip address 172.50.22.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet5.33\n         no shutdown\n         encapsulation dot1Q 33\n         vrf forwarding 33\n         ip address 172.50.24.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet5.55\n         no shutdown\n         encapsulation dot1Q 55\n         vrf forwarding 55\n         ip address 172.50.26.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet6\n         no shutdown\n         arp timeout 1200\n         vrf forwarding 11\n         ip address 172.50.2.1 255.255.255.0\n         ip helper-address 111.111.99.130\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface Tunnel1\n         no shutdown\n         ip unnumbered GigabitEthernet1\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet1\n         no ipv6 redirects\n         tunnel source GigabitEthernet1\n         tunnel mode sdwan\n        exit\n        interface Tunnel2\n         no shutdown\n         ip unnumbered GigabitEthernet2\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet2\n         no ipv6 redirects\n         tunnel source GigabitEthernet2\n         tunnel mode sdwan\n        exit\n        interface Tunnel200003\n         no shutdown\n         ip unnumbered GigabitEthernet3.200\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet3.200\n         no ipv6 redirects\n         tunnel source GigabitEthernet3.200\n         tunnel mode sdwan\n        exit\n        clock timezone UTC 0 0\n        logging persistent size 104857600 filesize 10485760\n        no logging monitor\n        logging buffered 512000\n        logging console\n        aaa authentication login default local\n        aaa authorization exec default local\n        aaa server radius dynamic-author\n        !\n        no crypto ikev2 diagnose error\n        no crypto isakmp diagnose error\n        no network-clock revertive\n        router bgp 65002\n         bgp log-neighbor-changes\n         address-family ipv4 unicast vrf 11\n          distance bgp 20 200 20\n          neighbor 172.50.21.1 remote-as 65002\n          neighbor 172.50.21.1 activate\n          neighbor 172.50.21.1 send-community both\n          neighbor 172.50.22.1 remote-as 65002\n          neighbor 172.50.22.1 activate\n          neighbor 172.50.22.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 33\n          distance bgp 20 200 20\n          neighbor 172.50.23.1 remote-as 65002\n          neighbor 172.50.23.1 activate\n          neighbor 172.50.23.1 send-community both\n          neighbor 172.50.24.1 remote-as 65002\n          neighbor 172.50.24.1 activate\n          neighbor 172.50.24.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 55\n          distance bgp 20 200 20\n          neighbor 172.50.25.1 remote-as 65002\n          neighbor 172.50.25.1 activate\n          neighbor 172.50.25.1 send-community both\n          neighbor 172.50.26.1 remote-as 65002\n          neighbor 172.50.26.1 activate\n          neighbor 172.50.26.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         timers bgp 60 180\n        !\n        snmp-server ifindex persist\n        line con 0\n         speed    115200\n         stopbits 1\n        !\n        line vty 0 4\n         transport input ssh\n        !\n        line vty 5 80\n         transport input ssh\n        !\n        lldp run\n        nat64 translation timeout tcp 3600\n        nat64 translation timeout udp 300\n       !\n      !\n\n      --===============2585368117674305274==--\n    hide_links: false\n    ram: 4096\n    cpus: 2\n    cpu_limit: 30\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - Greenwich Branch\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n      - id: i5\n        slot: 4\n        label: GigabitEthernet5\n        type: physical\n      - id: i6\n        slot: 5\n        label: GigabitEthernet6\n        type: physical\n  - id: n13\n    label: BR-2-R2\n    node_definition: cedge\n    x: 550\n    y: 450\n    configuration: |-\n      Content-Type: multipart/mixed; boundary=\"===============4620531657167622363==\"\n      MIME-Version: 1.0\n\n      --===============4620531657167622363==\n      Content-Type: text/cloud-config; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"tmph6mmj2ib\"\n\n      #cloud-config\n      vinitparam:\n       - vbond : 10.30.2.6\n       - uuid : C8K-408C47AB-AB1E-01E3-30B9-7EE2699DC872\n       - otp : 4da81a2fb9564747a354892e8d5770d7\n       - org : jpmc-branch-auto\n\n      --===============4620531657167622363==\n      Content-Type: text/cloud-boothook; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"config-C8K-408C47AB-AB1E-01E3-30B9-7EE2699DC872.txt\"\n\n      #cloud-boothook\n        system\n         ztp-status            success\n         pseudo-confirm-commit 300\n         personality           vedge\n         device-model          vedge-C8000V\n         chassis-number        C8K-408C47AB-AB1E-01E3-30B9-7EE2699DC872\n         system-ip             8.8.8.2\n         overlay-id            1\n         site-id               8\n         port-offset           0\n         control-session-pps   300\n         admin-tech-on-failure\n         sp-organization-name  jpmc-branch-auto\n         organization-name     jpmc-branch-auto\n         port-hop\n         track-transport\n         track-default-gateway\n         console-baud-rate     115200\n         config-template-name  Branch_Dual_Router-INET-CELL_TLOC-MPLS\n         no on-demand enable\n         on-demand idle-timeout 10\n         vbond 10.30.2.6 port 12346\n         logging\n          disk\n           enable\n          !\n         !\n        !\n        bfd color lte\n         hello-interval 1000\n         no pmtu-discovery\n         multiplier     1\n        !\n        bfd default-dscp 48\n        bfd app-route multiplier 2\n        bfd app-route poll-interval 123400\n        security\n         ipsec\n          rekey               86400\n          replay-window       512\n          authentication-type ah-sha1-hmac sha1-hmac\n         !\n        !\n        sslproxy\n         no enable\n         rsa-key-modulus      2048\n         certificate-lifetime 730\n         eckey-type           P256\n         ca-tp-label          PROXY-SIGNING-CA\n         settings expired-certificate  drop\n         settings untrusted-certificate drop\n         settings unknown-status       drop\n         settings certificate-revocation-check none\n         settings unsupported-protocol-versions drop\n         settings unsupported-cipher-suites drop\n         settings failure-mode         close\n         settings minimum-tls-ver      TLSv1\n         dual-side optimization enable\n        !\n        sdwan\n         interface GigabitEthernet1\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color public-internet restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet2\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color lte restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet3\n         exit\n         interface GigabitEthernet3.100\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color mpls restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       carrier2\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet3.200\n          tloc-extension GigabitEthernet1\n         exit\n         interface GigabitEthernet4\n         exit\n         interface GigabitEthernet5\n         exit\n         appqoe\n          no tcpopt enable\n          no dreopt enable\n         !\n         omp\n          no shutdown\n          send-path-limit  4\n          ecmp-limit       4\n          graceful-restart\n          no as-dot-notation\n          timers\n           holdtime               60\n           advertisement-interval 1\n           graceful-restart-timer 43200\n           eor-timer              300\n          exit\n          address-family ipv4\n           advertise bgp\n           advertise connected\n           advertise static\n          !\n          address-family ipv6\n           advertise connected\n           advertise static\n          !\n         !\n        !\n        banner login Un authorised Logins tracked\n        banner motd Restricted Use\n        service tcp-keepalives-in\n        service tcp-keepalives-out\n        no service tcp-small-servers\n        no service udp-small-servers\n        hostname BR-2-R2\n        username admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\n        vrf definition 11\n         rd 1:11\n         address-family ipv4\n          route-target export 65002:11\n          route-target import 65002:11\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 33\n         rd 1:33\n         address-family ipv4\n          route-target export 65002:33\n          route-target import 65002:33\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 55\n         rd 1:55\n         address-family ipv4\n          route-target export 65002:55\n          route-target import 65002:55\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition Mgmt-intf\n         description Management\n         rd          1:512\n         address-family ipv4\n          route-target export 65002:512\n          route-target import 65002:512\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        ip arp proxy disable\n        no ip finger\n        no ip rcmd rcp-enable\n        no ip rcmd rsh-enable\n        no ip dhcp use class\n        no ip ftp passive\n        ip route 0.0.0.0 0.0.0.0 192.168.2.1\n        ip bootp server\n        no ip source-route\n        no ip http server\n        no ip http secure-server\n        ip nat inside source list nat-dia-vpn-hop-access-list interface GigabitEthernet1 overload\n        ip nat translation tcp-timeout 3600\n        ip nat translation udp-timeout 60\n        ip nat settings central-policy\n        interface GigabitEthernet1\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet1\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         ip nat outside\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet2\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet2\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet3\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet3.100\n         no shutdown\n         encapsulation dot1Q 100\n         ip address 192.168.2.2 255.255.255.252\n         ip mtu 1500\n        exit\n        interface GigabitEthernet3.200\n         no shutdown\n         encapsulation dot1Q 200\n         ip address 192.168.1.2 255.255.255.252\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4.11\n         no shutdown\n         encapsulation dot1Q 11\n         vrf forwarding 11\n         ip address 172.50.32.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.33\n         no shutdown\n         encapsulation dot1Q 33\n         vrf forwarding 33\n         ip address 172.50.34.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.55\n         no shutdown\n         encapsulation dot1Q 55\n         vrf forwarding 55\n         ip address 172.50.36.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet5\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet5.11\n         no shutdown\n         encapsulation dot1Q 11\n         vrf forwarding 11\n         ip address 172.50.31.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet5.33\n         no shutdown\n         encapsulation dot1Q 33\n         vrf forwarding 33\n         ip address 172.50.33.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet5.55\n         no shutdown\n         encapsulation dot1Q 55\n         vrf forwarding 55\n         ip address 172.50.35.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet6\n         no shutdown\n         arp timeout 1200\n         vrf forwarding 11\n         ip address 172.50.3.1 255.255.255.0\n         ip helper-address 111.111.99.130\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface Tunnel1\n         no shutdown\n         ip unnumbered GigabitEthernet1\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet1\n         no ipv6 redirects\n         tunnel source GigabitEthernet1\n         tunnel mode sdwan\n        exit\n        interface Tunnel2\n         no shutdown\n         ip unnumbered GigabitEthernet2\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet2\n         no ipv6 redirects\n         tunnel source GigabitEthernet2\n         tunnel mode sdwan\n        exit\n        interface Tunnel100003\n         no shutdown\n         ip unnumbered GigabitEthernet3.100\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet3.100\n         no ipv6 redirects\n         tunnel source GigabitEthernet3.100\n         tunnel mode sdwan\n        exit\n        clock timezone UTC 0 0\n        logging persistent size 104857600 filesize 10485760\n        no logging monitor\n        logging buffered 512000\n        logging console\n        aaa authentication login default local\n        aaa authorization exec default local\n        aaa server radius dynamic-author\n        !\n        no crypto ikev2 diagnose error\n        no crypto isakmp diagnose error\n        no network-clock revertive\n        router bgp 65002\n         bgp log-neighbor-changes\n         address-family ipv4 unicast vrf 11\n          distance bgp 20 200 20\n          neighbor 172.50.31.1 remote-as 65002\n          neighbor 172.50.31.1 activate\n          neighbor 172.50.31.1 send-community both\n          neighbor 172.50.32.1 remote-as 65002\n          neighbor 172.50.32.1 activate\n          neighbor 172.50.32.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 33\n          distance bgp 20 200 20\n          neighbor 172.50.33.1 remote-as 65002\n          neighbor 172.50.33.1 activate\n          neighbor 172.50.33.1 send-community both\n          neighbor 172.50.34.1 remote-as 65002\n          neighbor 172.50.34.1 activate\n          neighbor 172.50.34.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 55\n          distance bgp 20 200 20\n          neighbor 172.50.35.1 remote-as 65002\n          neighbor 172.50.35.1 activate\n          neighbor 172.50.35.1 send-community both\n          neighbor 172.50.36.1 remote-as 65002\n          neighbor 172.50.36.1 activate\n          neighbor 172.50.36.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         timers bgp 60 180\n        !\n        snmp-server ifindex persist\n        line con 0\n         speed    115200\n         stopbits 1\n        !\n        line vty 0 4\n         transport input ssh\n        !\n        line vty 5 80\n         transport input ssh\n        !\n        lldp run\n        nat64 translation timeout tcp 3600\n        nat64 translation timeout udp 300\n       !\n      !\n\n      --===============4620531657167622363==--\n    hide_links: null\n    ram: 4096\n    cpus: 2\n    cpu_limit: 30\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - Greenwich Branch\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n      - id: i5\n        slot: 4\n        label: GigabitEthernet5\n        type: physical\n      - id: i6\n        slot: 5\n        label: GigabitEthernet6\n        type: physical\n  - id: n14\n    label: DC-2-R1\n    node_definition: cedge\n    x: -550\n    y: 350\n    configuration: |-\n      Content-Type: multipart/mixed; boundary=\"===============0314512180430754753==\"\n      MIME-Version: 1.0\n\n      --===============0314512180430754753==\n      Content-Type: text/cloud-config; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"tmp5ot4ns4o\"\n\n      #cloud-config\n      vinitparam:\n       - uuid : C8K-E2AFA37C-21A0-4345-F226-A6EB11C1C5DC\n       - otp : 0ee3d4bbe5d04882b7a9c34d105c9c62\n       - org : jpmc-branch-auto\n       - vbond : 10.30.2.6\n\n      --===============0314512180430754753==\n      Content-Type: text/cloud-boothook; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"config-C8K-E2AFA37C-21A0-4345-F226-A6EB11C1C5DC.txt\"\n\n      #cloud-boothook\n        system\n         ztp-status            success\n         pseudo-confirm-commit 300\n         personality           vedge\n         device-model          vedge-C8000V\n         chassis-number        C8K-E2AFA37C-21A0-4345-F226-A6EB11C1C5DC\n         system-ip             22.22.22.1\n         overlay-id            1\n         site-id               22\n         port-offset           0\n         control-session-pps   300\n         admin-tech-on-failure\n         sp-organization-name  jpmc-branch-auto\n         organization-name     jpmc-branch-auto\n         port-hop\n         track-transport\n         track-default-gateway\n         console-baud-rate     115200\n         config-template-name  DC_Single_Router\n         no on-demand enable\n         on-demand idle-timeout 10\n         vbond 10.30.2.6 port 12346\n         logging\n          disk\n           enable\n          !\n         !\n        !\n        bfd color lte\n         hello-interval 1000\n         no pmtu-discovery\n         multiplier     1\n        !\n        bfd default-dscp 48\n        bfd app-route multiplier 2\n        bfd app-route poll-interval 123400\n        security\n         ipsec\n          rekey               86400\n          replay-window       512\n          authentication-type ah-sha1-hmac sha1-hmac\n         !\n        !\n        sslproxy\n         no enable\n         rsa-key-modulus      2048\n         certificate-lifetime 730\n         eckey-type           P256\n         ca-tp-label          PROXY-SIGNING-CA\n         settings expired-certificate  drop\n         settings untrusted-certificate drop\n         settings unknown-status       drop\n         settings certificate-revocation-check none\n         settings unsupported-protocol-versions drop\n         settings unsupported-cipher-suites drop\n         settings failure-mode         close\n         settings minimum-tls-ver      TLSv1\n         dual-side optimization enable\n        !\n        sdwan\n         interface GigabitEthernet1\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color mpls restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       carrier1\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet2\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color public-internet restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet3\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color lte restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet4\n         exit\n         appqoe\n          no tcpopt enable\n          no dreopt enable\n         !\n         omp\n          no shutdown\n          send-path-limit  4\n          ecmp-limit       4\n          graceful-restart\n          no as-dot-notation\n          timers\n           holdtime               60\n           advertisement-interval 1\n           graceful-restart-timer 43200\n           eor-timer              300\n          exit\n          address-family ipv4\n           advertise bgp\n           advertise connected\n           advertise static\n          !\n          address-family ipv6\n           advertise connected\n           advertise static\n          !\n         !\n        !\n        banner login Un authorised Logins tracked\n        banner motd Restricted Use\n        service tcp-keepalives-in\n        service tcp-keepalives-out\n        no service tcp-small-servers\n        no service udp-small-servers\n        hostname DC-2-R1\n        username admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\n        vrf definition 11\n         rd 1:11\n         address-family ipv4\n          route-target export 65222:11\n          route-target import 65222:11\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 33\n         rd 1:33\n         address-family ipv4\n          route-target export 65222:33\n          route-target import 65222:33\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 55\n         rd 1:55\n         address-family ipv4\n          route-target export 65222:55\n          route-target import 65222:55\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition Mgmt-intf\n         description Management\n         rd          1:512\n         address-family ipv4\n          route-target export 65222:512\n          route-target import 65222:512\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        ip arp proxy disable\n        no ip finger\n        no ip rcmd rcp-enable\n        no ip rcmd rsh-enable\n        no ip dhcp use class\n        no ip ftp passive\n        ip bootp server\n        no ip source-route\n        no ip http server\n        no ip http secure-server\n        ip nat settings central-policy\n        interface GigabitEthernet1\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet1\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet2\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet2\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet3\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet3\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4.11\n         no shutdown\n         encapsulation dot1Q 11\n         vrf forwarding 11\n         ip address 172.50.211.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.33\n         no shutdown\n         encapsulation dot1Q 33\n         vrf forwarding 33\n         ip address 172.50.233.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.55\n         no shutdown\n         encapsulation dot1Q 55\n         vrf forwarding 55\n         ip address 172.50.205.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface Tunnel1\n         no shutdown\n         ip unnumbered GigabitEthernet1\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet1\n         no ipv6 redirects\n         tunnel source GigabitEthernet1\n         tunnel mode sdwan\n        exit\n        interface Tunnel2\n         no shutdown\n         ip unnumbered GigabitEthernet2\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet2\n         no ipv6 redirects\n         tunnel source GigabitEthernet2\n         tunnel mode sdwan\n        exit\n        interface Tunnel3\n         no shutdown\n         ip unnumbered GigabitEthernet3\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet3\n         no ipv6 redirects\n         tunnel source GigabitEthernet3\n         tunnel mode sdwan\n        exit\n        clock timezone UTC 0 0\n        logging persistent size 104857600 filesize 10485760\n        no logging monitor\n        logging buffered 512000\n        logging console\n        aaa authentication login default local\n        aaa authorization exec default local\n        aaa server radius dynamic-author\n        !\n        no crypto ikev2 diagnose error\n        no crypto isakmp diagnose error\n        no network-clock revertive\n        router bgp 65222\n         bgp log-neighbor-changes\n         address-family ipv4 unicast vrf 11\n          distance bgp 20 200 20\n          neighbor 172.50.211.1 remote-as 65222\n          neighbor 172.50.211.1 activate\n          neighbor 172.50.211.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 33\n          distance bgp 20 200 20\n          neighbor 172.50.233.1 remote-as 65222\n          neighbor 172.50.233.1 activate\n          neighbor 172.50.233.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 55\n          distance bgp 20 200 20\n          neighbor 172.50.205.1 remote-as 65222\n          neighbor 172.50.205.1 activate\n          neighbor 172.50.205.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         timers bgp 60 180\n        !\n        snmp-server ifindex persist\n        line con 0\n         speed    115200\n         stopbits 1\n        !\n        line vty 0 4\n         transport input ssh\n        !\n        line vty 5 80\n         transport input ssh\n        !\n        lldp run\n        nat64 translation timeout tcp 3600\n        nat64 translation timeout udp 300\n       !\n      !\n\n      --===============0314512180430754753==--\n    hide_links: null\n    image_definition: Cedge c8kv -17.3.6\n    ram: 4096\n    cpus: 2\n    cpu_limit: 30\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 2\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n  - id: n15\n    label: DC-1-R1\n    node_definition: cedge\n    x: -550\n    y: 50\n    configuration: |-\n      Content-Type: multipart/mixed; boundary=\"===============3641833493494337897==\"\n      MIME-Version: 1.0\n\n      --===============3641833493494337897==\n      Content-Type: text/cloud-config; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"tmp7mjfv4ro\"\n\n      #cloud-config\n      vinitparam:\n       - otp : 2fe935d66d8b44b3887621b055c1c8b0\n       - org : jpmc-branch-auto\n       - uuid : C8K-B7E14C38-F84F-D217-8014-8A338115CF9B\n       - vbond : 10.30.2.6\n\n      --===============3641833493494337897==\n      Content-Type: text/cloud-boothook; charset=\"us-ascii\"\n      MIME-Version: 1.0\n      Content-Transfer-Encoding: 7bit\n      Content-Disposition: attachment; filename=\"config-C8K-B7E14C38-F84F-D217-8014-8A338115CF9B.txt\"\n\n      #cloud-boothook\n        system\n         ztp-status            success\n         pseudo-confirm-commit 300\n         personality           vedge\n         device-model          vedge-C8000V\n         chassis-number        C8K-B7E14C38-F84F-D217-8014-8A338115CF9B\n         system-ip             11.11.11.1\n         overlay-id            1\n         site-id               11\n         port-offset           0\n         control-session-pps   300\n         admin-tech-on-failure\n         sp-organization-name  jpmc-branch-auto\n         organization-name     jpmc-branch-auto\n         port-hop\n         track-transport\n         track-default-gateway\n         console-baud-rate     115200\n         config-template-name  DC_Single_Router\n         no on-demand enable\n         on-demand idle-timeout 10\n         vbond 10.30.2.6 port 12346\n         logging\n          disk\n           enable\n          !\n         !\n        !\n        bfd color lte\n         hello-interval 1000\n         no pmtu-discovery\n         multiplier     1\n        !\n        bfd default-dscp 48\n        bfd app-route multiplier 2\n        bfd app-route poll-interval 123400\n        security\n         ipsec\n          rekey               86400\n          replay-window       512\n          authentication-type ah-sha1-hmac sha1-hmac\n         !\n        !\n        sslproxy\n         no enable\n         rsa-key-modulus      2048\n         certificate-lifetime 730\n         eckey-type           P256\n         ca-tp-label          PROXY-SIGNING-CA\n         settings expired-certificate  drop\n         settings untrusted-certificate drop\n         settings unknown-status       drop\n         settings certificate-revocation-check none\n         settings unsupported-protocol-versions drop\n         settings unsupported-cipher-suites drop\n         settings failure-mode         close\n         settings minimum-tls-ver      TLSv1\n         dual-side optimization enable\n        !\n        sdwan\n         interface GigabitEthernet1\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color mpls restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       carrier1\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet2\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color public-internet restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet3\n          tunnel-interface\n           encapsulation ipsec weight 1\n           no border\n           color lte restrict\n           no last-resort-circuit\n           no low-bandwidth-link\n           no vbond-as-stun-server\n           vmanage-connection-preference 5\n           port-hop\n           carrier                       default\n           nat-refresh-interval          5\n           hello-interval                1000\n           hello-tolerance               12\n           no allow-service all\n           no allow-service bgp\n           allow-service dhcp\n           allow-service dns\n           allow-service icmp\n           no allow-service sshd\n           no allow-service netconf\n           no allow-service ntp\n           no allow-service ospf\n           no allow-service stun\n           allow-service https\n           no allow-service snmp\n           no allow-service bfd\n          exit\n         exit\n         interface GigabitEthernet4\n         exit\n         appqoe\n          no tcpopt enable\n          no dreopt enable\n         !\n         omp\n          no shutdown\n          send-path-limit  4\n          ecmp-limit       4\n          graceful-restart\n          no as-dot-notation\n          timers\n           holdtime               60\n           advertisement-interval 1\n           graceful-restart-timer 43200\n           eor-timer              300\n          exit\n          address-family ipv4\n           advertise bgp\n           advertise connected\n           advertise static\n          !\n          address-family ipv6\n           advertise connected\n           advertise static\n          !\n         !\n        !\n        banner login Un authorised Logins tracked\n        banner motd Restricted Use\n        service tcp-keepalives-in\n        service tcp-keepalives-out\n        no service tcp-small-servers\n        no service udp-small-servers\n        hostname DC-1-R1\n        username admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo\n        vrf definition 11\n         rd 1:11\n         address-family ipv4\n          route-target export 65111:11\n          route-target import 65111:11\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 33\n         rd 1:33\n         address-family ipv4\n          route-target export 65111:33\n          route-target import 65111:33\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition 55\n         rd 1:55\n         address-family ipv4\n          route-target export 65111:55\n          route-target import 65111:55\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        vrf definition Mgmt-intf\n         description Management\n         rd          1:512\n         address-family ipv4\n          route-target export 65111:512\n          route-target import 65111:512\n          exit-address-family\n         !\n         address-family ipv6\n          exit-address-family\n         !\n        !\n        ip arp proxy disable\n        no ip finger\n        no ip rcmd rcp-enable\n        no ip rcmd rsh-enable\n        no ip dhcp use class\n        no ip ftp passive\n        ip bootp server\n        no ip source-route\n        no ip http server\n        no ip http secure-server\n        ip nat settings central-policy\n        interface GigabitEthernet1\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet1\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet2\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet2\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet3\n         no shutdown\n         arp timeout 1200\n         ip address dhcp client-id GigabitEthernet3\n         no ip redirects\n         ip dhcp client default-router distance 1\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4\n         no shutdown\n         arp timeout 1200\n         no ip redirects\n         ip mtu    1500\n         load-interval 30\n         mtu           1500\n         negotiation auto\n        exit\n        interface GigabitEthernet4.11\n         no shutdown\n         encapsulation dot1Q 11\n         vrf forwarding 11\n         ip address 172.50.111.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.33\n         no shutdown\n         encapsulation dot1Q 33\n         vrf forwarding 33\n         ip address 172.50.133.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface GigabitEthernet4.55\n         no shutdown\n         encapsulation dot1Q 55\n         vrf forwarding 55\n         ip address 172.50.155.2 255.255.255.0\n         ip mtu 1500\n        exit\n        interface Tunnel1\n         no shutdown\n         ip unnumbered GigabitEthernet1\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet1\n         no ipv6 redirects\n         tunnel source GigabitEthernet1\n         tunnel mode sdwan\n        exit\n        interface Tunnel2\n         no shutdown\n         ip unnumbered GigabitEthernet2\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet2\n         no ipv6 redirects\n         tunnel source GigabitEthernet2\n         tunnel mode sdwan\n        exit\n        interface Tunnel3\n         no shutdown\n         ip unnumbered GigabitEthernet3\n         no ip redirects\n         ipv6 unnumbered GigabitEthernet3\n         no ipv6 redirects\n         tunnel source GigabitEthernet3\n         tunnel mode sdwan\n        exit\n        clock timezone UTC 0 0\n        logging persistent size 104857600 filesize 10485760\n        no logging monitor\n        logging buffered 512000\n        logging console\n        aaa authentication login default local\n        aaa authorization exec default local\n        aaa server radius dynamic-author\n        !\n        no crypto ikev2 diagnose error\n        no crypto isakmp diagnose error\n        no network-clock revertive\n        router bgp 65111\n         bgp log-neighbor-changes\n         address-family ipv4 unicast vrf 11\n          distance bgp 20 200 20\n          neighbor 172.50.111.1 remote-as 65111\n          neighbor 172.50.111.1 activate\n          neighbor 172.50.111.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 33\n          distance bgp 20 200 20\n          neighbor 172.50.133.1 remote-as 65111\n          neighbor 172.50.133.1 activate\n          neighbor 172.50.133.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         address-family ipv4 unicast vrf 55\n          distance bgp 20 200 20\n          neighbor 172.50.155.1 remote-as 65111\n          neighbor 172.50.155.1 activate\n          neighbor 172.50.155.1 send-community both\n          redistribute omp\n          exit-address-family\n         !\n         timers bgp 60 180\n        !\n        snmp-server ifindex persist\n        line con 0\n         speed    115200\n         stopbits 1\n        !\n        line vty 0 4\n         transport input ssh\n        !\n        line vty 5 80\n         transport input ssh\n        !\n        lldp run\n        nat64 translation timeout tcp 3600\n        nat64 translation timeout udp 300\n       !\n      !\n\n      --===============3641833493494337897==--\n    hide_links: null\n    image_definition: Cedge c8kv -17.3.6\n    ram: 4096\n    cpus: 2\n    cpu_limit: 30\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 1\n      - enterprise_host\n    interfaces:\n      - id: i0\n        label: Loopback0\n        type: loopback\n      - id: i1\n        slot: 0\n        label: GigabitEthernet1\n        type: physical\n      - id: i2\n        slot: 1\n        label: GigabitEthernet2\n        type: physical\n      - id: i3\n        slot: 2\n        label: GigabitEthernet3\n        type: physical\n      - id: i4\n        slot: 3\n        label: GigabitEthernet4\n        type: physical\n  - id: n16\n    label: bridge-403\n    node_definition: external_connector\n    x: -1\n    y: -105\n    configuration: bridge403\n    hide_links: false\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - unknown_location\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port\n        type: physical\n  - id: n17\n    label: bridge-402\n    node_definition: external_connector\n    x: 1\n    y: 99\n    configuration: bridge402\n    hide_links: false\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - unknown_location\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port\n        type: physical\n  - id: n18\n    label: dc1-rail\n    node_definition: unmanaged_switch\n    x: -888\n    y: -24\n    configuration: ums-39673ce8-22\n    hide_links: false\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 1\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port0\n        type: physical\n      - id: i1\n        slot: 1\n        label: port1\n        type: physical\n      - id: i2\n        slot: 2\n        label: port2\n        type: physical\n      - id: i3\n        slot: 3\n        label: port3\n        type: physical\n      - id: i4\n        slot: 4\n        label: port4\n        type: physical\n      - id: i5\n        slot: 5\n        label: port5\n        type: physical\n      - id: i6\n        slot: 6\n        label: port6\n        type: physical\n      - id: i7\n        slot: 7\n        label: port7\n        type: physical\n  - id: n19\n    label: services\n    node_definition: alpine\n    x: -782\n    y: -93\n    configuration: \"# this is a shell script which will be sourced at boot\\nhostname\\\n      \\ services\\n# configurable user account\\nUSERNAME=cisco\\nPASSWORD=cisco\\n\\n\\\n      echo \\\"auto lo\\niface lo inet loopback\\n\\nauto eth0\\niface eth0 inet static\\n\\\n      \\taddress 10.2.1.130\\n\\tnetmask 255.255.255.0\\n\\tgateway 10.2.1.254\\n\\nauto\\\n      \\ eth1\\niface eth1 inet static\\n\\taddress 111.111.99.130\\n\\tnetmask 255.255.255.0\\n\\\n      \\tup ip route add 172.50.0.0/16 via 111.111.99.1\\n\\tup ip route add 222.222.0.0/16\\\n      \\ via 111.111.99.1\\n\\\" \u003e /etc/network/interfaces\\n\\n/etc/init.d/networking restart\\n\\\n      \\n# nameserver 10.2.1.29 and 10.2.1.30 as well as serch lab.local\\n# will have\\\n      \\ been learned from DHCP lease at boot, prior to the static\\n# addressing above\\\n      \\ being allocated (which works)\\n\\napk add --update dnsmasq\\n\\necho \\\"127.0.0.1\\\n      \\       localhost\\n111.111.99.130  services\\n10.2.1.130      services\\n111.111.99.10\\\n      \\   apps\\n10.2.1.139      apps\\n\\\" \u003e /etc/hosts\\n\\nmv dnsmasq.conf dnsmasq.conf.original\\n\\\n      \\necho \\\"domain-needed\\nbogus-priv\\nno-resolv\\nlocal=/jpmclab/\\nserver=/lab.local/10.2.1.29\\n\\\n      server=/lab.local/10.2.1.30\\nserver=8.8.8.8\\nserver=8.8.4.4\\nexpand-hosts\\n\\\n      domain=jpmclab\\n\\nlog-facility=/var/log/dnsmasq.log\\nlog-async\\nlog-queries\\n\\\n      log-dhcp\\n\\ndhcp-lease-max=95\\n\\n# dynamic pools\\n\\ndhcp-range=dc-1-lan,111.111.99.150,111.111.99.250,255.255.255.0,30m\\n\\\n      dhcp-option=dc-1-lan,3,111.111.99.1 #dhcp-option=option:router\\n#dhcp-option=dc-1-lan,119,jpmclab,lab.local\\\n      \\ #dhcp-option=option:domain-search\\n#dhcp-option-force=dc-1-lan,119 #dhcp-option-force=option:domain-search\\\n      \\ (if client does not ask for)\\n\\ndhcp-range=dc-2-lan,222.222.99.150,222.222.99.250,255.255.255.0,30m\\n\\\n      dhcp-option=dc-2-lan,3,222.222.99.1 #dhcp-option=option:router\\n\\ndhcp-range=br-1,172.50.1.200,172.50.1.250,255.255.255.0\\n\\\n      dhcp-option=br-1,3,172.50.1.1\\ndhcp-option=br-1,43,5A1N;B2;K4;I10.30.2.253;J80\\n\\\n      \\ndhcp-range=br-2-1,172.50.2.200,172.50.2.250,255.255.255.0\\ndhcp-option=br-2-1,3,172.50.2.1\\n\\\n      dhcp-option=br-2-1,43,5A1N;B2;K4;I10.30.2.253;J80\\n\\ndhcp-range=br-2-2,172.50.3.200,172.50.3.250,255.255.255.0\\n\\\n      dhcp-option=br-2-2,3,172.50.3.1\\ndhcp-option=br-2-2,43,5A1N;B2;K4;I10.30.2.253;J80\\n\\\n      \\n# static addressing\\n\\n\\\" \u003e /etc/dnsmasq.conf\\n\\nrc-service dnsmasq start\"\n    hide_links: false\n    ram: 512\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 16\n    tags:\n      - CDC 1\n      - enterprise_host\n    interfaces:\n      - id: i0\n        slot: 0\n        label: eth0\n        type: physical\n      - id: i1\n        slot: 1\n        label: eth1\n        type: physical\n  - id: n20\n    label: backbone\n    node_definition: external_connector\n    x: -729\n    y: -181\n    configuration: bridge0\n    hide_links: false\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 1\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port\n        type: physical\n  - id: n21\n    label: client-1\n    node_definition: alpine\n    x: -986\n    y: 41\n    configuration: |\n      # this is a shell script which will be sourced at boot\n      hostname client-1\n      # configurable user account\n      USERNAME=cisco\n      PASSWORD=cisco\n\n      echo \"auto lo\n      iface lo inet loopback\n\n      auto eth0\n      iface eth0 inet dhcp\n        hostname client-1\n      \" \u003e /etc/network/interfaces\n\n      # service networking restart\n      /etc/init.d/networking restart\n    hide_links: false\n    ram: 512\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 16\n    tags:\n      - CDC 1\n      - enterprise_host\n    interfaces:\n      - id: i0\n        slot: 0\n        label: eth0\n        type: physical\n  - id: n22\n    label: backbone-rail\n    node_definition: unmanaged_switch\n    x: -890\n    y: -182\n    configuration: ums-17ed73e9-08\n    hide_links: false\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 1\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port0\n        type: physical\n      - id: i1\n        slot: 1\n        label: port1\n        type: physical\n      - id: i2\n        slot: 2\n        label: port2\n        type: physical\n      - id: i3\n        slot: 3\n        label: port3\n        type: physical\n      - id: i4\n        slot: 4\n        label: port4\n        type: physical\n      - id: i5\n        slot: 5\n        label: port5\n        type: physical\n      - id: i6\n        slot: 6\n        label: port6\n        type: physical\n      - id: i7\n        slot: 7\n        label: port7\n        type: physical\n  - id: n23\n    label: dc2-rail\n    node_definition: unmanaged_switch\n    x: -879\n    y: 350\n    configuration: ums-819c8706-d6\n    hide_links: false\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 2\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port0\n        type: physical\n      - id: i1\n        slot: 1\n        label: port1\n        type: physical\n      - id: i2\n        slot: 2\n        label: port2\n        type: physical\n      - id: i3\n        slot: 3\n        label: port3\n        type: physical\n      - id: i4\n        slot: 4\n        label: port4\n        type: physical\n      - id: i5\n        slot: 5\n        label: port5\n        type: physical\n      - id: i6\n        slot: 6\n        label: port6\n        type: physical\n      - id: i7\n        slot: 7\n        label: port7\n        type: physical\n  - id: n24\n    label: client-2\n    node_definition: alpine\n    x: -977\n    y: 350\n    configuration: |\n      # this is a shell script which will be sourced at boot\n      hostname client-2\n      # configurable user account\n      USERNAME=cisco\n      PASSWORD=cisco\n\n      echo \"auto lo\n      iface lo inet loopback\n\n      auto eth0\n      iface eth0 inet dhcp\n        hostname client-2\n      \" \u003e /etc/network/interfaces\n\n      # service networking restart\n      /etc/init.d/networking restart\n    hide_links: false\n    ram: 512\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 16\n    tags:\n      - CDC 2\n      - enterprise_host\n    interfaces:\n      - id: i0\n        slot: 0\n        label: eth0\n        type: physical\n  - id: n25\n    label: bridge-302-2\n    node_definition: external_connector\n    x: -886\n    y: 162\n    configuration: bridge302\n    hide_links: false\n    ram: 0\n    cpus: 0\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 0\n    tags:\n      - CDC 1\n      - cml_infrastructure\n    interfaces:\n      - id: i0\n        slot: 0\n        label: port\n        type: physical\n  - id: n26\n    label: apps\n    node_definition: alpine\n    x: -989\n    y: -90\n    configuration: \"# this is a shell script which will be sourced at boot\\nhostname\\\n      \\ apps\\n# configurable user account\\nUSERNAME=cisco\\nPASSWORD=cisco\\n\\n\\necho\\\n      \\ \\\"auto lo\\niface lo inet loopback\\n\\nauto eth0\\niface eth0 inet static\\n\\t\\\n      address 10.2.1.139\\n\\tnetmask 255.255.255.0\\n\\tgateway 10.2.1.254\\n\\nauto eth1\\n\\\n      iface eth1 inet static\\n\\taddress 111.111.99.10\\n\\tnetmask 255.255.255.0\\n\\t\\\n      up ip route add 172.50.0.0/16 via 111.111.99.1\\n\\tup ip route add 222.222.99.0/24\\\n      \\ via 111.111.99.1\\n\\\" \u003e /etc/network/interfaces\\n\\n/etc/init.d/networking restart\\n\\\n      \\necho \\\"nameserver 111.111.99.130\\n\\\" \u003e /etc/resolv.conf\\n\\nmkdir /etc/udhcpc\\n\\\n      echo \\\"RESOLV_CONF=\\\\\\\"no\\\\\\\"\\n\\\" \u003e /etc/udhcpc/udhcpc.conf\\n\\nsed  -i \\\"s/#http:\\\\\\\n      /\\\\/dl-cdn.alpinelinux.org\\\\/alpine\\\\/v3.14\\\\/community/http:\\\\/\\\\/dl-cdn.alpinelinux.org\\\\\\\n      /alpine\\\\/v3.14\\\\/community/\\\" /etc/apk/repositories\\napk update\\napk add docker\\n\\\n      addgroup cisco docker\\nrc-update add docker boot\\nrc-service docker start\\n\\\n      apk add docker-compose\"\n    hide_links: false\n    ram: 512\n    cpus: 1\n    cpu_limit: 100\n    data_volume: 0\n    boot_disk_size: 16\n    tags:\n      - CDC 1\n      - enterprise_host\n    interfaces:\n      - id: i0\n        slot: 0\n        label: eth0\n        type: physical\n      - id: i1\n        slot: 1\n        label: eth1\n        type: physical\nlinks:\n  - id: l0\n    i1: i2\n    n1: n6\n    i2: i3\n    n2: n8\n    label: Cellular-GigabitEthernet2\u003c-\u003eBR-2-TSG-Cell-GigabitEthernet3\n  - id: l1\n    i1: i0\n    n1: n3\n    i2: i4\n    n2: n7\n    label: ext-conn-0-port\u003c-\u003eSD-WAN-Controllers-GigabitEthernet4\n  - id: l2\n    i1: i5\n    n1: n4\n    i2: i1\n    n2: n7\n    label: MPLS-GigabitEthernet5\u003c-\u003eSD-WAN-Controllers-GigabitEthernet1\n  - id: l3\n    i1: i5\n    n1: n5\n    i2: i2\n    n2: n7\n    label: INET-GigabitEthernet5\u003c-\u003eSD-WAN-Controllers-GigabitEthernet2\n  - id: l4\n    i1: i5\n    n1: n6\n    i2: i3\n    n2: n7\n    label: Cellular-GigabitEthernet5\u003c-\u003eSD-WAN-Controllers-GigabitEthernet3\n  - id: l5\n    i1: i1\n    n1: n4\n    i2: i1\n    n2: n11\n    label: MPLS-GigabitEthernet1\u003c-\u003eBR-1-R1-GigabitEthernet1\n  - id: l6\n    i1: i1\n    n1: n5\n    i2: i2\n    n2: n11\n    label: INET-GigabitEthernet1\u003c-\u003eBR-1-R1-GigabitEthernet2\n  - id: l7\n    i1: i2\n    n1: n4\n    i2: i1\n    n2: n12\n    label: MPLS-GigabitEthernet2\u003c-\u003eBR-2-R1-GigabitEthernet1\n  - id: l8\n    i1: i2\n    n1: n5\n    i2: i1\n    n2: n13\n    label: INET-GigabitEthernet2\u003c-\u003eBR-2-R2-GigabitEthernet1\n  - id: l9\n    i1: i2\n    n1: n8\n    i2: i2\n    n2: n13\n    label: BR-2-TSG-Cell-GigabitEthernet2\u003c-\u003eBR-2-R2-GigabitEthernet2\n  - id: l10\n    i1: i1\n    n1: n8\n    i2: i2\n    n2: n12\n    label: BR-2-TSG-Cell-GigabitEthernet1\u003c-\u003eBR-2-R1-GigabitEthernet2\n  - id: l11\n    i1: i4\n    n1: n4\n    i2: i1\n    n2: n14\n    label: MPLS-GigabitEthernet4\u003c-\u003eDC-2-R1-GigabitEthernet1\n  - id: l12\n    i1: i4\n    n1: n5\n    i2: i2\n    n2: n14\n    label: INET-GigabitEthernet4\u003c-\u003eDC-2-R1-GigabitEthernet2\n  - id: l13\n    i1: i4\n    n1: n6\n    i2: i3\n    n2: n14\n    label: Cellular-GigabitEthernet4\u003c-\u003eDC-2-R1-GigabitEthernet3\n  - id: l14\n    i1: i1\n    n1: n10\n    i2: i4\n    n2: n14\n    label: DC-2-hosts-GigabitEthernet1\u003c-\u003eDC-2-R1-GigabitEthernet4\n  - id: l15\n    i1: i3\n    n1: n4\n    i2: i1\n    n2: n15\n    label: MPLS-GigabitEthernet3\u003c-\u003eDC-1-R1-GigabitEthernet1\n  - id: l16\n    i1: i3\n    n1: n5\n    i2: i2\n    n2: n15\n    label: INET-GigabitEthernet3\u003c-\u003eDC-1-R1-GigabitEthernet2\n  - id: l17\n    i1: i3\n    n1: n6\n    i2: i3\n    n2: n15\n    label: Cellular-GigabitEthernet3\u003c-\u003eDC-1-R1-GigabitEthernet3\n  - id: l18\n    i1: i1\n    n1: n6\n    i2: i3\n    n2: n11\n    label: Cellular-GigabitEthernet1\u003c-\u003eBR-1-R1-GigabitEthernet3\n  - id: l19\n    i1: i2\n    n1: n2\n    i2: i4\n    n2: n11\n    label: BR-1-SW1-GigabitEthernet1/0/1\u003c-\u003eBR-1-R1-GigabitEthernet4\n  - id: l20\n    i1: i1\n    n1: n9\n    i2: i4\n    n2: n15\n    label: DC-1-hosts-GigabitEthernet1\u003c-\u003eDC-1-R1-GigabitEthernet4\n  - id: l21\n    i1: i4\n    n1: n12\n    i2: i2\n    n2: n0\n    label: BR-2-R1-GigabitEthernet4\u003c-\u003eBR-2-SW1-GigabitEthernet1/0/1\n  - id: l22\n    i1: i4\n    n1: n13\n    i2: i2\n    n2: n1\n    label: BR-2-R2-GigabitEthernet4\u003c-\u003eBR-2-SW2-GigabitEthernet1/0/1\n  - id: l23\n    i1: i5\n    n1: n12\n    i2: i3\n    n2: n1\n    label: BR-2-R1-GigabitEthernet5\u003c-\u003eBR-2-SW2-GigabitEthernet1/0/2\n  - id: l24\n    i1: i3\n    n1: n13\n    i2: i3\n    n2: n12\n    label: BR-2-R2-GigabitEthernet3\u003c-\u003eBR-2-R1-GigabitEthernet3\n  - id: l25\n    i1: i5\n    n1: n13\n    i2: i3\n    n2: n0\n    label: BR-2-R2-GigabitEthernet5\u003c-\u003eBR-2-SW1-GigabitEthernet1/0/2\n  - id: l26\n    i1: i0\n    n1: n16\n    i2: i6\n    n2: n4\n    label: 403-port\u003c-\u003eMPLS-GigabitEthernet6\n  - id: l27\n    i1: i0\n    n1: n17\n    i2: i6\n    n2: n5\n    label: 402-port\u003c-\u003eINET-GigabitEthernet6\n  - id: l28\n    i1: i0\n    n1: n18\n    i2: i2\n    n2: n9\n    label: DC-1-lan-port0\u003c-\u003eDC-1-access-GigabitEthernet2\n  - id: l29\n    i1: i1\n    n1: n19\n    i2: i1\n    n2: n18\n    label: alpine-0-eth1\u003c-\u003eDC-1-lan-port1\n  - id: l30\n    i1: i0\n    n1: n21\n    i2: i2\n    n2: n18\n    label: alpine-0-eth0\u003c-\u003eDC-1-lan-port2\n  - id: l31\n    i1: i0\n    n1: n22\n    i2: i0\n    n2: n20\n    label: backbone-rail-port0\u003c-\u003ebackbone-port\n  - id: l32\n    i1: i0\n    n1: n19\n    i2: i1\n    n2: n22\n    label: services-eth0\u003c-\u003ebackbone-rail-port1\n  - id: l33\n    i1: i2\n    n1: n10\n    i2: i0\n    n2: n23\n    label: DC-2-access-GigabitEthernet2\u003c-\u003edc2-rail-port0\n  - id: l34\n    i1: i6\n    n1: n12\n    i2: i1\n    n2: n0\n    label: BR-2-R1-GigabitEthernet6\u003c-\u003eBR-2-SW1-GigabitEthernet0/0\n  - id: l35\n    i1: i6\n    n1: n13\n    i2: i1\n    n2: n1\n    label: BR-2-R2-GigabitEthernet6\u003c-\u003eBR-2-SW2-GigabitEthernet0/0\n  - id: l36\n    i1: i6\n    n1: n11\n    i2: i1\n    n2: n2\n    label: BR-1-R1-GigabitEthernet6\u003c-\u003eBR-1-SW1-GigabitEthernet0/0\n  - id: l37\n    i1: i1\n    n1: n23\n    i2: i0\n    n2: n24\n    label: dc2-rail-port1\u003c-\u003eclient-2-eth0\n  - id: l38\n    i1: i3\n    n1: n9\n    i2: i0\n    n2: n25\n    label: DC-1-access-GigabitEthernet3\u003c-\u003eext-conn-0-port\n  - id: l39\n    i1: i0\n    n1: n26\n    i2: i2\n    n2: n22\n    label: alpine-0-eth0\u003c-\u003ebackbone-rail-port2\n  - id: l40\n    i1: i1\n    n1: n26\n    i2: i3\n    n2: n18\n    label: alpine-0-eth1\u003c-\u003edc1-rail-port3\n",
+              "scope": "input",
+              "name": "YAML",
+              "type": "datatype.string",
+              "is_required": true,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y5ZV0S07G2528G4LhjACqcz7XzWENyzYf",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "JSON",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y5ZV5892F8P1mQVdIkfmtwvvULxagvQgq",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "Convert YAML to JSON",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01Y5ZV8A5GH3X2kgsXbZCGu9WuYqcTevQM4",
+            "name": "Execute Python Script",
+            "title": "Convert",
+            "type": "python3.script",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Convert",
+              "script": "import urllib.parse, sys\nimport yaml\nimport json\n\njsn = json.dumps(yaml.load(sys.argv[1]), indent=2)",
+              "script_arguments": [
+                "$workflow.definition_workflow_01Y5ZUO232SYM21oRpjyXHkWdtIh6RDzGv2.input.variable_workflow_01Y5ZV0S07G2528G4LhjACqcz7XzWENyzYf$"
+              ],
+              "script_queries": [
+                {
+                  "script_query": "jsn",
+                  "script_query_name": "JSON",
+                  "script_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01Y60062W340M0wJ0VNse41Vv1OChCSizFS",
+            "name": "Set Variables",
+            "title": "Set Output JSON",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Output JSON",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01Y5ZUO232SYM21oRpjyXHkWdtIh6RDzGv2.output.variable_workflow_01Y5ZV5892F8P1mQVdIkfmtwvvULxagvQgq$",
+                  "variable_value_new": "$activity.definition_activity_01Y5ZV8A5GH3X2kgsXbZCGu9WuYqcTevQM4.output.script_queries.JSON$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_01XTYJFWCEOFX64OkJu6rjCOFod6NH9XYv0"
         ]
       }
     },
@@ -1002,38 +845,12 @@
             "properties": {
               "value": "",
               "scope": "input",
-              "name": "Reponse Trim Right Characters",
+              "name": "Request Type",
               "type": "datatype.string",
-              "is_required": false,
+              "is_required": true,
               "is_invisible": false
             },
-            "unique_name": "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "output",
-              "name": "Status Text",
-              "type": "datatype.string",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54M0O1SIJY0bnhsRiHAvd1m7eXZYaKI3",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.boolean",
-            "properties": {
-              "value": false,
-              "scope": "input",
-              "name": "Debug",
-              "type": "datatype.boolean",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI",
+            "unique_name": "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A",
             "object_type": "variable_workflow"
           },
           {
@@ -1047,32 +864,6 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.string",
-            "properties": {
-              "value": "",
-              "scope": "input",
-              "name": "Request Type",
-              "type": "datatype.string",
-              "is_required": true,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54CDD3GD6V1BrKC8qZ8U5f83GwOMK98A",
-            "object_type": "variable_workflow"
-          },
-          {
-            "schema_id": "datatype.integer",
-            "properties": {
-              "value": -1,
-              "scope": "output",
-              "name": "Status Code",
-              "type": "datatype.integer",
-              "is_required": false,
-              "is_invisible": false
-            },
-            "unique_name": "variable_workflow_01Y54LVO3JYOP6YAO6lbHIrQhldmKlSkuUl",
             "object_type": "variable_workflow"
           },
           {
@@ -1099,6 +890,58 @@
               "is_invisible": false
             },
             "unique_name": "variable_workflow_01Y54BK0AYW1N2zpWp0z5kTB98eHofcZ1wZ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "Reponse Trim Right Characters",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y54MKR4YPIK4GcItLxLY7PEYW9o1WztRK",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": -1,
+              "scope": "output",
+              "name": "Status Code",
+              "type": "datatype.integer",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y54LVO3JYOP6YAO6lbHIrQhldmKlSkuUl",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.boolean",
+            "properties": {
+              "value": false,
+              "scope": "input",
+              "name": "Debug",
+              "type": "datatype.boolean",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y549P1X24KE6mC0BkxYm6wNOqW3KRe0ZI",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Status Text",
+              "type": "datatype.string",
+              "is_required": false,
+              "is_invisible": false
+            },
+            "unique_name": "variable_workflow_01Y54M0O1SIJY0bnhsRiHAvd1m7eXZYaKI3",
             "object_type": "variable_workflow"
           },
           {
@@ -1233,7 +1076,7 @@
             "properties": {
               "action_timeout": 180,
               "allow_auto_redirect": true,
-              "body": "$workflow.definition_workflow_01Y544HY40OAV50eSV3dE2TpBR0Hd865Shq.input.variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR$",
+              "body": "{\n  \"configuration\": \"$workflow.definition_workflow_01Y544HY40OAV50eSV3dE2TpBR0Hd865Shq.input.variable_workflow_01Y54CKFZY4LC12mBb6m6L3e13GaeIIZrDR$\"\n}",
               "content_type": "application/json",
               "continue_on_error_status_code": false,
               "continue_on_failure": false,

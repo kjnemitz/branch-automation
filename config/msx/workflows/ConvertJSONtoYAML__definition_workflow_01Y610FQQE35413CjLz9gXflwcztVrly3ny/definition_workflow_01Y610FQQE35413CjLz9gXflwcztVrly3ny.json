@@ -1,0 +1,116 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01Y610FQQE35413CjLz9gXflwcztVrly3ny",
+    "name": "Convert JSON to YAML",
+    "title": "Convert JSON to YAML",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "JSON",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y610RTFWACQ1jbg5lY08NNdzB0pTGvL1o",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "YAML",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01Y610WIE1XJI2fj2JLHhHJTSFqkJkFwlQk",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Convert JSON to YAML",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01Y61106KUBSK2HgMaeSvQGNMqSDpKcZZRb",
+        "name": "Execute Python Script",
+        "title": "Convert",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Convert",
+          "script": "import urllib.parse, sys\nimport yaml\n\nyml = yaml.dump(yaml.load(sys.argv[1]), default_flow_style=False)",
+          "script_arguments": [
+            "$workflow.definition_workflow_01Y610FQQE35413CjLz9gXflwcztVrly3ny.input.variable_workflow_01Y610RTFWACQ1jbg5lY08NNdzB0pTGvL1o$"
+          ],
+          "script_queries": [
+            {
+              "script_query": "yml",
+              "script_query_name": "YAML",
+              "script_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Y61126SO0MW4CXKhbXp2nG1AX6d5uHmCO",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01Y610FQQE35413CjLz9gXflwcztVrly3ny.output.variable_workflow_01Y610WIE1XJI2fj2JLHhHJTSFqkJkFwlQk$",
+              "variable_value_new": "$activity.definition_activity_01Y61106KUBSK2HgMaeSvQGNMqSDpKcZZRb.output.script_queries.YAML$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01XTYJFWCEOFX64OkJu6rjCOFod6NH9XYv0"
+    ]
+  },
+  "categories": {
+    "category_01XTYJFWCEOFX64OkJu6rjCOFod6NH9XYv0": {
+      "unique_name": "category_01XTYJFWCEOFX64OkJu6rjCOFod6NH9XYv0",
+      "name": "Utility",
+      "title": "Utility",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}

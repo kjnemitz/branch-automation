@@ -1,11 +1,24 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31",
-    "name": "Build CML Lab",
-    "title": "Build CML Lab",
+    "name": "CML - Load CML Lab",
+    "title": "CML - Load CML Lab",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Lab ID",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YHVIV7S0HSI3Rqt2FfrqTmQhsArJzZhoW",
+        "object_type": "variable_workflow"
+      },
       {
         "schema_id": "datatype.string",
         "properties": {
@@ -18,6 +31,19 @@
         },
         "unique_name": "variable_workflow_01XV59KS7FQJC7BSq5HUTXakT0sTtXoz2fN",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "{\n  \"enterprise\": {\n    \"organization\": [\n      {\n        \"description\": \"Branch Networking\",\n        \"email\": \"jnemitz@cisco.com\",\n        \"name\": \"JPMC\",\n        \"url\": \"https://www.jpmorganchase.com/\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          },\n          {\n            \"name\": \"sdwan\"\n          }\n        ]\n      }\n    ],\n    \"CML\": {\n      \"lab\": {\n        \"description\": \"\",\n        \"notes\": \"\",\n        \"title\": \"SDWAN-AUTO-TEST\",\n        \"version\": \"0.0.5\"\n      },\n      \"lab_definition\": \"/prototype/SD-WAN-JPMC-BRANCH-Test\"\n    },\n    \"dnac_controller\": [\n      {\n        \"address\": \"7025 Kit Creek Rd, Morrisville, NC 27560\",\n        \"host\": \"dnac.lab.local\",\n        \"name\": \"DNAC-East\",\n        \"password\": \"10-9=One\",\n        \"port\": 443,\n        \"username\": \"admin\"\n      }\n    ],\n    \"site\": [\n      {\n        \"name\": \"CDC 1\",\n        \"type\": \"datacenter\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"CDC 1 - Building A\",\n            \"address\": {\n              \"address1\": \"880 Powder Mill Road\",\n              \"city\": \"Wilmington\",\n              \"state\": \"DE\",\n              \"zipcode\": \"19803\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"CDC 2\",\n        \"type\": \"datacenter\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"CDC 2 - Building 1\",\n            \"address\": {\n              \"street\": \"36 E Midland Ave\",\n              \"city\": \"Paramus\",\n              \"state\": \"NJ\",\n              \"zipcode\": \"07652\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": []\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Yamhill Branch\",\n        \"type\": \"branch\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Yamhill - Branch\",\n            \"address\": {\n              \"street\": \"811 Southwest 6th Avenue\",\n              \"city\": \"Portland\",\n              \"state\": \"OR\",\n              \"zipcode\": \"97204\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 1\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"BR02-SW02\",\n                    \"hostname\": \"BR02-SW01\",\n                    \"smart_license\": \"false\",\n                    \"dnac\": {\n                      \"serialNumber\": \"9BIT3F663GJ\",\n                      \"name\": \"9BIT3F663GJ\",\n                      \"pid\": \"C9300-8V\",\n                      \"hostname\": \"BR02-SW01\"\n                    },\n                    \"CML\": {\n                      \"label\": \"BR02-SW01\"\n                    },\n                    \"interfaces\": [\n                      {\n                        \"name\": \"GigabitEthernet0/0\"\n                      }\n                    ]\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Greenwich Branch\",\n        \"type\": \"branch\",\n        \"dnac_controller\": \"DNAC-East\",\n        \"services\": [\n          {\n            \"name\": \"sda\"\n          }\n        ],\n        \"network_profile\": [\n          {\n            \"name\": \"Switch Profile\"\n          }\n        ],\n        \"building\": [\n          {\n            \"name\": \"Westfield World Trade Center\",\n            \"address\": {\n              \"street\": \"285 Greenwich St\",\n              \"city\": \"New York\",\n              \"state\": \"NY\",\n              \"zipcode\": \"10006\"\n            },\n            \"floor\": [\n              {\n                \"name\": \"Floor 2\",\n                \"floorInfo\": {\n                  \"height\": \"5\",\n                  \"length\": \"5\",\n                  \"width\": \"5\",\n                  \"rfModelId\": \"75078\"\n                },\n                \"devices\": [\n                  {\n                    \"devicename\": \"BR02-SW01\",\n                    \"hostname\": \"BR02-SW01\",\n                    \"services\": [\n                      {\n                        \"name\": \"sdwan\"\n                      }\n                    ],\n                    \"dnac\": {\n                      \"serialNumber\": \"9BIT3F663GJ\",\n                      \"name\": \"9BIT3F663GJ\",\n                      \"pid\": \"C9300-8V\",\n                      \"hostname\": \"BR02-SW01\"\n                    },\n                    \"CML\": {\n                      \"label\": \"SDWAN-ROUTER\"\n                    },\n                    \"interfaces\": [\n                      {\n                        \"name\": \"GigabitEthernet0/0\"\n                      }\n                    ]\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"template\": [\n      {\n        \"name\": \"Switch-Base-Config\",\n        \"description\": \"Base configuration for switch\",\n        \"deviceTypes\": [\n          {\n            \"productFamily\": \"Switches and Hubs\"\n          }\n        ],\n        \"softwareType\": \"IOS-XE\",\n        \"softwareVariant\": \"XE\",\n        \"templateContent\": \"hostname {{ HOSTNAME }}\",\n        \"templateParams\": [\n          {\n            \"parameterName\": \"HOSTNAME\",\n            \"dataType\": \"STRING\",\n            \"description\": \"Host Name\",\n            \"required\": true,\n            \"notParam\": false,\n            \"paramArray\": false,\n            \"displayName\": \"Host Name\",\n            \"order\": 1,\n            \"customOrder\": 0\n          }\n        ],\n        \"customParamsOrder\": false,\n        \"projectName\": \"Onboarding Configuration\",\n        \"projectAssociated\": true,\n        \"documentDatabase\": false\n      }\n    ],\n    \"network_profile\": [\n      {\n        \"name\": \"Switch Profile\",\n        \"namespace\": \"switching\",\n        \"templates\": [\n          \"Switch-Base-Config\"\n        ]\n      }\n    ]\n  }\n}",
+          "scope": "input",
+          "name": "Network Design",
+          "type": "datatype.string",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01YHS4TMTUGWN14p3GdBgN06TY9qw3mFRHs",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -25,7 +51,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "Build CML Lab",
+      "display_name": "CML - Load CML Lab",
       "runtime_user": {
         "override_target_runtime_user": false,
         "specify_on_workflow_start": false,
@@ -40,6 +66,28 @@
     "object_type": "definition_workflow",
     "actions": [
       {
+        "unique_name": "definition_activity_01YHS50DYU9K21uXRGSVfrZI5hKgHTup6wH",
+        "name": "JSONPath Query",
+        "title": "Get Lab GIT Location",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Get Lab GIT Location",
+          "input_json": "$workflow.definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31.input.variable_workflow_01YHS4TMTUGWN14p3GdBgN06TY9qw3mFRHs$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.enterprise.CML.lab_definition",
+              "jsonpath_query_name": "Git Lab Relative URL",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_01XV4XQYCBJPK7EepCurhj0IXyH0T9EXPX2",
         "name": "HTTP Request",
         "title": "Get CML YAML from GitHub",
@@ -52,7 +100,7 @@
           "continue_on_failure": false,
           "display_name": "Get CML YAML from GitHub",
           "method": "GET",
-          "relative_url": "prototype/prototype.yaml",
+          "relative_url": "$activity.definition_activity_01YHS50DYU9K21uXRGSVfrZI5hKgHTup6wH.output.jsonpath_queries.Git Lab Relative URL$",
           "runtime_user": {
             "override_target_runtime_user": false,
             "target_default": true
@@ -68,7 +116,7 @@
       {
         "unique_name": "definition_activity_01XV555BRLGPY0PBrYdc7bpqGvODJe3keL3",
         "name": "HTTP Request",
-        "title": "Get Authentication Token from CML",
+        "title": "Get CML Authentication Token",
         "type": "web-service.http_request",
         "base_type": "activity",
         "properties": {
@@ -78,7 +126,7 @@
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "continue_on_failure": false,
-          "display_name": "Get Authentication Token from CML",
+          "display_name": "Get CML Authentication Token",
           "method": "POST",
           "relative_url": "authenticate",
           "runtime_user": {
@@ -98,13 +146,13 @@
       {
         "unique_name": "definition_activity_01XV59WNDNVLB2ULbLO5o5Pj4aUirqXmW2M",
         "name": "Trim String",
-        "title": "Trim String",
+        "title": "Format CML Token",
         "type": "core.trim_string",
         "base_type": "activity",
         "properties": {
           "characters_to_trim": "\"",
           "continue_on_failure": false,
-          "display_name": "Trim String",
+          "display_name": "Format CML Token",
           "skip_execution": false,
           "source": "$activity.definition_activity_01XV555BRLGPY0PBrYdc7bpqGvODJe3keL3.output.response_body$",
           "trim_leading": true,
@@ -197,51 +245,39 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01XV5PHLHTK9646eFt1z4fmYbAmqLOtrx5j",
-        "name": "HTTP Request",
-        "title": "Start CML Lab",
-        "type": "web-service.http_request",
+        "unique_name": "definition_activity_01YHVIY5YTNN57htGWVTtAKJn93uY3efNAr",
+        "name": "Set Variables",
+        "title": "Set Lab ID Output",
+        "type": "core.set_multiple_variables",
         "base_type": "activity",
         "properties": {
-          "action_timeout": 180,
-          "allow_auto_redirect": true,
-          "continue_on_error_status_code": false,
           "continue_on_failure": false,
-          "custom_headers": [
-            {
-              "name": "content-type",
-              "value": "application/json"
-            },
-            {
-              "name": "accept",
-              "value": "application/json"
-            },
-            {
-              "name": "authorization",
-              "value": "bearer $workflow.definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31.local.variable_workflow_01XV59KS7FQJC7BSq5HUTXakT0sTtXoz2fN$"
-            }
-          ],
-          "display_name": "Start CML Lab",
-          "method": "PUT",
-          "relative_url": "labs/$activity.definition_activity_01XV5JBMI8ICO3mKHv5WHWxGViqO4VwgVup.output.jsonpath_queries.id$/start",
-          "runtime_user": {
-            "override_target_runtime_user": false,
-            "target_default": true
-          },
+          "display_name": "Set Lab ID Output",
           "skip_execution": false,
-          "target": {
-            "override_workflow_target": false,
-            "override_workflow_target_group_criteria": false,
-            "use_workflow_target": true,
-            "use_workflow_target_group": false
-          }
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01XV4WWH97Y7C57ktBYXSNUiwkyqpUNEy31.output.variable_workflow_01YHVIV7S0HSI3Rqt2FfrqTmQhsArJzZhoW$",
+              "variable_value_new": "$activity.definition_activity_01XV5JBMI8ICO3mKHv5WHWxGViqO4VwgVup.output.jsonpath_queries.id$"
+            }
+          ]
         },
         "object_type": "definition_activity"
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01Y5403M85XIC6BVgysDSs8lZteKgkYJDAt"
     ]
+  },
+  "categories": {
+    "category_01Y5403M85XIC6BVgysDSs8lZteKgkYJDAt": {
+      "unique_name": "category_01Y5403M85XIC6BVgysDSs8lZteKgkYJDAt",
+      "name": "CML",
+      "title": "CML",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
   },
   "targets": {
     "definition_target_01XJHDV2PT1BS2YiUD0bUd8icufdPQyBKRE": {
@@ -264,14 +300,14 @@
     },
     "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ": {
       "unique_name": "definition_target_01XV4WHORH52Q6zhjsXev3DI5hC5li44qTZ",
-      "name": "CML",
-      "title": "CML",
+      "name": "Cisco Modelling Labs",
+      "title": "Cisco Modelling Labs",
       "type": "web-service.endpoint",
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
         "disable_certificate_validation": true,
-        "display_name": "CML",
+        "display_name": "Cisco Modelling Labs",
         "host": "10.2.1.177",
         "ignore_proxy": false,
         "no_runtime_user": true,
