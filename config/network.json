@@ -23,7 +23,7 @@
         "title": "JPMC-Branch",
         "version": "0.0.5"
       },
-      "lab_definition": "/CML/JPMC-Branch"
+      "lab_definition": "config/CML/JPMC-Branch.yaml"
     },
     "dnac_controller": [
       {
@@ -32,22 +32,25 @@
         "name": "DNAC-East",
         "password": "10-9=One",
         "port": 443,
-        "username": "admin"
+        "username": "admin",
+        "network_profile": [
+          {
+            "name": "Switch Profile",
+            "namespace": "switching",
+            "templates": [
+              "Switch-Base-Config"
+            ]
+          }
+        ]
       }
     ],
     "site": [
       {
         "name": "CDC 1",
         "type": "datacenter",
-        "dnac_controller": "DNAC-East",
         "services": [
           {
-            "name": "sda"
-          }
-        ],
-        "network_profile": [
-          {
-            "name": "Switch Profile"
+            "name": "sdwan"
           }
         ],
         "building": [
@@ -70,9 +73,53 @@
                 },
                 "devices": [
                   {
-                    "device_name": "DC-1-R1",
+                    "devicename": "services",
+                    "CML": {
+                      "label": "services",
+                      "start": {
+                        "stage": "POST-LAB"
+                      }
+                    }
+                  },
+                  {
+                    "devicename": "DATACENTER-1-R1",
                     "sdwan": {
-                      "template": "DC_Single_Router"
+                      "ip_address": "11.11.11.1",
+                      "site_id": "11",
+                      "vbond": {
+                        "ip_address": "10.30.2.6",
+                        "port": "12346"
+                      },
+                      "bootstrap_tunnel_interface_color": "mpls",
+                      "template": {
+                        "name": "DC_Single_Router",
+                        "data": {
+                          "csv-deviceIP": "11.11.11.1",
+                          "csv-host-name": "DATACENTER-1-R1",
+                          "/0/Cellular_VPN_0_if_name/interface/if-name": "GigabitEthernet3",
+                          "//system/site-id": "11",
+                          "/0/MPLS_VPN_0_if_name/interface/if-name": "GigabitEthernet1",
+                          "//system/host-name": "DATACENTER-1-R1",
+                          "/0/INET_VPN_0_if_name/interface/if-name": "GigabitEthernet2",
+                          "//system/system-ip": "11.11.11.1",
+                          "/55/LAN_VPN_55_if_name/interface/if-name": "GigabitEthernet4.55",
+                          "/55/LAN_VPN_55_if_name/interface/ip/address": "172.50.155.2/24",
+                          "/55//router/bgp/as-num": "65111",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address": "172.50.155.1",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as": "65111",
+                          "/33/LAN_VPN_33_if_name/interface/if-name": "GigabitEthernet4.33",
+                          "/33/LAN_VPN_33_if_name/interface/ip/address": "172.50.133.2/24",
+                          "/33//router/bgp/as-num": "65111",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address": "172.50.133.1",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as": "65111",
+                          "/11/LAN_VPN_11_if_name/interface/if-name": "GigabitEthernet4.11",
+                          "/11/LAN_VPN_11_if_name/interface/ip/address": "172.50.111.2/24",
+                          "/11//router/bgp/as-num": "65111",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address": "172.50.111.1",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as": "65111",
+                          "/0/LAN_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet4"
+                        }
+                      }
                     },
                     "CML": {
                       "label": "DC-1-R1"
@@ -87,6 +134,11 @@
       {
         "name": "CDC 2",
         "type": "datacenter",
+        "services": [
+          {
+            "name": "sdwan"
+          }
+        ],
         "building": [
           {
             "name": "CDC 2 - Building 1",
@@ -107,9 +159,44 @@
                 },
                 "devices": [
                   {
-                    "devicename": "DC-2-R1",
+                    "devicename": "DATACENTER-2-R1",
                     "sdwan": {
-                      "template": "DC_Single_Router"
+                      "ip_address": "22.22.22.1",
+                      "site_id": "22",
+                      "vbond": {
+                        "ip_address": "10.30.2.6",
+                        "port": "12346"
+                      },
+                      "bootstrap_tunnel_interface_color": "mpls",
+                      "template": {
+                        "name": "DC_Single_Router",
+                        "data": {
+                          "csv-deviceIP": "22.22.22.1",
+                          "csv-host-name": "DATACENTER-2-R1",
+                          "/0/Cellular_VPN_0_if_name/interface/if-name": "GigabitEthernet3",
+                          "//system/site-id": "22",
+                          "/0/MPLS_VPN_0_if_name/interface/if-name": "GigabitEthernet1",
+                          "//system/host-name": "DATACENTER-2-R1",
+                          "/0/INET_VPN_0_if_name/interface/if-name": "GigabitEthernet2",
+                          "//system/system-ip": "22.22.22.1",
+                          "/55/LAN_VPN_55_if_name/interface/if-name": "GigabitEthernet4.55",
+                          "/55/LAN_VPN_55_if_name/interface/ip/address": "172.50.205.2/24",
+                          "/55//router/bgp/as-num": "65222",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address": "172.50.205.1",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as": "65222",
+                          "/33/LAN_VPN_33_if_name/interface/if-name": "GigabitEthernet4.33",
+                          "/33/LAN_VPN_33_if_name/interface/ip/address": "172.50.233.2/24",
+                          "/33//router/bgp/as-num": "65222",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address": "172.50.233.1",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as": "65222",
+                          "/11/LAN_VPN_11_if_name/interface/if-name": "GigabitEthernet4.11",
+                          "/11/LAN_VPN_11_if_name/interface/ip/address": "172.50.211.2/24",
+                          "/11//router/bgp/as-num": "65222",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address": "172.50.211.1",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as": "65222",
+                          "/0/LAN_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet4"
+                        }
+                      }
                     },
                     "CML": {
                       "label": "DC-2-R1"
@@ -124,9 +211,20 @@
       {
         "name": "Yamhill Branch",
         "type": "branch",
-        "sda": {
-          "dnac_controller": "DNAC-East"
-        },
+        "services": [
+          {
+            "name": "sda",
+            "controller": "DNAC-East",
+            "network_profile": [
+              {
+                "name": "Switch Profile"
+              }
+            ]
+          },
+          {
+            "name": "sdwan"
+          }
+        ],
         "building": [
           {
             "name": "Yamhill - Branch",
@@ -147,17 +245,56 @@
                 },
                 "devices": [
                   {
-                    "devicename": "BR-1-R1",
+                    "devicename": "BRANCH-1-R1",
                     "sdwan": {
-                      "template": "Branch_Single_Router"
+                      "ip_address": "7.7.7.1",
+                      "site_id": "7",
+                      "vbond": {
+                        "ip_address": "10.30.2.6",
+                        "port": "12346"
+                      },
+                      "bootstrap_tunnel_interface_color": "mpls",
+                      "template": {
+                        "name": "Branch_Single_Router",
+                        "data": {
+                          "csv-deviceIP": "7.7.7.1",
+                          "csv-host-name": "BRANCH-1-R1",
+                          "//system/site-id": "7",
+                          "/0/MPLS_VPN_0_if_name/interface/if-name": "GigabitEthernet1",
+                          "//system/host-name": "BRANCH-1-R1",
+                          "/0/INET_VPN_0_if_name/interface/if-name": "GigabitEthernet2",
+                          "//system/system-ip": "7.7.7.1",
+                          "/0/CELL_VPN_0_if_name/interface/if-name": "GigabitEthernet3",
+                          "/55/LAN_VPN_55_if_name/interface/if-name": "GigabitEthernet4.55",
+                          "/55/LAN_VPN_55_if_name/interface/ip/address": "172.50.15.2/24",
+                          "/55//router/bgp/as-num": "65001",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address": "172.50.15.1",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as": "65001",
+                          "/33/LAN_VPN_33_if_name/interface/if-name": "GigabitEthernet4.33",
+                          "/33/LAN_VPN_33_if_name/interface/ip/address": "172.50.13.2/24",
+                          "/33//router/bgp/as-num": "65001",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address": "172.50.13.1",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as": "65001",
+                          "/11/LAN_VPN_11_if_name/interface/if-name": "GigabitEthernet4.11",
+                          "/11/LAN_VPN_11_if_name/interface/ip/address": "172.50.11.2/24",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/if-name": "GigabitEthernet6",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/ip/address": "172.50.1.1/24",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/dhcp-helper": "111.111.99.130",
+                          "/11//router/bgp/as-num": "65001",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address": "172.50.11.1",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as": "65001",
+                          "/0/LAN_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet4"
+                        }
+                      }
                     },
                     "CML": {
                       "label": "BR-1-R1"
                     }
                   },
                   {
-                    "devicename": "BR-1-SW1",
+                    "devicename": "BRANCH-1-SW1",
                     "sda": {
+                      "management_interface": "GigabitEthernet0/0"
                     },
                     "CML": {
                       "label": "BR-1-SW1"
@@ -172,15 +309,18 @@
       {
         "name": "Greenwich Branch",
         "type": "branch",
-        "dnac_controller": "DNAC-East",
         "services": [
           {
-            "name": "sda"
-          }
-        ],
-        "network_profile": [
+            "name": "sda",
+            "controller": "DNAC-East",
+            "network_profile": [
+              {
+                "name": "Switch Profile"
+              }
+            ]
+          },
           {
-            "name": "Switch Profile"
+            "name": "sdwan"
           }
         ],
         "building": [
@@ -203,34 +343,150 @@
                 },
                 "devices": [
                   {
-                    "devicename": "BR-2-R1",
+                    "devicename": "BRANCH-2-R1",
                     "sdwan": {
-                      "template": "Branch_Dual_Router-MPLS-CELL_TLOC-INET"
+                      "ip_address": "8.8.8.1",
+                      "site_id": "8",
+                      "vbond": {
+                        "ip_address": "10.30.2.6",
+                        "port": "12346"
+                      },
+                      "bootstrap_tunnel_interface_color": "mpls",
+                      "template": {
+                        "name": "Branch_Dual_Router-MPLS-CELL_TLOC-INET",
+                        "data": {
+                          "csv-deviceIP": "8.8.8.1",
+                          "csv-host-name": "BRANCH-2-R1",
+                          "/0/MPLS_VPN_0_TLOC_xconn_if_name/interface/tloc-extension": "GigabitEthernet1",
+                          "//system/site-id": "8",
+                          "/0/MPLS_VPN_0_if_name/interface/if-name": "GigabitEthernet1",
+                          "//system/host-name": "BRANCH-2-R1",
+                          "/0/INET_VPN_0_if_name/interface/if-name": "GigabitEthernet3.200",
+                          "//system/system-ip": "8.8.8.1",
+                          "/0/MPLS_VPN_0_TLOC_xconn_if_name/interface/if-name": "GigabitEthernet3.100",
+                          "/0/vpn-instance/ip/route/0.0.0.0/0/next-hop/vpn_INET_xconn_next_hop_ip_address_0/address": "192.168.1.2",
+                          "/0/CELL_VPN_0_if_name/interface/if-name": "GigabitEthernet2",
+                          "/0/WAN_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet3",
+                          "/0/MPLS_VPN_0_TLOC_xconn_if_name/interface/ip/address": "192.168.2.1/30",
+                          "/0/INET_VPN_0_if_name/interface/ip/address": "192.168.1.1/30",
+                          "/55/LAN_SW2_VPN_55_if_name/interface/if-name": "GigabitEthernet5.55",
+                          "/55/LAN_SW2_VPN_55_if_name/interface/ip/address": "172.50.26.2/24",
+                          "/55/LAN_VPN_55_if_name/interface/if-name": "GigabitEthernet4.55",
+                          "/55/LAN_VPN_55_if_name/interface/ip/address": "172.50.25.2/24",
+                          "/55//router/bgp/as-num": "65002",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address": "172.50.25.1",
+                          "/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/address": "172.50.26.1",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as": "65002",
+                          "/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/remote-as": "65002",
+                          "/33/LAN_SW2_VPN_33_if_name/interface/if-name": "GigabitEthernet5.33",
+                          "/33/LAN_SW2_VPN_33_if_name/interface/ip/address": "172.50.24.2/24",
+                          "/33/LAN_VPN_33_if_name/interface/if-name": "GigabitEthernet4.33",
+                          "/33/LAN_VPN_33_if_name/interface/ip/address": "172.50.23.2/24",
+                          "/33//router/bgp/as-num": "65002",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address": "172.50.23.1",
+                          "/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/address": "172.50.24.1",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as": "65002",
+                          "/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/remote-as": "65002",
+                          "/11/LAN_SW2_VPN_11_if_name/interface/if-name": "GigabitEthernet5.11",
+                          "/11/LAN_SW2_VPN_11_if_name/interface/ip/address": "172.50.22.2/24",
+                          "/11/LAN_VPN_11_if_name/interface/if-name": "GigabitEthernet4.11",
+                          "/11/LAN_VPN_11_if_name/interface/ip/address": "172.50.21.2/24",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/if-name": "GigabitEthernet6",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/ip/address": "172.50.2.1/24",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/dhcp-helper": "111.111.99.130",
+                          "/11//router/bgp/as-num": "65002",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address": "172.50.21.1",
+                          "/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/address": "172.50.22.1",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as": "65002",
+                          "/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/remote-as": "65002",
+                          "/0/LAN_SW2_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet5",
+                          "/0/LAN_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet4"
+                        }
+                      }
                     },
                     "CML": {
                       "label": "BR-2-R1"
                     }
                   },
                   {
-                    "devicename": "BR-2-R2",
+                    "devicename": "BRANCH-2-R2",
                     "sdwan": {
-                      "template": "Branch_Dual_Router-INET-CELL_TLOC-MPLS"
+                      "ip_address": "8.8.8.2",
+                      "site_id": "8",
+                      "vbond": {
+                        "ip_address": "10.30.2.6",
+                        "port": "12346"
+                      },
+                      "bootstrap_tunnel_interface_color": "public-internet",
+                      "template": {
+                        "name": "Branch_Dual_Router-INET-CELL_TLOC-MPLS",
+                        "data": {
+                          "csv-deviceIP": "8.8.8.2",
+                          "csv-host-name": "BRANCH-2-R2",
+                          "/0/INET_VPN_0_TLOC-xconn_if_name/interface/ip/address": "192.168.1.2/30",
+                          "/0/INET_VPN_0_TLOC-xconn_if_name/interface/tloc-extension": "GigabitEthernet1",
+                          "//system/site-id": "8",
+                          "/0/MPLS_VPN_0_if_name/interface/if-name": "GigabitEthernet3.100",
+                          "/0/INET_VPN_0_TLOC-xconn_if_name/interface/if-name": "GigabitEthernet3.200",
+                          "//system/host-name": "BRANCH-2-R2",
+                          "/0/INET_VPN_0_if_name/interface/if-name": "GigabitEthernet1",
+                          "//system/system-ip": "8.8.8.2",
+                          "/0/vpn-instance/ip/route/0.0.0.0/0/next-hop/vpn0_MPLS-TLOC_next_hop_ip_address_1/address": "192.168.2.1",
+                          "/0/CELL_VPN_0_if_name/interface/if-name": "GigabitEthernet2",
+                          "/0/WAN_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet3",
+                          "/55/LAN_SW2_VPN_55_if_name/interface/if-name": "GigabitEthernet4.55",
+                          "/55/LAN_SW2_VPN_55_if_name/interface/ip/address": "172.50.36.2/24",
+                          "/55/LAN_VPN_55_if_name/interface/if-name": "GigabitEthernet5.55",
+                          "/55/LAN_VPN_55_if_name/interface/ip/address": "172.50.35.2/24",
+                          "/55//router/bgp/as-num": "65002",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/address": "172.50.35.1",
+                          "/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/address": "172.50.36.1",
+                          "/55//router/bgp/neighbor/bgp_VPN55_neighbor_address/remote-as": "65002",
+                          "/55//router/bgp/neighbor/bgp_VPN55_SW2_neighbor_address/remote-as": "65002",
+                          "/33/LAN_SW2_VPN_33_if_name/interface/if-name": "GigabitEthernet4.33",
+                          "/33/LAN_SW2_VPN_33_if_name/interface/ip/address": "172.50.34.2/24",
+                          "/33/LAN_VPN_33_if_name/interface/if-name": "GigabitEthernet5.33",
+                          "/33/LAN_VPN_33_if_name/interface/ip/address": "172.50.33.2/24",
+                          "/33//router/bgp/as-num": "65002",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/address": "172.50.33.1",
+                          "/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/address": "172.50.34.1",
+                          "/33//router/bgp/neighbor/bgp_VPN33_neighbor_address/remote-as": "65002",
+                          "/33//router/bgp/neighbor/bgp_VPN33_SW2_neighbor_address/remote-as": "65002",
+                          "/11/LAN_SW2_VPN_11_if_name/interface/if-name": "GigabitEthernet4.11",
+                          "/11/LAN_SW2_VPN_11_if_name/interface/ip/address": "172.50.32.2/24",
+                          "/11/LAN_VPN_11_if_name/interface/if-name": "GigabitEthernet5.11",
+                          "/11/LAN_VPN_11_if_name/interface/ip/address": "172.50.31.2/24",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/if-name": "GigabitEthernet6",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/ip/address": "172.50.3.1/24",
+                          "/11/LAN_MGMT_VPN_11_if_name/interface/dhcp-helper": "111.111.99.130",
+                          "/11//router/bgp/as-num": "65002",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/address": "172.50.31.1",
+                          "/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/address": "172.50.32.1",
+                          "/11//router/bgp/neighbor/bgp_VPN11_neighbor_address/remote-as": "65002",
+                          "/11//router/bgp/neighbor/bgp_SW2_VPN11_neighbor_address/remote-as": "65002",
+                          "/0/LAN_SW2_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet4",
+                          "/0/LAN_MAIN_for_SUB_INT/interface/if-name": "GigabitEthernet5",
+                          "/0/MPLS_VPN_0_if_name/interface/ip/address": "192.168.2.2/30"
+                        }
+                      }
                     },
                     "CML": {
-                      "label": "BR-2-R1"
+                      "label": "BR-2-R2"
                     }
                   },
                   {
-                    "devicename": "BR-2-SW1",
+                    "devicename": "BRANCH-2-SW1",
                     "sda": {
+                      "management_interface": "GigabitEthernet0/0"
                     },
                     "CML": {
                       "label": "BR-2-SW1"
                     }
                   },
                   {
-                    "devicename": "BR-2-SW2",
+                    "devicename": "BRANCH-2-SW2",
                     "sda": {
+                      "management_interface": "GigabitEthernet0/0"
                     },
                     "CML": {
                       "label": "BR-2-SW2"
@@ -246,41 +502,36 @@
     "template": [
       {
         "name": "Switch-Base-Config",
-        "description": "Base configuration for switch",
-        "deviceTypes": [
-          {
-            "productFamily": "Switches and Hubs"
-          }
-        ],
-        "softwareType": "IOS-XE",
-        "softwareVariant": "XE",
-        "templateContent": "hostname {{ HOSTNAME }}",
-        "templateParams": [
-          {
-            "parameterName": "HOSTNAME",
-            "dataType": "STRING",
-            "description": "Host Name",
-            "required": true,
-            "notParam": false,
-            "paramArray": false,
-            "displayName": "Host Name",
-            "order": 1,
-            "customOrder": 0
-          }
-        ],
-        "customParamsOrder": false,
-        "projectName": "Onboarding Configuration",
-        "projectAssociated": true,
-        "documentDatabase": false
-      }
-    ],
-    "network_profile": [
-      {
-        "name": "Switch Profile",
-        "namespace": "switching",
-        "templates": [
-          "Switch-Base-Config"
-        ]
+        "service": "sda",
+        "data": {
+          "name": "Switch-Base-Config",
+          "description": "Base configuration for switch",
+          "deviceTypes": [
+            {
+              "productFamily": "Switches and Hubs"
+            }
+          ],
+          "softwareType": "IOS-XE",
+          "softwareVariant": "XE",
+          "templateContent": "hostname {{ HOSTNAME }}",
+          "templateParams": [
+            {
+              "parameterName": "HOSTNAME",
+              "dataType": "STRING",
+              "description": "Host Name",
+              "required": true,
+              "notParam": false,
+              "paramArray": false,
+              "displayName": "Host Name",
+              "order": 1,
+              "customOrder": 0
+            }
+          ],
+          "customParamsOrder": false,
+          "projectName": "Onboarding Configuration",
+          "projectAssociated": true,
+          "documentDatabase": false
+        }
       }
     ]
   }
