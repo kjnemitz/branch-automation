@@ -243,6 +243,9 @@
                   "width": "5",
                   "rfModelId": "75078"
                 },
+                "mangement_ip_subnets": [
+                  "172.50.1.0/24"
+                ],
                 "devices": [
                   {
                     "devicename": "BRANCH-1-R1",
@@ -341,6 +344,10 @@
                   "width": "5",
                   "rfModelId": "75078"
                 },
+                "mangement_ip_subnets": [
+                  "172.50.2.0/24",
+                  "172.50.3.0/24"
+                ],
                 "devices": [
                   {
                     "devicename": "BRANCH-2-R1",
