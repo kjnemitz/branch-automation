@@ -4,8 +4,8 @@
       {
         "description": "Branch Networking",
         "email": "jnemitz@cisco.com",
-        "name": "JPMC",
-        "url": "https://www.jpmorganchase.com/",
+        "name": "DEMO-COMPANY",
+        "url": "https://www.cisco.com/",
         "services": [
           {
             "name": "sda"
@@ -20,10 +20,10 @@
       "lab": {
         "description": "Branch Automation Lab",
         "notes": "",
-        "title": "JPMC-Branch",
+        "title": "Demo-Branch",
         "version": "0.0.5"
       },
-      "lab_definition": "config/CML/JPMC-Branch.yaml"
+      "lab_definition": "config/CML/Demo-Branch.yaml"
     },
     "dnac_controller": [
       {
