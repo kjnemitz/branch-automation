@@ -1,7 +1,7 @@
 lab:
   description: ''
   notes: ''
-  title: JPMC-Branch
+  title: Demo-Network
   version: 0.0.5
 nodes:
   - id: n0
