@@ -786,6 +786,7 @@ nodes:
        description Main Interface for SD-WAN Subnets
        no ip address
        negotiation auto
+       no shut
       !
       interface GigabitEthernet1.11
        description SD_WAN User Subnet
@@ -808,10 +809,12 @@ nodes:
        description Link to Services
        ip address 111.111.99.1 255.255.255.0
        negotiation auto
+       no shut
       !
       interface GigabitEthernet3
        ip address 10.30.2.8 255.255.255.0
        negotiation auto
+       no shut
       !
       interface GigabitEthernet4
        no ip address
