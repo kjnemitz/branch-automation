@@ -20,7 +20,7 @@
       "lab": {
         "description": "Branch Automation Lab",
         "notes": "",
-        "title": "Demo-Branch",
+        "title": "Demo-Network",
         "version": "0.0.5"
       },
       "lab_definition": "config/CML/Demo-Branch.yaml"
